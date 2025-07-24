@@ -7,17 +7,26 @@ import {
   TouchableOpacity,
   Image,
   ImageBackground,
+  KeyboardAvoidingView,
+  Platform,
+  Dimensions,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
+const screenHeight = Dimensions.get("window").height;
+
 export default function LoginScreen() {
   const [showPassword, setShowPassword] = useState(false);
+
   return (
     <ImageBackground
       source={require("../assets/images/login_bg.png")}
       style={styles.background}
     >
-      <View style={styles.container}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+        style={styles.container}
+      >
         <View style={styles.logoWrapper}>
           <Image
             source={require("../assets/images/logo_app.png")}
@@ -25,7 +34,8 @@ export default function LoginScreen() {
             resizeMode="contain"
           />
         </View>
-        <View style={styles.form}>
+
+        <View style={styles.formWrapper}>
           <View style={styles.inputBox}>
             <FontAwesome
               name="user"
@@ -39,6 +49,7 @@ export default function LoginScreen() {
               placeholderTextColor="#555"
             />
           </View>
+
           <View style={styles.inputBox}>
             <FontAwesome
               name="lock"
@@ -57,41 +68,61 @@ export default function LoginScreen() {
                 name={showPassword ? "eye-slash" : "eye"}
                 size={16}
                 color="#333"
+                style={{ marginLeft: 8 }}
               />
             </TouchableOpacity>
           </View>
+
+          <View style={styles.linkRow}>
+            <TouchableOpacity>
+              <Text style={styles.link}>Registrati</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.link}>Hai dimenticato la password?</Text>
+            </TouchableOpacity>
+          </View>
+
+          <TouchableOpacity style={styles.loginButton}>
+            <Text style={styles.loginText}>LOGIN</Text>
+          </TouchableOpacity>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     </ImageBackground>
   );
 }
+
 const styles = StyleSheet.create({
   background: {
     flex: 1,
     resizeMode: "cover",
-    justifyContent: "center",
-    alignItems: "center",
   },
   container: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 30,
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
-  logo: {
-    width: 180,
-    height: 180,
-    marginBottom: 10,
+  logoWrapper: {
+    position: "absolute",
+    top: screenHeight * 0.17,
+    alignItems: "center",
   },
-
+  logo: {
+    width: 200,
+    height: 200,
+  },
+  formWrapper: {
+    position: "absolute",
+    top: screenHeight * 0.5,
+    width: "85%",
+    alignItems: "center",
+  },
   inputBox: {
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#fff",
     borderRadius: 6,
     paddingHorizontal: 10,
-    marginVertical: 8,
+    marginVertical: 6,
     width: "100%",
   },
   icon: {
@@ -101,19 +132,30 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 12,
     fontSize: 16,
-    height: 40,
     color: "#000",
   },
-  logoWrapper: {
-    marginTop: "30%",
-    alignItems: "center",
-    flex: 1,
-    justifyContent: "flex-start",
-  },
-  form: {
+  linkRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     width: "100%",
-    flex: 2,
-    justifyContent: "flex-start",
-    alignItems: "center",
+    marginTop: 10,
+    marginBottom: 20,
+  },
+  link: {
+    color: "#fff",
+    fontSize: 12,
+    textDecorationLine: "underline",
+  },
+  loginButton: {
+    backgroundColor: "#000",
+    paddingVertical: 12,
+    paddingHorizontal: 40,
+    borderRadius: 4,
+  },
+  loginText: {
+    color: "#fff",
+    fontSize: 16,
+    fontFamily: "Cinzel",
+    textAlign: "center",
   },
 });
