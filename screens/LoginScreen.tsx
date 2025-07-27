@@ -12,11 +12,15 @@ import {
   Dimensions,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import { useNavigation, NavigationProp } from "@react-navigation/native";
+import { RootStackParamList } from "../App";
 
 const screenHeight = Dimensions.get("window").height;
 
 export default function LoginScreen() {
   const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   return (
     <ImageBackground
@@ -27,6 +31,7 @@ export default function LoginScreen() {
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         style={styles.container}
       >
+        {/* Logo */}
         <View style={styles.logoWrapper}>
           <Image
             source={require("../assets/images/logo_app.png")}
@@ -35,14 +40,11 @@ export default function LoginScreen() {
           />
         </View>
 
+        {/* Form */}
         <View style={styles.formWrapper}>
+          {/* Username */}
           <View style={styles.inputBox}>
-            <FontAwesome
-              name="user"
-              size={16}
-              color="#333"
-              style={styles.icon}
-            />
+            <FontAwesome name="user" size={16} color="#333" />
             <TextInput
               placeholder="User Name"
               style={styles.input}
@@ -50,13 +52,9 @@ export default function LoginScreen() {
             />
           </View>
 
+          {/* Password */}
           <View style={styles.inputBox}>
-            <FontAwesome
-              name="lock"
-              size={16}
-              color="#333"
-              style={styles.icon}
-            />
+            <FontAwesome name="lock" size={16} color="#333" />
             <TextInput
               placeholder="Password"
               secureTextEntry={!showPassword}
@@ -73,8 +71,22 @@ export default function LoginScreen() {
             </TouchableOpacity>
           </View>
 
+          {/* Remember me */}
+          <TouchableOpacity
+            style={styles.checkboxContainer}
+            onPress={() => setRememberMe(!rememberMe)}
+          >
+            <View style={styles.checkbox}>
+              {rememberMe && (
+                <FontAwesome name="check" size={14} color="#fff" />
+              )}
+            </View>
+            <Text style={styles.checkboxLabel}>Ricorda password</Text>
+          </TouchableOpacity>
+
+          {/* Links */}
           <View style={styles.linkRow}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Register")}>
               <Text style={styles.link}>Registrati</Text>
             </TouchableOpacity>
             <TouchableOpacity>
@@ -82,6 +94,7 @@ export default function LoginScreen() {
             </TouchableOpacity>
           </View>
 
+          {/* Login button */}
           <TouchableOpacity style={styles.loginButton}>
             <Text style={styles.loginText}>LOGIN</Text>
           </TouchableOpacity>
@@ -92,10 +105,7 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    resizeMode: "cover",
-  },
+  background: { flex: 1, resizeMode: "cover" },
   container: {
     flex: 1,
     alignItems: "center",
@@ -106,10 +116,7 @@ const styles = StyleSheet.create({
     top: screenHeight * 0.17,
     alignItems: "center",
   },
-  logo: {
-    width: 200,
-    height: 200,
-  },
+  logo: { width: 200, height: 200 },
   formWrapper: {
     position: "absolute",
     top: screenHeight * 0.5,
@@ -118,21 +125,19 @@ const styles = StyleSheet.create({
   },
   inputBox: {
     flexDirection: "row",
-    alignItems: "center",
     backgroundColor: "#fff",
     borderRadius: 6,
     paddingHorizontal: 10,
     marginVertical: 6,
     width: "100%",
-  },
-  icon: {
-    marginRight: 8,
+    alignItems: "center",
   },
   input: {
     flex: 1,
     paddingVertical: 12,
     fontSize: 16,
     color: "#000",
+    fontFamily: "Cormorant",
   },
   linkRow: {
     flexDirection: "row",
@@ -145,6 +150,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 12,
     textDecorationLine: "underline",
+    fontFamily: "Cormorant",
   },
   loginButton: {
     backgroundColor: "#000",
@@ -158,4 +164,23 @@ const styles = StyleSheet.create({
     fontFamily: "Cinzel",
     textAlign: "center",
   },
+  checkboxContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 10,
+    marginBottom: 10,
+    alignSelf: "flex-start",
+  },
+  checkbox: {
+    width: 20,
+    height: 20,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: "#333",
+    backgroundColor: "#000",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 8,
+  },
+  checkboxLabel: { fontFamily: "Cormorant", fontSize: 14, color: "#fff" },
 });
