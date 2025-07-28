@@ -2,46 +2,39 @@ import React, { useState } from "react";
 import {
   View,
   Text,
+  StyleSheet,
   TextInput,
   TouchableOpacity,
   Image,
   ScrollView,
   KeyboardAvoidingView,
   Platform,
-  StyleSheet,
+  Dimensions,
 } from "react-native";
-import { useNavigation, NavigationProp } from "@react-navigation/native";
-import { RootStackParamList } from "../App";
+import { FontAwesome } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../navigation/Navigation";
+
+type RegisterNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  "Register"
+>;
+
+const screenHeight = Dimensions.get("window").height;
 
 export default function RegisterScreen() {
+  const navigation = useNavigation<RegisterNavigationProp>();
   const [nome, setNome] = useState("");
   const [cognome, setCognome] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-
-  const handleRegister = () => {
-    if (
-      !nome ||
-      !cognome ||
-      !username ||
-      !email ||
-      !password ||
-      !confirmPassword
-    ) {
-      setErrorMsg("Compila tutti i campi!");
-    } else if (password !== confirmPassword) {
-      setErrorMsg("Le password non coincidono.");
-    } else {
-      setErrorMsg("");
-      console.log("Registrazione completata!");
-    }
-  };
+  const [error, setError] = useState("");
 
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
@@ -49,7 +42,7 @@ export default function RegisterScreen() {
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         style={styles.container}
       >
-        {/* Header */}
+        {/* LOGO in alto */}
         <View style={styles.header}>
           <Image
             source={require("../assets/images/logo_pages.png")}
@@ -59,58 +52,115 @@ export default function RegisterScreen() {
           <Text style={styles.title}>Occhio Al Borgo</Text>
         </View>
 
-        {/* Form */}
+        {/* Aggiungeremo qui i campi dopo */}
         <View style={styles.formWrapper}>
-          {[
-            "Nome",
-            "Cognome",
-            "Username",
-            "Email",
-            "Password",
-            "Conferma Password",
-          ].map((pl, i) => (
-            <View key={i} style={styles.inputBox}>
-              <TextInput
-                placeholder={pl}
-                placeholderTextColor="#555"
-                secureTextEntry={
-                  pl.toLowerCase().includes("password")
-                    ? !(pl === "Password" ? showPassword : showConfirmPassword)
-                    : false
-                }
-                style={styles.input}
-                value={
-                  pl === "Nome"
-                    ? nome
-                    : pl === "Cognome"
-                    ? cognome
-                    : pl === "Username"
-                    ? username
-                    : pl === "Email"
-                    ? email
-                    : pl === "Password"
-                    ? password
-                    : confirmPassword
-                }
-                onChangeText={(text) => {
-                  if (pl === "Nome") setNome(text);
-                  if (pl === "Cognome") setCognome(text);
-                  if (pl === "Username") setUsername(text);
-                  if (pl === "Email") setEmail(text);
-                  if (pl === "Password") setPassword(text);
-                  if (pl === "Conferma Password") setConfirmPassword(text);
-                }}
+          <View style={styles.inputBox}>
+            <TextInput
+              placeholder="Nome"
+              style={styles.input}
+              placeholderTextColor="#555"
+              value={nome}
+              onChangeText={setNome}
+            />
+          </View>
+          <View style={styles.inputBox}>
+            <TextInput
+              placeholder="Cognome"
+              style={styles.input}
+              placeholderTextColor="#555"
+              value={cognome}
+              onChangeText={setCognome}
+            />
+          </View>
+          <View style={styles.inputBox}>
+            <TextInput
+              placeholder="Username"
+              style={styles.input}
+              placeholderTextColor="#555"
+              value={username}
+              onChangeText={setUsername}
+            />
+          </View>
+          <View style={styles.inputBox}>
+            <TextInput
+              placeholder="Email"
+              style={styles.input}
+              placeholderTextColor="#555"
+              keyboardType="email-address"
+              autoCapitalize="none"
+              value={email}
+              onChangeText={setEmail}
+            />
+          </View>
+          <View style={styles.inputBox}>
+            <TextInput
+              placeholder="Password"
+              style={styles.input}
+              placeholderTextColor="#555"
+              secureTextEntry={!showPassword}
+              value={password}
+              onChangeText={setPassword}
+            />
+            <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+              <FontAwesome
+                name={showPassword ? "eye-slash" : "eye"}
+                size={16}
+                color="#333"
+                style={{ marginLeft: 8 }}
               />
-            </View>
-          ))}
+            </TouchableOpacity>
+          </View>
+          <View style={styles.inputBox}>
+            <TextInput
+              placeholder="Conferma Password"
+              style={styles.input}
+              placeholderTextColor="#555"
+              secureTextEntry={!showConfirmPassword}
+              value={confirmPassword}
+              onChangeText={setConfirmPassword}
+            />
+            <TouchableOpacity
+              onPress={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              <FontAwesome
+                name={showConfirmPassword ? "eye-slash" : "eye"}
+                size={16}
+                color="#333"
+                style={{ marginLeft: 8 }}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
+        {errorMessage !== "" && (
+          <Text style={styles.errorText}>{errorMessage}</Text>
+        )}
+        {error ? <Text style={styles.errorText}>{error}</Text> : null}
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            if (
+              !nome ||
+              !cognome ||
+              !username ||
+              !email ||
+              !password ||
+              !confirmPassword
+            ) {
+              setErrorMessage("Compila tutti i campi!");
 
-        {errorMsg ? <Text style={styles.errorText}>{errorMsg}</Text> : null}
-
-        <TouchableOpacity style={styles.button} onPress={handleRegister}>
+              setError("");
+            } else if (password !== confirmPassword) {
+              setError("Le password non coincidono");
+              setErrorMessage("");
+            } else {
+              setErrorMessage("");
+              setError("");
+              console.log("Registrazione completata!");
+            }
+          }}
+        >
           <Text style={styles.buttonText}>Registrati</Text>
         </TouchableOpacity>
-
         <View style={styles.loginLinkContainer}>
           <Text style={styles.loginTextHint}>Hai già un account?</Text>
           <TouchableOpacity onPress={() => navigation.navigate("Login")}>
@@ -121,9 +171,18 @@ export default function RegisterScreen() {
     </ScrollView>
   );
 }
-
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#e8e9ea", alignItems: "center" },
+  container: {
+    flex: 1,
+    backgroundColor: "#e8e9ea", // puoi cambiare per tema scuro
+    alignItems: "center",
+  },
+
+  logo: {
+    width: 80,
+    height: 80,
+    marginRight: 20,
+  },
   header: {
     flexDirection: "row",
     alignItems: "center",
@@ -132,19 +191,34 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     alignSelf: "flex-start",
   },
-  logo: { width: 80, height: 80, marginRight: 20 },
-  title: { fontSize: 22, fontFamily: "Cinzel", marginLeft: 15, color: "#000" },
-  formWrapper: { width: "85%", alignItems: "center", marginTop: 10 },
+  title: {
+    fontSize: 22,
+    fontFamily: "Cinzel", // se vuoi un altro font qui, dimmi
+    color: "#000",
+    marginLeft: 15,
+  },
+  formWrapper: {
+    width: "85%",
+    alignItems: "center",
+    marginTop: 10,
+  },
   inputBox: {
+    flexDirection: "row",
+    alignItems: "center",
     backgroundColor: "#fff",
     borderRadius: 8,
     paddingHorizontal: 10,
     marginVertical: 6,
     width: "100%",
-    height: 44,
-    justifyContent: "center",
+    marginBottom: 12,
   },
-  input: { fontSize: 16, color: "#000", fontFamily: "Cormorant" },
+  input: {
+    flex: 1,
+    paddingVertical: 12,
+    fontSize: 16,
+    color: "#000",
+    fontFamily: "Cormorant",
+  },
   button: {
     backgroundColor: "#000",
     paddingVertical: 12,
