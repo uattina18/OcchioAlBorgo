@@ -15,6 +15,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../navigation/Navigation";
+import * as SecureStore from "expo-secure-store";
 
 type RegisterNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -137,7 +138,7 @@ export default function RegisterScreen() {
         {error ? <Text style={styles.errorText}>{error}</Text> : null}
         <TouchableOpacity
           style={styles.button}
-          onPress={() => {
+          onPress={async () => {
             if (
               !nome ||
               !cognome ||
@@ -155,7 +156,15 @@ export default function RegisterScreen() {
             } else {
               setErrorMessage("");
               setError("");
+
+              await SecureStore.setItemAsync("nome", nome);
+              await SecureStore.setItemAsync("cognome", cognome);
+              await SecureStore.setItemAsync("username", username);
+              await SecureStore.setItemAsync("email", email);
+
               console.log("Registrazione completata!");
+
+              navigation.navigate("Home");
             }
           }}
         >
