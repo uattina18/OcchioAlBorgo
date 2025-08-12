@@ -1,0 +1,22 @@
+{
+  "badges": [
+    {
+      "id": "viaggiatrice-liguria",
+      "title": "Viaggiatrice Liguria",
+      "description": "Hai visitato 3 borghi diversi in Liguria",
+      "icon": "map-pin"
+    },
+    {
+      "id": "fotografa-aspra",
+      "title": "Fotografa Aspra",
+      "description": "Hai caricato 5 foto da borghi diversi",
+      "icon": "camera"
+    },
+    {
+      "id": "completa",
+      "title": "Completa",
+      "description": "Hai visitato almeno un borgo in ogni provincia ligure",
+      "icon": "location-dot"
+    }
+  ]
+}

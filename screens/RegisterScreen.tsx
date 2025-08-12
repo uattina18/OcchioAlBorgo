@@ -161,6 +161,7 @@ export default function RegisterScreen() {
               await SecureStore.setItemAsync("cognome", cognome);
               await SecureStore.setItemAsync("username", username);
               await SecureStore.setItemAsync("email", email);
+              await SecureStore.setItemAsync("password", password);
 
               console.log("Registrazione completata!");
 
