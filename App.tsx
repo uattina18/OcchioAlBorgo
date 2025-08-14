@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 
 import Navigation from "./navigation/Navigation";
 import { ThemeProvider } from "./src/theme/ThemeContext";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
@@ -20,8 +21,10 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <ThemeProvider>
-      <Navigation />
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <Navigation />
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
