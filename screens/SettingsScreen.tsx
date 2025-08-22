@@ -19,14 +19,25 @@ import {
 } from "lucide-react-native";
 import { useTheme, useColors } from "../src/theme/ThemeContext";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { deleteItem } from "../utils/secureStore";
 
 export default function SettingsScreen() {
   const navigation = useNavigation();
   const { theme, setDark } = useTheme();
   const colors = useColors();
   const insets = useSafeAreaInsets();
-  const TOP_PAD = Math.max(insets.top, 16) + 32; // ↓ spingi più in basso
+  const TOP_PAD = Math.max(insets.top, 16) + 32;
   const dark = theme === "dark";
+
+  const handleLogout = async () => {
+    await deleteItem("username"); // non cancella nome, cognome ecc.
+    // 🔁 Riavvia flusso da AuthLoadingScreen
+    // @ts-ignore
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "AuthLoadingScreen" }],
+    });
+  };
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: colors.bg }]}>
@@ -58,7 +69,8 @@ export default function SettingsScreen() {
             label="Account"
             right={<ChevronRight size={18} color={colors.sub} />}
             onPress={() => {
-              /* @ts-ignore */ navigation.navigate("Profilo");
+              // @ts-ignore
+              navigation.navigate("Profilo");
             }}
             colors={colors}
           />
@@ -67,7 +79,8 @@ export default function SettingsScreen() {
             label="Notifiche"
             right={<ChevronRight size={18} color={colors.sub} />}
             onPress={() => {
-              /* @ts-ignore */ navigation.navigate("Notifiche");
+              // @ts-ignore
+              navigation.navigate("Notifiche");
             }}
             colors={colors}
           />
@@ -94,7 +107,7 @@ export default function SettingsScreen() {
           />
 
           <View style={[styles.hr, { backgroundColor: colors.hr }]} />
-          <TouchableOpacity onPress={() => {}} style={styles.logoutBtn}>
+          <TouchableOpacity onPress={handleLogout} style={styles.logoutBtn}>
             <Text style={[styles.logoutText, { color: colors.text }]}>
               Logout
             </Text>

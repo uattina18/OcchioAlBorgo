@@ -1,232 +1,272 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
-  SafeAreaView,
+  TextInput,
   TouchableOpacity,
   Image,
-  Linking,
+  ImageBackground,
+  KeyboardAvoidingView,
+  Platform,
+  Dimensions,
+  Alert,
 } from "react-native";
-import * as SecureStore from "expo-secure-store";
-import Navbar from "../components/Navbar";
-import eventiData from "../assets/data/eventi_liguria.json";
+import { FontAwesome } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../navigation/Navigation";
+import { setItem, getItem, deleteItem } from "../utils/secureStore";
 
-export default function HomeScreen() {
-  const [username, setUsername] = useState<string | null>(null);
+const screenHeight = Dimensions.get("window").height;
+type Nav = NativeStackNavigationProp<RootStackParamList, "Login">;
 
-  useEffect(() => {
-    const loadUsername = async () => {
-      const salvato = await SecureStore.getItemAsync("username");
-      setUsername(salvato);
-    };
-    loadUsername();
-    initBadges();
-  }, []);
+export default function LoginScreen() {
+  const navigation = useNavigation<Nav>();
 
-  const renderEventi = () => {
-    const today = new Date();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState(""); // opzionale per “ricorda password”
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
-    const eventiFuturi = eventiData
-      .filter((evento) => {
-        const match = evento["Event Date"]?.match(/\d{2}\/\d{2}\/\d{4}/);
-        if (!match) return false;
-        const eventDate = new Date(match[0].split("/").reverse().join("-"));
-        return eventDate >= today && evento.Region === "Liguria";
-      })
-      .sort((a, b) => {
-        const da = new Date(
-          a["Event Date"]
-            .match(/\d{2}\/\d{2}\/\d{4}/)[0]
-            .split("/")
-            .reverse()
-            .join("-")
-        );
-        const db = new Date(
-          b["Event Date"]
-            .match(/\d{2}\/\d{2}\/\d{4}/)[0]
-            .split("/")
-            .reverse()
-            .join("-")
-        );
-        return da.getTime() - db.getTime();
-      })
-      .slice(0, 3);
+  const onLogin = async () => {
+    try {
+      if (!username.trim()) {
+        Alert.alert("Attenzione", "Inserisci lo username.");
+        return;
+      }
 
-    if (eventiFuturi.length === 0) {
-      return (
-        <Text style={styles.noEventText}>
-          Nessun evento disponibile al momento.
-        </Text>
-      );
+      // Se hai una chiamata API, mettila qui e ottieni un token reale.
+      // Per ora salviamo solo lo username (coerente con AuthLoadingScreen).
+      await setItem("username", username.trim());
+
+      if (rememberMe && password) {
+        await setItem("password", password); // opzionale, se vuoi ricordarla
+      } else {
+        await deleteItem("password");
+      }
+
+      // Se in futuro usi un token:
+      // await setItem("authToken", token);
+
+      // Vai in Home azzerando lo stack (no back alla login)
+      navigation.reset({ index: 0, routes: [{ name: "Home" }] });
+    } catch (e) {
+      console.warn("Errore login:", e);
+      Alert.alert("Errore", "Qualcosa è andato storto durante il login.");
     }
-
-    return eventiFuturi.map((evento, index) => (
-      <TouchableOpacity
-        key={index}
-        style={styles.eventCard}
-        onPress={() => Linking.openURL(evento["Event Link"])}
-      >
-        <Image
-          source={{ uri: evento["Event Image"] }}
-          style={styles.eventImage}
-        />
-        <View style={styles.eventInfo}>
-          <Text style={styles.eventName}>{evento["Event Title"]}</Text>
-          <Text style={styles.eventDate}>📍 {evento.City}</Text>
-          <Text style={styles.eventDate}>📅 {evento["Event Date"]}</Text>
-        </View>
-      </TouchableOpacity>
-    ));
   };
 
+  const loadRemembered = async () => {
+    // opzionale: precompila username/password salvati
+    const savedUser = await getItem("username");
+    const savedPass = await getItem("password");
+    if (savedUser) setUsername(savedUser);
+    if (savedPass) {
+      setPassword(savedPass);
+      setRememberMe(true);
+    }
+  };
+
+  React.useEffect(() => {
+    loadRemembered();
+  }, []);
+
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <View style={styles.header}>
-          <Text style={styles.greeting}>
-            {username ? `Bentornata, ${username}!` : "Bentornata!"}
-          </Text>
-          <TouchableOpacity style={styles.avatar}>
-            <Image
-              source={require("../assets/images/avatar_placeholder.png")}
-              style={styles.avatarImage}
-            />
-          </TouchableOpacity>
+    <ImageBackground
+      source={require("../assets/images/login_bg.png")}
+      style={styles.background}
+    >
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+        style={styles.container}
+      >
+        {/* Logo */}
+        <View style={styles.logoWrapper}>
+          <Image
+            source={require("../assets/images/logo_app.png")}
+            style={styles.logo}
+            resizeMode="contain"
+          />
         </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Ultimo borgo visitato</Text>
-          <View style={styles.borgoBox}>
-            <Image
-              source={require("../assets/images/borgo_placeholder.png")}
-              style={styles.borgoImage}
+        {/* Form */}
+        <View style={styles.formWrapper}>
+          {/* Username */}
+          <View style={styles.inputBox}>
+            <FontAwesome
+              name="user"
+              size={16}
+              color="#333"
+              style={styles.icon}
             />
-            <Text style={styles.borgoDate}>22 apr 2024</Text>
-            <Text style={styles.borgoName}>Fosdinovo</Text>
+            <TextInput
+              value={username}
+              onChangeText={setUsername}
+              placeholder="User Name"
+              style={styles.input}
+              placeholderTextColor="#555"
+              autoCapitalize="none"
+              autoCorrect={false}
+              textContentType="username"
+              accessibilityLabel="Campo User Name"
+            />
           </View>
-          <TouchableOpacity style={styles.scanButton}>
-            <Text style={styles.scanText}>SCATTA UN NUOVO BORGO</Text>
+
+          {/* Password */}
+          <View style={styles.inputBox}>
+            <FontAwesome
+              name="lock"
+              size={16}
+              color="#333"
+              style={styles.icon}
+            />
+            <TextInput
+              value={password}
+              onChangeText={setPassword}
+              placeholder="Password"
+              secureTextEntry={!showPassword}
+              style={styles.input}
+              placeholderTextColor="#555"
+              autoCapitalize="none"
+              autoCorrect={false}
+              textContentType="password"
+              accessibilityLabel="Campo Password"
+            />
+            <TouchableOpacity
+              onPress={() => setShowPassword((s) => !s)}
+              accessibilityRole="button"
+              accessibilityLabel={
+                showPassword ? "Nascondi password" : "Mostra password"
+              }
+            >
+              <FontAwesome
+                name={showPassword ? "eye-slash" : "eye"}
+                size={16}
+                color="#333"
+              />
+            </TouchableOpacity>
+          </View>
+
+          {/* Remember me */}
+          <TouchableOpacity
+            style={styles.checkboxContainer}
+            onPress={() => setRememberMe((v) => !v)}
+            accessibilityRole="checkbox"
+            accessibilityState={{ checked: rememberMe }}
+          >
+            <View
+              style={[styles.checkbox, rememberMe && styles.checkboxChecked]}
+            >
+              {rememberMe && (
+                <FontAwesome name="check" size={14} color="#fff" />
+              )}
+            </View>
+            <Text style={styles.checkboxLabel}>Ricorda password</Text>
+          </TouchableOpacity>
+
+          {/* Links */}
+          <View style={styles.linkRow}>
+            <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+              <Text style={styles.link}>Registrati</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => Alert.alert("Info", "Funzione in arrivo.")}
+            >
+              <Text style={styles.link}>Hai dimenticato la password?</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* Login button */}
+          <TouchableOpacity style={styles.loginButton} onPress={onLogin}>
+            <Text style={styles.loginText}>LOGIN</Text>
           </TouchableOpacity>
         </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Eventi in arrivo</Text>
-          {renderEventi()}
-        </View>
-
-        <View style={styles.badgeBox}>
-          <Text style={styles.badgeBoxText}>
-            HAI OTTENUTO UN NUOVO BADGE: "BORGO LOVER"
-          </Text>
-          <TouchableOpacity>
-            <Text style={styles.badgeLink}>→ VEDI NEL TUO PROFILO</Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
-      <Navbar />
-    </SafeAreaView>
+      </KeyboardAvoidingView>
+    </ImageBackground>
   );
 }
 
-const initBadges = async () => {
-  const existing = await SecureStore.getItemAsync("badges");
-  if (!existing) {
-    const initialBadges = {
-      primoBorgo: false,
-      cinque_borghi: false,
-      dieci_borghi: false,
-      eventi_visitati: 0,
-      selfie_fatti: 0,
-      borghiVisitati: 0,
-    };
-    await SecureStore.setItemAsync("badges", JSON.stringify(initialBadges));
-  }
-};
-
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#e8e9ea" },
-  scrollContainer: { padding: 20, paddingBottom: 120 },
-  header: {
-    marginTop: 40,
-    marginBottom: 10,
-    paddingHorizontal: 24,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  greeting: { fontSize: 22, fontFamily: "Cinzel", color: "#000" },
-  avatar: {
-    width: 36,
-    height: 36,
-    backgroundColor: "#ccc",
-    borderRadius: 18,
+  background: { flex: 1, resizeMode: "cover" },
+  container: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
-  },
-  avatarImage: { width: 32, height: 32, borderRadius: 16 },
-  section: { marginTop: 30 },
-  sectionTitle: { fontSize: 18, fontFamily: "Cinzel", marginBottom: 10 },
-  borgoBox: { alignItems: "center" },
-  borgoImage: {
-    width: 100,
-    height: 100,
-    marginBottom: 8,
-    borderRadius: 8,
-  },
-  borgoDate: { fontFamily: "Cormorant", fontSize: 14, color: "#444" },
-  borgoName: { fontFamily: "Cinzel", fontSize: 18, fontWeight: "bold" },
-  scanButton: {
-    backgroundColor: "#000",
-    paddingVertical: 10,
     paddingHorizontal: 24,
-    borderRadius: 8,
-    marginTop: 16,
   },
-  scanText: { color: "#fff", fontFamily: "Cinzel", fontSize: 14 },
-  eventCard: {
+  logoWrapper: {
+    position: "absolute",
+    top: screenHeight * 0.17,
+    alignItems: "center",
+  },
+  logo: { width: 200, height: 200 },
+  formWrapper: {
+    position: "absolute",
+    top: screenHeight * 0.5,
+    width: "100%",
+    maxWidth: 400,
+  },
+  inputBox: {
     flexDirection: "row",
+    alignItems: "center",
     backgroundColor: "#fff",
-    borderRadius: 10,
-    padding: 10,
-    marginBottom: 10,
-    elevation: 2,
+    borderRadius: 6,
+    paddingHorizontal: 10,
+    marginVertical: 6,
+    width: "100%",
   },
-  eventImage: { width: 70, height: 70, borderRadius: 8, marginRight: 10 },
-  eventInfo: { flex: 1, justifyContent: "center" },
-  eventName: {
-    fontFamily: "Cormorant",
+  icon: { marginRight: 8 },
+  input: {
+    flex: 1,
+    paddingVertical: 12,
     fontSize: 16,
-    fontWeight: "bold",
-    marginBottom: 4,
-  },
-  eventDate: { fontFamily: "Cormorant", fontSize: 14, color: "#555" },
-  noEventText: {
+    color: "#000",
     fontFamily: "Cormorant",
-    fontSize: 14,
-    color: "#666",
+  },
+  linkRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 8,
   },
-  badgeBox: {
-    marginTop: 30,
-    backgroundColor: "#fff",
-    padding: 16,
-    borderRadius: 8,
-    elevation: 2,
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-  },
-  badgeBoxText: {
-    fontFamily: "Cormorant",
-    fontSize: 14,
-    marginBottom: 8,
-  },
-  badgeLink: {
-    fontFamily: "Cormorant",
-    fontSize: 14,
-    color: "#007AFF",
+  link: {
+    color: "#fff",
+    fontSize: 12,
     textDecorationLine: "underline",
+    fontFamily: "Cormorant",
   },
+  loginButton: {
+    backgroundColor: "#3a602a", // ✅ verde richiesto
+    paddingVertical: 14,
+    borderRadius: 6,
+    marginTop: 14,
+  },
+  loginText: {
+    color: "#fff",
+    fontSize: 16,
+    fontFamily: "Cinzel",
+    textAlign: "center",
+  },
+  checkboxContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 10,
+    marginBottom: 10,
+    alignSelf: "flex-start",
+  },
+  checkbox: {
+    width: 20,
+    height: 20,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: "#333",
+    backgroundColor: "#000",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 8,
+  },
+  checkboxChecked: {
+    backgroundColor: "#000",
+  },
+  checkboxLabel: { fontFamily: "Cormorant", fontSize: 14, color: "#fff" },
 });
