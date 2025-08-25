@@ -16,99 +16,129 @@ import {
   Camera as CamIcon,
   Check,
   X,
+  Target,
 } from "lucide-react-native";
 import { useNavigation } from "@react-navigation/native";
 import { CameraView, useCameraPermissions } from "expo-camera";
 import * as Location from "expo-location";
 import { Magnetometer } from "expo-sensors";
 import { useColors } from "../src/theme/ThemeContext";
+import { saveScattoToQueue } from "../utils/scattiStore";
+// ✅ dataset “lite” multi‑regione
+import borghi from "../assets/data/borghi_min.json";
+// ✅ motore badge (verifica il path nel tuo progetto)
+import {
+  incBorghiVisitati,
+  markProvinceCovered,
+  popJustUnlocked,
+} from "../utils/badgesEngine";
 
-// ⬇️ Importa i borghi da JSON (mettilo in assets/data)
-import borghiData from "../assets/data/borghi_liguria.json";
-
-/* -------------------- tipi + parser robusto -------------------- */
-type RawBorgo = any;
+/* -------------------- tipi -------------------- */
 type Borgo = {
   id: string;
   name: string;
   lat: number;
-  lon: number;
-  comune?: string;
-  img?: string;
+  lng: number;
+  provinceCode?: string;
+  regionId: string;
 };
+const BORGI: Borgo[] = borghi as Borgo[];
 
-function pick(o: any, keys: string[]) {
-  for (const k of keys) if (o && o[k] != null && o[k] !== "") return o[k];
-  return null;
-}
-function toNum(x: any): number | null {
-  if (x == null) return null;
-  const n = typeof x === "string" ? parseFloat(x.replace(",", ".")) : Number(x);
-  return Number.isFinite(n) ? n : null;
-}
-function normalizeBorgo(r: RawBorgo, idx: number): Borgo {
-  const name = String(
-    pick(r, ["name", "nome", "borgo", "comune", "localita"]) ??
-      `Borgo ${idx + 1}`
-  );
-  const lat = toNum(
-    pick(r, ["lat", "latitude", "Lat", "LAT", "y", "coord_y", "latitudine"])
-  );
-  const lon = toNum(
-    pick(r, [
-      "lon",
-      "lng",
-      "long",
-      "longitude",
-      "Lon",
-      "LON",
-      "x",
-      "coord_x",
-      "longitudine",
-    ])
-  );
-  const comune = pick(r, ["comune", "municipio", "city"]) ?? undefined;
-  const img = pick(r, ["img", "image", "photo", "foto", "cover"]) ?? undefined;
-  const id = String(pick(r, ["id", "slug", "code"]) ?? `b_${idx}`);
-  return { id, name, lat: lat ?? NaN, lon: lon ?? NaN, comune, img };
-}
-const BORGI: Borgo[] = (borghiData as RawBorgo[])
-  .map(normalizeBorgo)
-  .filter((b) => Number.isFinite(b.lat) && Number.isFinite(b.lon));
+/* -------------------- geo helpers -------------------- */
+const toRad = (d: number) => (d * Math.PI) / 180;
+const toDeg = (r: number) => (r * 180) / Math.PI;
+const clamp360 = (a: number) => ((a % 360) + 360) % 360;
 
-/* -------------------- util geo -------------------- */
 function toCardinal(deg: number) {
   const dirs = ["N", "NE", "E", "SE", "S", "SO", "O", "NO", "N"];
   return dirs[Math.round(deg / 45)];
 }
 function distKm(
-  a: { lat: number; lon: number },
-  b: { lat: number; lon: number }
+  a: { lat: number; lng: number },
+  b: { lat: number; lng: number }
 ) {
   const R = 6371;
-  const dLat = ((b.lat - a.lat) * Math.PI) / 180;
-  const dLon = ((b.lon - a.lon) * Math.PI) / 180;
-  const la1 = (a.lat * Math.PI) / 180;
-  const la2 = (b.lat * Math.PI) / 180;
-  const x =
-    Math.sin(dLat / 2) ** 2 +
-    Math.cos(la1) * Math.cos(la2) * Math.sin(dLon / 2) ** 2;
-  return 2 * R * Math.asin(Math.sqrt(x));
+  const dLat = toRad(b.lat - a.lat);
+  const dLon = toRad(b.lng - a.lng);
+  const lat1 = toRad(a.lat),
+    lat2 = toRad(b.lat);
+  const s1 = Math.sin(dLat / 2),
+    s2 = Math.sin(dLon / 2);
+  const A = s1 * s1 + Math.cos(lat1) * Math.cos(lat2) * s2 * s2;
+  return 2 * R * Math.asin(Math.sqrt(A));
 }
-function nearestBorgo(pos: { lat: number; lon: number }) {
+function bearing(
+  a: { lat: number; lng: number },
+  b: { lat: number; lng: number }
+) {
+  const φ1 = toRad(a.lat),
+    φ2 = toRad(b.lat);
+  const λ1 = toRad(a.lng),
+    λ2 = toRad(b.lng);
+  const y = Math.sin(λ2 - λ1) * Math.cos(φ2);
+  const x =
+    Math.cos(φ1) * Math.sin(φ2) -
+    Math.sin(φ1) * Math.cos(φ2) * Math.cos(λ2 - λ1);
+  return clamp360(toDeg(Math.atan2(y, x)));
+}
+function angularDiff(aDeg: number, bDeg: number) {
+  let d = Math.abs(clamp360(aDeg) - clamp360(bDeg));
+  return d > 180 ? 360 - d : d;
+}
+function nearestBorgo(pos: { lat: number; lng: number }, maxKm = 30) {
   let best: { borgo: Borgo; d: number } | null = null;
   for (const b of BORGI) {
-    const d = distKm(pos, { lat: b.lat, lon: b.lon });
-    if (!best || d < best.d) best = { borgo: b, d };
+    const d = distKm(pos, { lat: b.lat, lng: b.lng });
+    if (d <= maxKm && (!best || d < best.d)) best = { borgo: b, d };
   }
   return best;
 }
 
+/** Sceglie il borgo lungo la direzione (cono ±tol gradi) con punteggio distanza+angolo */
+function pickBorgoByHeading(
+  A: { lat: number; lng: number },
+  headingDeg: number,
+  opts?: {
+    maxKm?: number;
+    tol?: number;
+    angleW?: number;
+    distW?: number;
+    regionId?: string;
+  }
+) {
+  const maxKm = opts?.maxKm ?? 25;
+  const tol = opts?.tol ?? 12; // ±12°
+  const angleW = opts?.angleW ?? 1.0;
+  const distW = opts?.distW ?? 0.15;
+  const regionId = opts?.regionId;
+
+  let best: {
+    borgo: Borgo;
+    d: number;
+    brng: number;
+    diff: number;
+    score: number;
+  } | null = null;
+
+  for (const b of BORGI) {
+    if (regionId && b.regionId !== regionId) continue;
+    const d = distKm(A, { lat: b.lat, lng: b.lng });
+    if (d > maxKm) continue;
+    const brng = bearing(A, { lat: b.lat, lng: b.lng });
+    const diff = angularDiff(headingDeg, brng);
+    if (diff > tol) continue;
+    const score = angleW * diff + distW * d;
+    if (!best || score < best.score) best = { borgo: b, d, brng, diff, score };
+  }
+
+  return best;
+}
+
+/* -------------------- componente -------------------- */
 export default function ScattaBorgoScreen() {
   const colors = useColors();
   const nav = useNavigation();
   const insets = useSafeAreaInsets();
-  const TOP_PAD = Math.max(insets.top, 16) + 16;
 
   // camera
   const [camPerm, requestCamPerm] = useCameraPermissions();
@@ -117,26 +147,30 @@ export default function ScattaBorgoScreen() {
 
   // location + heading
   const [locPerm, setLocPerm] = useState<boolean>(false);
-  const [coords, setCoords] = useState<{ lat: number; lon: number } | null>(
+  const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(
     null
   );
   const [heading, setHeading] = useState<number | null>(null);
 
-  // watch subscriptions
+  // watches
   const locWatch = useRef<Location.LocationSubscription | null>(null);
   const headWatch = useRef<Location.LocationSubscription | null>(null);
   const magSub = useRef<any>(null);
+
+  // smoothing heading
+  const headingBuf = useRef<number[]>([]);
 
   useEffect(() => {
     (async () => {
       if (!camPerm?.granted) await requestCamPerm();
       const { status } = await Location.requestForegroundPermissionsAsync();
       setLocPerm(status === "granted");
-      if (status !== "granted")
+      if (status !== "granted") {
         Alert.alert(
           "Permesso posizione",
-          "Attiva la posizione per trovare il borgo vicino."
+          "Attiva la posizione per trovare il borgo che stai inquadrando."
         );
+      }
     })();
   }, []);
 
@@ -145,63 +179,92 @@ export default function ScattaBorgoScreen() {
 
     // posizione
     (async () => {
-      if (locWatch.current) {
-        locWatch.current.remove();
-        locWatch.current = null;
-      }
+      locWatch.current?.remove();
       locWatch.current = await Location.watchPositionAsync(
-        { accuracy: Location.Accuracy.High, distanceInterval: 5 },
+        { accuracy: Location.Accuracy.Balanced, distanceInterval: 5 },
         (pos) =>
-          setCoords({ lat: pos.coords.latitude, lon: pos.coords.longitude })
+          setCoords({ lat: pos.coords.latitude, lng: pos.coords.longitude })
       );
     })();
 
-    // heading (nativo -> fallback magnetometro)
+    // heading: preferisci quello nativo → fallback magnetometro
     (async () => {
       try {
-        if (headWatch.current) {
-          headWatch.current.remove();
-          headWatch.current = null;
-        }
+        headWatch.current?.remove();
         headWatch.current = await (Location as any).watchHeadingAsync(
           (h: any) => {
-            if (h?.trueHeading != null) setHeading(h.trueHeading);
-            else if (h?.magHeading != null) setHeading(h.magHeading);
+            const raw =
+              typeof h?.trueHeading === "number"
+                ? h.trueHeading
+                : h?.magHeading;
+            if (typeof raw === "number" && Number.isFinite(raw)) {
+              pushHeading(clamp360(raw));
+            }
           }
         );
       } catch {
+        magSub.current?.remove?.();
         magSub.current = Magnetometer.addListener(({ x, y }) => {
           if (x == null || y == null) return;
-          let angle = Math.atan2(y, x) * (180 / Math.PI); // -180..180 (0=Est)
-          angle += 90;
-          if (angle < 0) angle += 360;
-          setHeading(angle);
+          // atan2(y,x): 0° = Est; ruoto per avere 0° = Nord
+          let angle = (Math.atan2(y, x) * 180) / Math.PI + 90;
+          pushHeading(clamp360(angle));
         });
         Magnetometer.setUpdateInterval(400);
       }
     })();
 
     return () => {
-      if (locWatch.current) {
-        locWatch.current.remove();
-        locWatch.current = null;
-      }
-      if (headWatch.current) {
-        headWatch.current.remove();
-        headWatch.current = null;
-      }
-      if (magSub.current) {
-        magSub.current.remove();
-        magSub.current = null;
-      }
+      locWatch.current?.remove();
+      headWatch.current?.remove();
+      magSub.current?.remove?.();
+      locWatch.current = null;
+      headWatch.current = null;
+      magSub.current = null;
+      headingBuf.current = [];
     };
   }, [locPerm]);
 
+  function pushHeading(h: number) {
+    const buf = headingBuf.current;
+    buf.push(h);
+    if (buf.length > 12) buf.shift(); // media ultimi ~12 campioni
+    // media circolare
+    let x = 0,
+      y = 0;
+    for (const a of buf) {
+      const r = toRad(a);
+      x += Math.cos(r);
+      y += Math.sin(r);
+    }
+    const avg = clamp360(toDeg(Math.atan2(y / buf.length, x / buf.length)));
+    setHeading(avg);
+  }
+
+  // suggerimento: heading-based, fallback nearest
   const suggested = useMemo(() => {
     if (!coords || BORGI.length === 0) return null;
-    const n = nearestBorgo(coords);
-    return n ? { ...n, within: n.d <= 30 } : null; // 30km soglia
-  }, [coords]);
+
+    if (heading != null) {
+      const pick = pickBorgoByHeading(coords, heading, {
+        maxKm: 25,
+        tol: 12 /*, regionId: "liguria" */,
+      });
+      if (pick) {
+        return {
+          mode: "heading" as const,
+          borgo: pick.borgo,
+          d: pick.d,
+          brng: pick.brng,
+          diff: pick.diff,
+        };
+      }
+    }
+    const near = nearestBorgo(coords, 30);
+    return near
+      ? { mode: "nearest" as const, borgo: near.borgo, d: near.d }
+      : null;
+  }, [coords, heading]);
 
   const takePhoto = async () => {
     try {
@@ -219,12 +282,51 @@ export default function ScattaBorgoScreen() {
 
   const resetPhoto = () => setPhotoUri(null);
 
+  const confirmUse = async () => {
+    try {
+      if (!suggested || !photoUri || !coords || heading == null) {
+        Alert.alert(
+          "Attenzione",
+          "Scatta una foto e conferma prima di continuare."
+        );
+        return;
+      }
+
+      const b = suggested.borgo;
+      // salva offline in coda (sposta la foto in scatti e crea item pending)
+      await saveScattoToQueue({
+        tempUri: photoUri,
+        borgoId: b.id,
+        borgoName: b.name,
+        lat: coords.lat,
+        lng: coords.lng,
+        heading,
+      });
+
+      // ✅ aggiorna badge
+      await incBorghiVisitati(b.regionId);
+      if (b.provinceCode) await markProvinceCovered(b.regionId, b.provinceCode);
+      const just = await popJustUnlocked();
+      if (just) {
+        Alert.alert("Nuovo badge!", "Hai sbloccato un nuovo badge 🎉");
+      }
+
+      // TODO: salva foto+metadati se vuoi (uri, coords, heading, borgoId)
+      // @ts-ignore
+      nav.navigate("Explore");
+    } catch (e) {
+      console.warn("confirmUse error:", e);
+      Alert.alert("Ops", "Qualcosa è andato storto nel salvataggio.");
+    }
+  };
+
+  /* -------------------- UI -------------------- */
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.bg }}>
       {/* Header */}
       <View
         style={{
-          paddingTop: TOP_PAD,
+          paddingTop: Math.max(insets.top, 16) + 16,
           paddingHorizontal: 16,
           paddingBottom: 8,
           flexDirection: "row",
@@ -259,19 +361,17 @@ export default function ScattaBorgoScreen() {
       {/* Corpo */}
       <View style={{ flex: 1 }}>
         {!camPerm?.granted ? (
-          <View
-            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-          >
-            <Text style={{ color: colors.sub, fontFamily: "Cormorant" }}>
-              Concedi i permessi fotocamera…
-            </Text>
-          </View>
+          <CenterMsg
+            text="Concedi i permessi fotocamera…"
+            subColor={colors.sub}
+          />
         ) : photoUri ? (
           <View style={{ flex: 1 }}>
             <Image source={{ uri: photoUri }} style={{ flex: 1 }} />
             <View
               style={[styles.bottomPanel, { backgroundColor: colors.card }]}
             >
+              {/* info */}
               <View
                 style={{
                   flexDirection: "row",
@@ -279,55 +379,54 @@ export default function ScattaBorgoScreen() {
                   justifyContent: "space-between",
                 }}
               >
-                <View
-                  style={{ flexDirection: "row", alignItems: "center", gap: 8 }}
-                >
-                  <CompassIcon size={16} color={colors.text} />
-                  <Text
-                    style={{
-                      color: colors.text,
-                      fontFamily: "Cinzel",
-                      fontSize: 14,
-                    }}
-                  >
-                    {heading != null
+                <InfoPill
+                  icon={<CompassIcon size={16} color={colors.text} />}
+                  text={
+                    heading != null
                       ? `${Math.round(heading)}° ${toCardinal(heading)}`
-                      : "—°"}
-                  </Text>
-                </View>
-                <View
-                  style={{ flexDirection: "row", alignItems: "center", gap: 6 }}
-                >
-                  <MapPin size={16} color={colors.text} />
-                  <Text style={{ color: colors.text, fontFamily: "Cormorant" }}>
-                    {coords
-                      ? `${coords.lat.toFixed(5)}, ${coords.lon.toFixed(5)}`
-                      : "—"}
-                  </Text>
-                </View>
+                      : "—°"
+                  }
+                  textColor={colors.text}
+                />
+                <InfoPill
+                  icon={<MapPin size={16} color={colors.text} />}
+                  text={
+                    coords
+                      ? `${coords.lat.toFixed(5)}, ${coords.lng.toFixed(5)}`
+                      : "—"
+                  }
+                  textColor={colors.text}
+                />
               </View>
 
+              {/* suggerimento */}
               <View style={{ marginTop: 8 }}>
                 {BORGI.length === 0 ? (
                   <Text style={{ color: colors.sub, fontFamily: "Cormorant" }}>
-                    Nessun borgo con coordinate valide in borghi_liguria.json
+                    Nessun borgo nel dataset.
                   </Text>
                 ) : suggested ? (
                   <Text style={{ color: colors.text, fontFamily: "Cormorant" }}>
-                    Borgo vicino:{" "}
+                    {suggested.mode === "heading" ? (
+                      <>
+                        <Target size={14} color={colors.text} /> Sto guardando:{" "}
+                      </>
+                    ) : (
+                      "Borgo vicino: "
+                    )}
                     <Text style={{ fontFamily: "Cinzel" }}>
                       {suggested.borgo.name}
                     </Text>{" "}
                     ({suggested.d.toFixed(1)} km)
-                    {suggested.within ? "" : " – fuori soglia"}
                   </Text>
                 ) : (
                   <Text style={{ color: colors.sub, fontFamily: "Cormorant" }}>
-                    Calcolo borgo vicino…
+                    Calcolo borgo…
                   </Text>
                 )}
               </View>
 
+              {/* azioni */}
               <View style={{ flexDirection: "row", gap: 10, marginTop: 10 }}>
                 <TouchableOpacity
                   onPress={resetPhoto}
@@ -337,18 +436,14 @@ export default function ScattaBorgoScreen() {
                   <Text style={styles.btnText}>Rifai</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  onPress={() => {
-                    // Salva meta/scatto in futuro; per ora apri Esplora
-                    // @ts-ignore
-                    nav.navigate("Explore");
-                  }}
+                  onPress={confirmUse}
                   style={[
                     styles.btn,
                     { backgroundColor: colors.tint, flex: 1 },
                   ]}
                 >
                   <Check size={16} color="#fff" />
-                  <Text style={styles.btnText}>Usa e apri Esplora</Text>
+                  <Text style={styles.btnText}>Usa</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -358,24 +453,25 @@ export default function ScattaBorgoScreen() {
             <CameraView ref={cameraRef} style={{ flex: 1 }} facing="back" />
             {/* overlay */}
             <View pointerEvents="none" style={styles.overlayTop}>
-              <View style={[styles.pill, { backgroundColor: colors.card }]}>
-                <CompassIcon size={16} color={colors.text} />
-                <Text style={[styles.pillText, { color: colors.text }]}>
-                  {heading != null
+              <InfoPill
+                icon={<CompassIcon size={16} color={colors.text} />}
+                text={
+                  heading != null
                     ? `${Math.round(heading)}° ${toCardinal(heading)}`
-                    : "—°"}
-                </Text>
-              </View>
-              <View style={[styles.pill, { backgroundColor: colors.card }]}>
-                <MapPin size={16} color={colors.text} />
-                <Text style={[styles.pillText, { color: colors.text }]}>
-                  {coords
-                    ? `${coords.lat.toFixed(5)}, ${coords.lon.toFixed(5)}`
-                    : "—"}
-                </Text>
-              </View>
+                    : "—°"
+                }
+                textColor={colors.text}
+              />
+              <InfoPill
+                icon={<MapPin size={16} color={colors.text} />}
+                text={
+                  coords
+                    ? `${coords.lat.toFixed(5)}, ${coords.lng.toFixed(5)}`
+                    : "—"
+                }
+                textColor={colors.text}
+              />
             </View>
-
             <View style={styles.overlayBottom}>
               <TouchableOpacity
                 onPress={takePhoto}
@@ -391,6 +487,32 @@ export default function ScattaBorgoScreen() {
   );
 }
 
+/* -------------------- piccoli UI helpers -------------------- */
+function CenterMsg({ text, subColor }: { text: string; subColor: string }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text style={{ color: subColor, fontFamily: "Cormorant" }}>{text}</Text>
+    </View>
+  );
+}
+function InfoPill({
+  icon,
+  text,
+  textColor,
+}: {
+  icon: React.ReactNode;
+  text: string;
+  textColor: string;
+}) {
+  return (
+    <View style={styles.pill}>
+      {icon}
+      <Text style={[styles.pillText, { color: textColor }]}>{text}</Text>
+    </View>
+  );
+}
+
+/* -------------------- styles -------------------- */
 const styles = StyleSheet.create({
   overlayTop: {
     position: "absolute",
@@ -408,9 +530,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 8,
     opacity: 0.92,
+    backgroundColor: "rgba(0,0,0,0.25)",
   },
   pillText: { fontFamily: "Cinzel", fontSize: 12 },
-
   overlayBottom: {
     position: "absolute",
     bottom: 26,
@@ -431,7 +553,6 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     shadowOffset: { width: 0, height: 3 },
   },
-
   bottomPanel: {
     position: "absolute",
     left: 0,

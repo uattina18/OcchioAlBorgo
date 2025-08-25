@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import {
   SafeAreaView,
   View,
@@ -20,11 +20,18 @@ import {
 } from "lucide-react-native";
 import * as SecureStore from "expo-secure-store";
 import * as ImagePicker from "expo-image-picker";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
+import {
+  listScatti,
+  deleteScatto,
+  processQueue,
+  canProcessNow,
+  mockUpload, // sostituisci con la tua funzione di upload reale
+} from "../utils/scattiStore";
 
 type CommunityPhoto = { id: string; uri: string; author: string; ts: number };
-type VoteState = { liked: boolean; score: number }; // 👈 solo like
-type MyPhoto = { id: string; uri: string; ts: number; votesUp?: number }; // 👈 solo likes
+type VoteState = { liked: boolean; score: number };
+type MyPhoto = { id: string; uri: string; ts: number; votesUp?: number };
 
 const COMMUNITY_SEED: CommunityPhoto[] = [
   {
@@ -61,21 +68,18 @@ export default function GalleriaScreen() {
 
   const [tab, setTab] = useState<"community" | "mine">("community");
 
-  // COMMUNITY
+  // ---------------- COMMUNITY ----------------
   const [votes, setVotes] = useState<Record<string, VoteState>>({});
   const [sort, setSort] = useState<"recent" | "top">("recent");
 
-  // migrazione vecchio formato { myVote, score } -> { liked, score }
   useEffect(() => {
     (async () => {
       const raw = await SecureStore.getItemAsync("communityVotes");
       if (!raw) return;
       try {
         const obj = JSON.parse(raw);
-        const entries = Object.entries(obj);
-        // se è già nel nuovo formato, salvo e basta
         const migrated: Record<string, VoteState> = {};
-        for (const [id, st] of entries as any) {
+        for (const [id, st] of Object.entries(obj) as any) {
           if ("liked" in st) {
             migrated[id] = { liked: !!st.liked, score: Number(st.score || 0) };
           } else {
@@ -90,7 +94,6 @@ export default function GalleriaScreen() {
           JSON.stringify(migrated)
         );
       } catch {
-        // se parsing fallisce, azzero
         setVotes({});
         await SecureStore.setItemAsync("communityVotes", JSON.stringify({}));
       }
@@ -129,15 +132,41 @@ export default function GalleriaScreen() {
     await SecureStore.setItemAsync("communityVotes", JSON.stringify(next));
   };
 
-  // LE MIE
+  // ---------------- LE MIE ----------------
   const [mine, setMine] = useState<MyPhoto[]>([]);
   const [mineFilter, setMineFilter] = useState<"all" | "voted" | "not">("all");
+
+  const [queueItems, setQueueItems] = useState<
+    Array<{ id: string; uri: string; takenAt: string; status: string }>
+  >([]);
+  const [pendingOnly, setPendingOnly] = useState(false);
+
   useEffect(() => {
     (async () => {
       const mp = await SecureStore.getItemAsync("myPhotos");
       if (mp) setMine(JSON.parse(mp));
+      await refreshQueue();
     })();
   }, []);
+
+  const refreshQueue = async () => {
+    const q = await listScatti().catch(() => []);
+    setQueueItems(
+      q.map((it) => ({
+        id: it.id,
+        uri: it.uri,
+        takenAt: it.takenAt,
+        status: it.status,
+      }))
+    );
+  };
+
+  useFocusEffect(
+    useCallback(() => {
+      refreshQueue();
+    }, [])
+  );
+
   const saveMine = async (arr: MyPhoto[]) => {
     setMine(arr);
     await SecureStore.setItemAsync("myPhotos", JSON.stringify(arr));
@@ -159,6 +188,7 @@ export default function GalleriaScreen() {
       ]);
     }
   };
+
   const captureWithCamera = async () => {
     const { status } = await ImagePicker.requestCameraPermissionsAsync();
     if (status !== "granted")
@@ -181,6 +211,55 @@ export default function GalleriaScreen() {
       return true;
     });
   }, [mine, mineFilter]);
+
+  const mineDisplay: MyPhoto[] = useMemo(() => {
+    if (pendingOnly) {
+      const pend = queueItems
+        .filter((it) => it.status === "pending")
+        .map<MyPhoto>((it) => ({
+          id: "q_" + it.id,
+          uri: it.uri,
+          ts: new Date(it.takenAt).getTime(),
+          votesUp: 0,
+        }))
+        .sort((a, b) => b.ts - a.ts);
+      return pend;
+    }
+    return [...mineFiltered].sort((a, b) => b.ts - a.ts);
+  }, [pendingOnly, queueItems, mineFiltered]);
+
+  const pendingCount = useMemo(
+    () => queueItems.filter((it) => it.status === "pending").length,
+    [queueItems]
+  );
+
+  const handleDelete = async (item: MyPhoto) => {
+    if (item.id.startsWith("q_")) {
+      const rawId = item.id.slice(2);
+      await deleteScatto(rawId);
+      await refreshQueue();
+    } else {
+      const updated = mine.filter((p) => p.id !== item.id);
+      await saveMine(updated);
+    }
+  };
+
+  const processNow = async () => {
+    const ok = await canProcessNow();
+    if (!ok) {
+      return Alert.alert(
+        "Non posso inviare",
+        "Connessione assente o batteria troppo bassa / risparmio energetico attivo."
+      );
+    }
+    try {
+      await processQueue(mockUpload);
+      await refreshQueue();
+      Alert.alert("Fatto!", "Coda inviata.");
+    } catch (e: any) {
+      Alert.alert("Errore", String(e?.message || e) || "Invio non riuscito.");
+    }
+  };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -336,8 +415,8 @@ export default function GalleriaScreen() {
           </>
         ) : (
           <>
-            {/* azioni */}
-            <View style={styles.mineActions}>
+            {/* azioni + filtro SOLO IN CODA + INVIA ORA */}
+            <View style={[styles.mineActions, { alignItems: "center" }]}>
               <TouchableOpacity
                 onPress={pickFromLibrary}
                 style={[styles.actionBtn, { backgroundColor: colors.card }]}
@@ -354,56 +433,111 @@ export default function GalleriaScreen() {
                   Scatta
                 </Text>
               </TouchableOpacity>
-            </View>
 
-            {/* filtri */}
-            <View style={styles.filterRow}>
-              <Text style={{ color: colors.sub, fontFamily: "Cormorant" }}>
-                Mostra:
-              </Text>
-              {(["all", "voted", "not"] as const).map((f) => (
-                <TouchableOpacity
-                  key={f}
-                  onPress={() => setMineFilter(f)}
+              <TouchableOpacity
+                onPress={() => setPendingOnly((v) => !v)}
+                style={[
+                  styles.chip,
+                  {
+                    backgroundColor: pendingOnly ? colors.tint : colors.card,
+                    marginLeft: 8,
+                  },
+                ]}
+              >
+                <Text
                   style={[
-                    styles.chip,
-                    {
-                      backgroundColor:
-                        mineFilter === f ? colors.tint : colors.card,
-                    },
+                    styles.chipText,
+                    { color: pendingOnly ? "#fff" : colors.text },
                   ]}
                 >
-                  <Text
-                    style={[
-                      styles.chipText,
-                      { color: mineFilter === f ? "#fff" : colors.text },
-                    ]}
-                  >
-                    {f === "all"
-                      ? "Tutte"
-                      : f === "voted"
-                      ? "Con like"
-                      : "Senza like"}
-                  </Text>
-                </TouchableOpacity>
-              ))}
+                  Solo in coda ({pendingCount})
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                onPress={processNow}
+                style={[
+                  styles.chip,
+                  { backgroundColor: colors.card, marginLeft: 8 },
+                ]}
+              >
+                <Text style={[styles.chipText, { color: colors.text }]}>
+                  Invia ora
+                </Text>
+              </TouchableOpacity>
             </View>
 
+            {!pendingOnly && (
+              <View style={styles.filterRow}>
+                <Text style={{ color: colors.sub, fontFamily: "Cormorant" }}>
+                  Mostra:
+                </Text>
+                {(["all", "voted", "not"] as const).map((f) => (
+                  <TouchableOpacity
+                    key={f}
+                    onPress={() => setMineFilter(f)}
+                    style={[
+                      styles.chip,
+                      {
+                        backgroundColor:
+                          mineFilter === f ? colors.tint : colors.card,
+                      },
+                    ]}
+                  >
+                    <Text
+                      style={[
+                        styles.chipText,
+                        { color: mineFilter === f ? "#fff" : colors.text },
+                      ]}
+                    >
+                      {f === "all"
+                        ? "Tutte"
+                        : f === "voted"
+                        ? "Con like"
+                        : "Senza like"}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            )}
+
             <FlatList
-              data={mineFiltered}
+              data={mineDisplay}
               keyExtractor={(i) => i.id}
               renderItem={({ item }) => (
                 <View style={[styles.card, { backgroundColor: colors.card }]}>
-                  <Image source={{ uri: item.uri }} style={styles.img} />
+                  <View>
+                    <Image source={{ uri: item.uri }} style={styles.img} />
+                    {item.id.startsWith("q_") && (
+                      <View style={styles.queueBadge}>
+                        <Text style={styles.queueBadgeText}>In coda</Text>
+                      </View>
+                    )}
+                  </View>
                   <View style={styles.mineFooter}>
                     <Text
                       style={{ color: colors.sub, fontFamily: "Cormorant" }}
                     >
                       👍 {item.votesUp || 0}
                     </Text>
+                    <TouchableOpacity
+                      onPress={() => handleDelete(item)}
+                      style={{ marginLeft: 12 }}
+                    >
+                      <Text style={{ color: "red", fontFamily: "Cinzel" }}>
+                        Elimina
+                      </Text>
+                    </TouchableOpacity>
                   </View>
                 </View>
               )}
+              ListEmptyComponent={
+                <View style={{ paddingTop: 40, alignItems: "center" }}>
+                  <Text style={{ color: colors.sub, fontFamily: "Cormorant" }}>
+                    {pendingOnly ? "Nessuna foto in coda." : "Nessuna foto."}
+                  </Text>
+                </View>
+              }
               contentContainerStyle={{ paddingBottom: 100 }}
             />
           </>
@@ -446,6 +580,7 @@ const styles = StyleSheet.create({
 
   card: { borderRadius: 12, overflow: "hidden", marginTop: 12, elevation: 1 },
   img: { width: "100%", height: 240 },
+
   cardFooter: {
     paddingHorizontal: 12,
     paddingVertical: 10,
@@ -478,5 +613,16 @@ const styles = StyleSheet.create({
     gap: 8,
     marginTop: 10,
   },
-  mineFooter: { padding: 10, alignItems: "flex-end" },
+  mineFooter: { padding: 10, alignItems: "flex-end", flexDirection: "row" },
+
+  queueBadge: {
+    position: "absolute",
+    top: 8,
+    left: 8,
+    backgroundColor: "rgba(0,0,0,0.55)",
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 8,
+  },
+  queueBadgeText: { color: "#fff", fontFamily: "Cinzel", fontSize: 11 },
 });

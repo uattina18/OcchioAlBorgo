@@ -6,7 +6,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build-data": "node scripts/convertBorghiMulti.js"
   },
   "dependencies": {
     "@react-navigation/elements": "^2.6.3",
@@ -33,7 +34,9 @@
     "react-native-vector-icons": "^10.2.0",
     "expo-camera": "~16.1.11",
     "expo-location": "~18.1.6",
-    "expo-sensors": "~14.1.4"
+    "expo-sensors": "~14.1.4",
+    "expo-network": "~7.1.5",
+    "expo-battery": "~9.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
