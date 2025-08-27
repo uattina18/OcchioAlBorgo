@@ -1,3 +1,4 @@
+// screens/ScattaBorgoScreen.tsx
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   SafeAreaView,
@@ -22,18 +23,18 @@ import { useNavigation } from "@react-navigation/native";
 import { CameraView, useCameraPermissions } from "expo-camera";
 import * as Location from "expo-location";
 import { Magnetometer } from "expo-sensors";
+import * as FileSystem from "expo-file-system";
 import { useColors } from "../src/theme/ThemeContext";
 import { saveScattoToQueue } from "../utils/scattiStore";
-// ✅ dataset “lite” multi‑regione
 import borghi from "../assets/data/borghi_min.json";
-// ✅ motore badge (verifica il path nel tuo progetto)
 import {
   incBorghiVisitati,
   markProvinceCovered,
   popJustUnlocked,
 } from "../utils/badgesEngine";
+import { notifyAllJustUnlocked } from "../utils/notificationStore";
 
-/* -------------------- tipi -------------------- */
+/* -------------------- tipi & costanti -------------------- */
 type Borgo = {
   id: string;
   name: string;
@@ -130,7 +131,6 @@ function pickBorgoByHeading(
     const score = angleW * diff + distW * d;
     if (!best || score < best.score) best = { borgo: b, d, brng, diff, score };
   }
-
   return best;
 }
 
@@ -154,7 +154,7 @@ export default function ScattaBorgoScreen() {
 
   // watches
   const locWatch = useRef<Location.LocationSubscription | null>(null);
-  const headWatch = useRef<Location.LocationSubscription | null>(null);
+  const headWatch = useRef<{ remove: () => void } | null>(null);
   const magSub = useRef<any>(null);
 
   // smoothing heading
@@ -172,6 +172,7 @@ export default function ScattaBorgoScreen() {
         );
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -181,7 +182,11 @@ export default function ScattaBorgoScreen() {
     (async () => {
       locWatch.current?.remove();
       locWatch.current = await Location.watchPositionAsync(
-        { accuracy: Location.Accuracy.Balanced, distanceInterval: 5 },
+        {
+          accuracy: Location.Accuracy.Balanced,
+          distanceInterval: 5,
+          timeInterval: 1500,
+        },
         (pos) =>
           setCoords({ lat: pos.coords.latitude, lng: pos.coords.longitude })
       );
@@ -191,6 +196,7 @@ export default function ScattaBorgoScreen() {
     (async () => {
       try {
         headWatch.current?.remove();
+        // @ts-ignore: watchHeadingAsync esiste a runtime
         headWatch.current = await (Location as any).watchHeadingAsync(
           (h: any) => {
             const raw =
@@ -270,6 +276,7 @@ export default function ScattaBorgoScreen() {
     try {
       const cam = cameraRef.current;
       if (!cam) return;
+
       const p = await cam.takePictureAsync({
         quality: 0.85,
         skipProcessing: true,
@@ -292,26 +299,54 @@ export default function ScattaBorgoScreen() {
         return;
       }
 
-      const b = suggested.borgo;
-      // salva offline in coda (sposta la foto in scatti e crea item pending)
-      await saveScattoToQueue({
-        tempUri: photoUri,
-        borgoId: b.id,
-        borgoName: b.name,
-        lat: coords.lat,
-        lng: coords.lng,
-        heading,
-      });
-
-      // ✅ aggiorna badge
-      await incBorghiVisitati(b.regionId);
-      if (b.provinceCode) await markProvinceCovered(b.regionId, b.provinceCode);
-      const just = await popJustUnlocked();
-      if (just) {
-        Alert.alert("Nuovo badge!", "Hai sbloccato un nuovo badge 🎉");
+      // ✅ pre-check esistenza file temporaneo
+      const src = photoUri.startsWith("file://")
+        ? photoUri
+        : `file://${photoUri}`;
+      const info = await FileSystem.getInfoAsync(src);
+      if (!info.exists) {
+        Alert.alert(
+          "Foto non trovata",
+          "La foto temporanea non è più disponibile. Rifai lo scatto e riprova."
+        );
+        return;
       }
 
-      // TODO: salva foto+metadati se vuoi (uri, coords, heading, borgoId)
+      const b = suggested.borgo;
+
+      // salva offline in coda (sposta/copia il file e crea item pending)
+      try {
+        await saveScattoToQueue({
+          tempUri: photoUri,
+          borgoId: b.id,
+          borgoName: b.name,
+          lat: coords.lat,
+          lng: coords.lng,
+          heading,
+        });
+      } catch (err: any) {
+        if (String(err?.message) === "SOURCE_MISSING") {
+          Alert.alert(
+            "Foto non trovata",
+            "La foto temporanea non è più disponibile. Rifai lo scatto e riprova."
+          );
+          return;
+        }
+        Alert.alert("Errore salvataggio", String(err?.message || err));
+        return;
+      }
+
+      // ✅ badge dopo salvataggio riuscito
+      await incBorghiVisitati(b.regionId);
+      if (b.provinceCode) await markProvinceCovered(b.regionId, b.provinceCode);
+      const just = await notifyAllJustUnlocked({
+        regionId: b.regionId,
+        borgoId: b.id,
+        borgoName: b.name,
+      });
+      if (just) Alert.alert("Nuovo badge!", "Hai sbloccato un nuovo badge 🎉");
+
+      Alert.alert("Salvato", "Scatto aggiunto alla coda offline.");
       // @ts-ignore
       nav.navigate("Explore");
     } catch (e) {
@@ -364,7 +399,17 @@ export default function ScattaBorgoScreen() {
           <CenterMsg
             text="Concedi i permessi fotocamera…"
             subColor={colors.sub}
-          />
+          >
+            <TouchableOpacity
+              onPress={requestCamPerm}
+              style={[
+                styles.btn,
+                { backgroundColor: colors.tint, marginTop: 12 },
+              ]}
+            >
+              <Text style={styles.btnText}>Concedi</Text>
+            </TouchableOpacity>
+          </CenterMsg>
         ) : photoUri ? (
           <View style={{ flex: 1 }}>
             <Image source={{ uri: photoUri }} style={{ flex: 1 }} />
@@ -488,10 +533,19 @@ export default function ScattaBorgoScreen() {
 }
 
 /* -------------------- piccoli UI helpers -------------------- */
-function CenterMsg({ text, subColor }: { text: string; subColor: string }) {
+function CenterMsg({
+  text,
+  subColor,
+  children,
+}: {
+  text: string;
+  subColor: string;
+  children?: React.ReactNode;
+}) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text style={{ color: subColor, fontFamily: "Cormorant" }}>{text}</Text>
+      {children}
     </View>
   );
 }

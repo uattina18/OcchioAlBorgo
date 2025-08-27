@@ -34,6 +34,7 @@ export type RootStackParamList = {
   InvitaAmico: undefined;
   Galleria: undefined;
   EditProfilo: undefined;
+
   // CambiaPassword: undefined;
 };
 
@@ -64,6 +65,7 @@ const Navigation: React.FC = () => {
         <Stack.Screen name="EditProfilo" component={EditProfiloScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
+
         {/* <Stack.Screen name="CambiaPassword" component={CambiaPasswordScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>

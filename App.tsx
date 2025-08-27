@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
-// ⬇️ usa il path giusto in base a dove hai il file
 import { startQueueMonitor } from "./utils/queueMonitor";
 import Navigation from "./navigation/Navigation";
 import { ThemeProvider } from "./src/theme/ThemeContext";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import {
+  ensureNotificationPerms,
+  configureAndroidChannels,
+} from "./utils/notify";
 
+// Puoi lasciarlo qui: non è un hook
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
 export default function App() {
@@ -15,17 +19,22 @@ export default function App() {
     Cormorant: require("./assets/fonts/static/CormorantGaramond-Regular.ttf"),
   });
 
-  // 1) avvia il monitor una sola volta
+  // 1) Permessi + canali notifiche (solo una volta)
+  useEffect(() => {
+    ensureNotificationPerms();
+    configureAndroidChannels();
+  }, []);
+
+  // 2) Avvia monitor coda (solo una volta)
   useEffect(() => {
     startQueueMonitor();
   }, []);
 
-  // 2) quando i font sono pronti, nascondi lo splash
+  // 3) Nascondi splash quando i font sono pronti
   useEffect(() => {
     if (fontsLoaded) SplashScreen.hideAsync();
   }, [fontsLoaded]);
 
-  // ⬇️ il return arriva SOLO dopo aver registrato gli hook
   if (!fontsLoaded) return null;
 
   return (

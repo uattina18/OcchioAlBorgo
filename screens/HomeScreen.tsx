@@ -14,7 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import * as SecureStore from "expo-secure-store";
 import { Settings, User as UserIcon } from "lucide-react-native";
-
+import { useFocusEffect } from "@react-navigation/native";
 import Navbar from "../components/Navbar";
 import eventiData from "../assets/data/eventi_liguria.json";
 import { useColors, useTheme } from "../src/theme/ThemeContext";
@@ -259,6 +259,10 @@ export default function HomeScreen() {
           </View>
           <TouchableOpacity
             style={[styles.scanButton, { backgroundColor: colors.tint }]}
+            onPress={() => {
+              // @ts-ignore
+              navigation.navigate("Scatta");
+            }}
           >
             <Text style={styles.scanText}>SCATTA UN NUOVO BORGO</Text>
           </TouchableOpacity>
@@ -287,18 +291,6 @@ export default function HomeScreen() {
             onPress={() => navigation.navigate("SegnalaEvento")}
           >
             <Text style={styles.reportBtnText}>Segnala un evento</Text>
-          </TouchableOpacity>
-        </View>
-
-        {/* Badge placeholder */}
-        <View style={[styles.badgeBox, { backgroundColor: colors.card }]}>
-          <Text style={[styles.badgeBoxText, { color: colors.text }]}>
-            HAI OTTENUTO UN NUOVO BADGE: "BORGO LOVER"
-          </Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Profilo")}>
-            <Text style={[styles.badgeLink, { color: "#007AFF" }]}>
-              → VEDI NEL TUO PROFILO
-            </Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

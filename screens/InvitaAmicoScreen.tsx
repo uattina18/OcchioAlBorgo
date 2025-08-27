@@ -12,9 +12,10 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ArrowLeft, Gift, CheckCircle2 } from "lucide-react-native";
 import { useNavigation } from "@react-navigation/native";
 import * as SecureStore from "expo-secure-store";
+import { getOrCreateReferralCode } from "../src/utils/referral";
 
-const REF_LINK = "https://example.com/app";
-const REF_CODE = "AMICIDIUATTINA";
+// Metti qui i link reali dello store quando li avrai
+const APP_LINK = "https://example.com/app"; // puoi costruire Android/iOS separati se vuoi
 
 type Invites = { sent: number; success: number };
 
@@ -23,19 +24,31 @@ export default function InvitaAmicoScreen() {
   const insets = useSafeAreaInsets();
   const TOP_PAD = Math.max(insets.top, 16) + 32;
   const nav = useNavigation();
+
   const [invites, setInvites] = useState<Invites>({ sent: 0, success: 0 });
+  const [refCode, setRefCode] = useState<string>("");
 
   useEffect(() => {
     (async () => {
+      // recupera un eventuale username salvato
+      const username = await SecureStore.getItemAsync("username");
+      // crea/recupera il codice invito per-utente
+      const code = await getOrCreateReferralCode(username ?? undefined);
+      setRefCode(code);
+
       const saved = await SecureStore.getItemAsync("invites");
       if (saved) setInvites(JSON.parse(saved));
     })();
   }, []);
 
   const share = async () => {
-    await Share.share({
-      message: `Scarica BorgoQuest! Codice ${REF_CODE} ${REF_LINK}`,
-    });
+    const message =
+      `Scarica Occhio al Borgo!\n` +
+      `Codice invito: ${refCode}\n` +
+      `${APP_LINK}`;
+
+    await Share.share({ message });
+
     const updated = { ...invites, sent: invites.sent + 1 };
     setInvites(updated);
     await SecureStore.setItemAsync("invites", JSON.stringify(updated));
@@ -85,11 +98,12 @@ export default function InvitaAmicoScreen() {
           <Text style={[styles.text, { color: colors.text }]}>
             Condividi il tuo codice e ottieni badge quando un amico si registra!
           </Text>
+
           <View style={[styles.code, { borderColor: colors.hr }]}>
             <Text
               style={{ fontFamily: "Cinzel", fontSize: 16, color: colors.text }}
             >
-              {REF_CODE}
+              {refCode || "····"}
             </Text>
           </View>
 
@@ -131,6 +145,7 @@ export default function InvitaAmicoScreen() {
     </SafeAreaView>
   );
 }
+
 const styles = StyleSheet.create({
   card: { borderRadius: 12, padding: 16, gap: 12 },
   text: { fontFamily: "Cormorant", fontSize: 14 },
