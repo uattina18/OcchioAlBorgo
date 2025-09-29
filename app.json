@@ -13,7 +13,10 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -21,17 +24,24 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.uattina.occhioalborgo"
+      "package": "com.uattina.occhioalborgo",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-font", "expo-secure-store"],
+    "plugins": [
+      "expo-font",
+      "expo-secure-store"
+    ],
     "extra": {
       "eas": {
         "projectId": "bfb36559-70f7-4e68-9e91-97b7c96ef115"
       }
     },
-    "owner": "uattina18"
+    "owner": "uattina18",
+    "updates": {
+      "url": "https://u.expo.dev/bfb36559-70f7-4e68-9e91-97b7c96ef115"
+    }
   }
 }

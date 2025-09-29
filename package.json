@@ -29,6 +29,7 @@
     "expo-sensors": "~14.1.4",
     "expo-splash-screen": "~0.30.10",
     "expo-status-bar": "~2.2.3",
+    "expo-updates": "~29.0.11",
     "firebase": "^11.9.1",
     "lucide-react-native": "^0.534.0",
     "node-fetch": "^3.3.2",
