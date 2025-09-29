@@ -6,6 +6,7 @@ import React, {
   useState,
 } from "react";
 import * as SecureStore from "expo-secure-store";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type Theme = "light" | "dark";
 type Colors = {
@@ -16,11 +17,13 @@ type Colors = {
   hr: string;
   tint: string;
 };
+
 type Ctx = {
   theme: Theme;
   colors: Colors;
   setDark: (on: boolean) => void;
   toggleDark: () => void;
+  topPad: number; // ✅ aggiunto qui
 };
 
 const ThemeContext = createContext<Ctx | null>(null);
@@ -44,6 +47,8 @@ const DARK: Colors = {
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("light");
+  const insets = useSafeAreaInsets();
+  const topPad = Math.max(insets.top, 16) + 24; // ✅ padding dinamico
 
   useEffect(() => {
     (async () => {
@@ -74,11 +79,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     () => (theme === "dark" ? DARK : LIGHT),
     [theme]
   );
+
   const value: Ctx = {
     theme,
     colors,
     setDark,
     toggleDark: () => setDark(theme !== "dark"),
+    topPad, // ✅ incluso nel valore
   };
 
   return (
@@ -91,4 +98,6 @@ export const useTheme = () => {
   if (!ctx) throw new Error("useTheme must be used inside ThemeProvider");
   return ctx;
 };
+
 export const useColors = () => useTheme().colors;
+export const useTopPad = () => useTheme().topPad; // ✅ export dedicato

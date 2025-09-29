@@ -31,6 +31,8 @@ import {
 
 import { useColors } from "../src/theme/ThemeContext";
 import { RootStackParamList } from "../navigation/Navigation";
+import { getSavedBorghi } from "../utils/borghiStorage";
+import { Star, Map } from "lucide-react-native";
 
 type ProfileNav = NativeStackNavigationProp<RootStackParamList, "Profilo">;
 
@@ -263,6 +265,42 @@ export default function ProfiloScreen() {
             colors={colors}
           />
         </View>
+        {/* Borghi salvati e visitati */}
+        <View style={{ marginTop: 30 }}>
+          <Text style={[styles.sectionTitle, { color: colors.text }]}>
+            I tuoi borghi
+          </Text>
+
+          <TouchableOpacity
+            onPress={() => nav.navigate("BorghiSalvati")}
+            style={[styles.row, { backgroundColor: colors.card }]}
+          >
+            <View
+              style={{ flexDirection: "row", alignItems: "center", gap: 10 }}
+            >
+              <Text style={{ fontSize: 18 }}>🔖</Text>
+              <Text style={[styles.rowLabel, { color: colors.text }]}>
+                Salvati per dopo
+              </Text>
+            </View>
+            <Text style={{ color: colors.sub }}>›</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => nav.navigate("BorghiVisitati")}
+            style={[styles.row, { backgroundColor: colors.card }]}
+          >
+            <View
+              style={{ flexDirection: "row", alignItems: "center", gap: 10 }}
+            >
+              <Text style={{ fontSize: 18 }}>📍</Text>
+              <Text style={[styles.rowLabel, { color: colors.text }]}>
+                Già visitati
+              </Text>
+            </View>
+            <Text style={{ color: colors.sub }}>›</Text>
+          </TouchableOpacity>
+        </View>
 
         {/* Lista collegamenti (row) */}
         <LinkRow
@@ -287,6 +325,18 @@ export default function ProfiloScreen() {
           icon={<Compass size={18} color={colors.text} />}
           label="Esplora"
           onPress={() => nav.navigate("Explore")}
+          colors={colors}
+        />
+        <LinkRow
+          icon={<Star size={18} color={colors.text} />}
+          label="Borghi salvati"
+          onPress={() => nav.navigate("BorghiSalvati")}
+          colors={colors}
+        />
+        <LinkRow
+          icon={<Map size={18} color={colors.text} />}
+          label="Borghi visitati"
+          onPress={() => nav.navigate("BorghiVisitati")}
           colors={colors}
         />
       </ScrollView>
@@ -436,4 +486,9 @@ const styles = StyleSheet.create({
     elevation: 1,
   },
   rowLabel: { fontFamily: "Cormorant", fontSize: 16 },
+  sectionTitle: {
+    fontFamily: "Cinzel",
+    fontSize: 18,
+    marginBottom: 12,
+  },
 });

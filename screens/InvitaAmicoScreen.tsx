@@ -12,7 +12,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ArrowLeft, Gift, CheckCircle2 } from "lucide-react-native";
 import { useNavigation } from "@react-navigation/native";
 import * as SecureStore from "expo-secure-store";
-import { getOrCreateReferralCode } from "../src/utils/referral";
+import { getOrCreateReferralCode } from "../utils/referral";
 
 // Metti qui i link reali dello store quando li avrai
 const APP_LINK = "https://example.com/app"; // puoi costruire Android/iOS separati se vuoi

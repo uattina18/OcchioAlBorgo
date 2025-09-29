@@ -17,7 +17,11 @@ import InvitaAmicoScreen from "../screens/InvitaAmicoScreen";
 import GalleriaScreen from "../screens/GalleriaScreen";
 import EditProfiloScreen from "../screens/EditProfiloScreen";
 import AuthLoadingScreen from "../screens/AuthLoadingScreen";
-// import CambiaPasswordScreen from "../screens/CambiaPasswordScreen";
+import SearchScreen from "../screens/SearchScreen";
+import BorgoDetailScreen from "../screens/BorgoDetailScreen";
+import BorghiSalvatiScreen from "../screens/BorghiSalvatiScreen";
+import BorghiVisitatiScreen from "../screens/BorghiVisitatiScreen";
+import AccountSettingsScreen from "../screens/AccountSettingsScreen";
 
 // Tipi di navigazione
 export type RootStackParamList = {
@@ -34,7 +38,10 @@ export type RootStackParamList = {
   InvitaAmico: undefined;
   Galleria: undefined;
   EditProfilo: undefined;
-
+  ExploreScreen: undefined;
+  BorghiSalvati: undefined;
+  BorghiVisitati: undefined;
+  AccountSettings: undefined;
   // CambiaPassword: undefined;
 };
 
@@ -65,7 +72,18 @@ const Navigation: React.FC = () => {
         <Stack.Screen name="EditProfilo" component={EditProfiloScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
-
+        <Stack.Screen name="Search" component={SearchScreen} />
+        <Stack.Screen
+          name="BorgoDetail"
+          component={BorgoDetailScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="BorghiSalvati" component={BorghiSalvatiScreen} />
+        <Stack.Screen name="BorghiVisitati" component={BorghiVisitatiScreen} />
+        <Stack.Screen
+          name="AccountSettings"
+          component={AccountSettingsScreen}
+        />
         {/* <Stack.Screen name="CambiaPassword" component={CambiaPasswordScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>

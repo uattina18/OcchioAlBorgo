@@ -70,7 +70,7 @@ export default function SettingsScreen() {
             right={<ChevronRight size={18} color={colors.sub} />}
             onPress={() => {
               // @ts-ignore
-              navigation.navigate("Profilo");
+              navigation.navigate("AccountSettings");
             }}
             colors={colors}
           />

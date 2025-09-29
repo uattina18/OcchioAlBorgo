@@ -2,8 +2,8 @@
   "version": 0.6,
   "generator": "Overpass API 0.7.62.8 e802775f",
   "osm3s": {
-    "timestamp_osm_base": "2025-08-22T15:48:06Z",
-    "timestamp_areas_base": "2025-08-22T12:40:26Z",
+    "timestamp_osm_base": "2025-08-29T09:49:00Z",
+    "timestamp_areas_base": "2025-08-29T07:13:02Z",
     "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
   },
   "elements": [
@@ -186,6 +186,21 @@
     },
     {
       "type": "node",
+      "id": 61753387,
+      "lat": 43.341715,
+      "lon": 11.92378,
+      "tags": {
+        "gfoss_id": "4595",
+        "name": "Castiglion Fiorentino",
+        "name:ru": "Кастильон-Фьорентино",
+        "place": "town",
+        "population": "13244",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q52074"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753389,
       "lat": 43.6405741,
       "lon": 11.9874471,
@@ -195,6 +210,21 @@
         "place": "village",
         "population": "1626",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753390,
+      "lat": 43.2752976,
+      "lon": 11.9850623,
+      "tags": {
+        "gfoss_id": "4600",
+        "name": "Cortona",
+        "name:ru": "Кортона",
+        "place": "town",
+        "population": "22450",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q52080"
       }
     },
     {
@@ -296,6 +326,21 @@
     },
     {
       "type": "node",
+      "id": 61753402,
+      "lat": 43.6955475,
+      "lon": 11.817341,
+      "tags": {
+        "gfoss_id": "4587",
+        "name": "Bibbiena",
+        "name:ru": "Биббьена",
+        "place": "town",
+        "population": "11462",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q30022826"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753403,
       "lat": 43.6950243,
       "lon": 11.9386322,
@@ -347,6 +392,20 @@
         "place": "village",
         "population": "1985",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753408,
+      "lat": 43.5234999,
+      "lon": 11.5675911,
+      "tags": {
+        "gfoss_id": "4609",
+        "name": "Montevarchi",
+        "place": "town",
+        "population": "24378",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q52089"
       }
     },
     {
@@ -406,6 +465,21 @@
     },
     {
       "type": "node",
+      "id": 61753415,
+      "lat": 43.5700776,
+      "lon": 12.1403766,
+      "tags": {
+        "gfoss_id": "4617",
+        "name": "Sansepolcro",
+        "place": "town",
+        "population": "15884",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q52098",
+        "wikipedia": "it:Sansepolcro"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753416,
       "lat": 43.643435,
       "lon": 11.5466756,
@@ -448,6 +522,20 @@
     },
     {
       "type": "node",
+      "id": 61753420,
+      "lat": 43.551208,
+      "lon": 11.5858271,
+      "tags": {
+        "gfoss_id": "4622",
+        "name": "Terranuova Bracciolini",
+        "place": "town",
+        "population": "12346",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q30031077"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753421,
       "lat": 43.7083496,
       "lon": 12.2965336,
@@ -477,6 +565,20 @@
     },
     {
       "type": "node",
+      "id": 61753425,
+      "lat": 43.752172,
+      "lon": 11.3199949,
+      "tags": {
+        "gfoss_id": "4481",
+        "name": "Bagno a Ripoli",
+        "place": "town",
+        "population": "25611",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82612"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753427,
       "lat": 43.5611665,
       "lon": 11.1730035,
@@ -489,6 +591,20 @@
         "wikidata": "Q82873",
         "wikimedia_commons": "Category:Tavarnelle Val di Pesa",
         "wikipedia": "it:Tavarnelle Val di Pesa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753429,
+      "lat": 43.6853454,
+      "lon": 11.2546637,
+      "tags": {
+        "gfoss_id": "4500",
+        "name": "Impruneta",
+        "place": "town",
+        "population": "14615",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q30026341"
       }
     },
     {
@@ -517,6 +633,34 @@
         "place": "village",
         "population": "4812",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753433,
+      "lat": 43.7589215,
+      "lon": 10.879013,
+      "tags": {
+        "gfoss_id": "4489",
+        "name": "Cerreto Guidi",
+        "place": "town",
+        "population": "10870",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q30024584"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753435,
+      "lat": 43.6830877,
+      "lon": 11.5368965,
+      "tags": {
+        "gfoss_id": "4511",
+        "name": "Reggello",
+        "place": "town",
+        "population": "16290",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82810"
       }
     },
     {
@@ -588,6 +732,20 @@
     },
     {
       "type": "node",
+      "id": 61753442,
+      "lat": 43.6569596,
+      "lon": 11.1856679,
+      "tags": {
+        "gfoss_id": "4514",
+        "name": "San Casciano in Val di Pesa",
+        "place": "town",
+        "population": "17062",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82822"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753444,
       "lat": 43.72105,
       "lon": 11.451427,
@@ -597,6 +755,51 @@
         "place": "village",
         "population": "8651",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753445,
+      "lat": 43.954248,
+      "lon": 11.3864681,
+      "tags": {
+        "gfoss_id": "4484",
+        "name": "Borgo San Lorenzo",
+        "place": "town",
+        "population": "18211",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82619"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753446,
+      "lat": 43.8652493,
+      "lon": 11.1673685,
+      "tags": {
+        "gfoss_id": "4485",
+        "name": "Calenzano",
+        "place": "town",
+        "population": "17489",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82635",
+        "wikipedia": "it:Calenzano"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753448,
+      "lat": 43.5477043,
+      "lon": 11.0409545,
+      "tags": {
+        "addr:postcode": "50021",
+        "gfoss_id": "4490",
+        "name": "Certaldo",
+        "place": "town",
+        "population": "16121",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82646",
+        "wikipedia": "it:Certaldo"
       }
     },
     {
@@ -658,6 +861,20 @@
     },
     {
       "type": "node",
+      "id": 61753458,
+      "lat": 43.770985,
+      "lon": 11.107215,
+      "tags": {
+        "gfoss_id": "4502",
+        "name": "Lastra a Signa",
+        "place": "town",
+        "population": "20156",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82751"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753459,
       "lat": 44.0757376,
       "lon": 11.6128962,
@@ -688,6 +905,50 @@
     },
     {
       "type": "node",
+      "id": 61753462,
+      "lat": 43.7194884,
+      "lon": 10.9458556,
+      "tags": {
+        "gfoss_id": "4492",
+        "name": "Empoli",
+        "name:ru": "Эмполи",
+        "place": "town",
+        "population": "48109",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q6697"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753465,
+      "lat": 43.6182682,
+      "lon": 11.4718926,
+      "tags": {
+        "name": "Figline Valdarno",
+        "name:uk": "Фільїне-Вальдарно",
+        "place": "town",
+        "population": "13287",
+        "wikidata": "Q82676",
+        "wikipedia": "en:Figline Valdarno"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753466,
+      "lat": 43.729202,
+      "lon": 10.808205,
+      "tags": {
+        "gfoss_id": "4497",
+        "name": "Fucecchio",
+        "place": "town",
+        "population": "23618",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82699",
+        "wikipedia": "it:Fucecchio"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753467,
       "lat": 43.9960778,
       "lon": 11.3550688,
@@ -699,6 +960,49 @@
         "source": "geodati.gfoss.it",
         "wikidata": "Q82846",
         "wikipedia": "it:Scarperia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753468,
+      "lat": 43.7567104,
+      "lon": 11.1847619,
+      "tags": {
+        "gfoss_id": "4517",
+        "name": "Scandicci",
+        "place": "town",
+        "population": "50609",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82842"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753470,
+      "lat": 43.7873966,
+      "lon": 10.9271055,
+      "tags": {
+        "gfoss_id": "4524",
+        "name": "Vinci",
+        "place": "town",
+        "population": "14604",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82884",
+        "wikipedia": "it:Vinci"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753471,
+      "lat": 43.831721,
+      "lon": 11.1992239,
+      "tags": {
+        "gfoss_id": "4519",
+        "name": "Sesto Fiorentino",
+        "place": "town",
+        "population": "48958",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82865"
       }
     },
     {
@@ -716,6 +1020,20 @@
     },
     {
       "type": "node",
+      "id": 61753474,
+      "lat": 43.7331531,
+      "lon": 11.0208768,
+      "tags": {
+        "gfoss_id": "4506",
+        "name": "Montelupo Fiorentino",
+        "place": "town",
+        "population": "14098",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q30027890"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753475,
       "lat": 43.8266681,
       "lon": 11.4900777,
@@ -725,6 +1043,20 @@
         "place": "village",
         "population": "6693",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753476,
+      "lat": 43.7738313,
+      "lon": 11.4346286,
+      "tags": {
+        "gfoss_id": "4510",
+        "name": "Pontassieve",
+        "place": "town",
+        "population": "20603",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82791"
       }
     },
     {
@@ -751,6 +1083,57 @@
         "place": "village",
         "population": "4114",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753483,
+      "lat": 43.8216342,
+      "lon": 11.1366776,
+      "tags": {
+        "gfoss_id": "4486",
+        "name": "Campi Bisenzio",
+        "place": "town",
+        "population": "46166",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82636"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753484,
+      "lat": 43.7806931,
+      "lon": 11.0964527,
+      "tags": {
+        "gfoss_id": "4520",
+        "name": "Signa",
+        "place": "town",
+        "population": "19179",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q82869"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753487,
+      "lat": 43.5824597,
+      "lon": 11.3168731,
+      "tags": {
+        "gfoss_id": "4499",
+        "name": "Greve in Chianti",
+        "name:bcl": "Greve sa Chianti",
+        "name:be": "Грэвэ-ін-К'янці",
+        "name:bg": "Греве ин Кианти",
+        "name:ja": "グレーヴェ・イン・キアンティ",
+        "name:kk": "Греве-ин-Кьянти",
+        "name:la": "Burgus Grevis",
+        "name:ru": "Греве-ин-Кьянти",
+        "name:uk": "Греве-ін-К'янті",
+        "name:zh": "格雷韦伊恩基亚恩蒂",
+        "place": "town",
+        "population": "13862",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q30026220"
       }
     },
     {
@@ -838,6 +1221,22 @@
     },
     {
       "type": "node",
+      "id": 61753500,
+      "lat": 43.0500376,
+      "lon": 10.8879707,
+      "tags": {
+        "gfoss_id": "4673",
+        "istat_id": "053015",
+        "name": "Massa Marittima",
+        "place": "town",
+        "population": "8818",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q214725",
+        "wikipedia": "en:Massa Marittima"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753501,
       "lat": 42.8904069,
       "lon": 11.392892,
@@ -847,6 +1246,21 @@
         "place": "village",
         "population": "2695",
         "postal_code": "58044"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753503,
+      "lat": 42.926326,
+      "lon": 10.761625,
+      "tags": {
+        "gfoss_id": "4667",
+        "name": "Follonica",
+        "name:ru": "Фоллоника",
+        "place": "town",
+        "population": "21605",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q188587"
       }
     },
     {
@@ -960,6 +1374,19 @@
     },
     {
       "type": "node",
+      "id": 61753520,
+      "lat": 42.4380944,
+      "lon": 11.2107429,
+      "tags": {
+        "gfoss_id": "4676",
+        "name": "Orbetello",
+        "place": "town",
+        "population": "14878",
+        "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753522,
       "lat": 43.079015,
       "lon": 10.6786806,
@@ -994,6 +1421,39 @@
     },
     {
       "type": "node",
+      "id": 61753525,
+      "lat": 42.814147,
+      "lon": 10.3310261,
+      "tags": {
+        "name": "Portoferraio",
+        "place": "town",
+        "population": "11914",
+        "wikidata": "Q30029093",
+        "wikipedia": "it:Portoferraio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753526,
+      "lat": 42.9231662,
+      "lon": 10.5268192,
+      "tags": {
+        "ele": "21",
+        "gfoss_id": "4536",
+        "is_in": "Livorno, Toscana, Italy",
+        "name": "Piombino",
+        "name:mk": "Пјомбино",
+        "name:ml": "പിയോംബിനോ",
+        "name:ru": "Пьомбино",
+        "place": "town",
+        "population": "34060",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q157824",
+        "wikipedia": "it:Piombino"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753527,
       "lat": 42.8036083,
       "lon": 10.1967676,
@@ -1004,6 +1464,22 @@
         "place": "village",
         "population": "1891",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753529,
+      "lat": 43.3113449,
+      "lon": 10.5173443,
+      "tags": {
+        "gfoss_id": "4531",
+        "name": "Cecina",
+        "name:ml": "ചെചിന",
+        "name:ru": "Чечина",
+        "place": "town",
+        "population": "28046",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q157762"
       }
     },
     {
@@ -1080,6 +1556,20 @@
     },
     {
       "type": "node",
+      "id": 61753539,
+      "lat": 43.9380611,
+      "lon": 10.3039553,
+      "tags": {
+        "gfoss_id": "4428",
+        "name": "Camaiore",
+        "place": "town",
+        "population": "32513",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q216853"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753540,
       "lat": 43.978948,
       "lon": 10.545703,
@@ -1134,6 +1624,21 @@
         "place": "village",
         "population": "2162",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753546,
+      "lat": 43.588912,
+      "lon": 10.476264,
+      "tags": {
+        "gfoss_id": "4532",
+        "name": "Collesalvetti",
+        "name:ru": "Коллесальветти",
+        "place": "town",
+        "population": "16827",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q157773"
       }
     },
     {
@@ -1212,6 +1717,54 @@
     },
     {
       "type": "node",
+      "id": 61753555,
+      "lat": 43.994721,
+      "lon": 10.2257715,
+      "tags": {
+        "gfoss_id": "4451",
+        "name": "Seravezza",
+        "name:ru": "Серавецца",
+        "place": "town",
+        "population": "13073",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q30030597"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753556,
+      "lat": 43.8672392,
+      "lon": 10.2506055,
+      "tags": {
+        "gfoss_id": "4456",
+        "name": "Viareggio",
+        "name:it": "Viareggio",
+        "name:la": "Viaregium",
+        "name:ru": "Виареджо",
+        "place": "town",
+        "population": "62467",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q221377",
+        "wikipedia": "it:Viareggio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753558,
+      "lat": 43.8150413,
+      "lon": 10.6743961,
+      "tags": {
+        "gfoss_id": "4424",
+        "name": "Altopascio",
+        "place": "town",
+        "population": "15481",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q216385",
+        "wikipedia": "it:Altopascio"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753559,
       "lat": 44.0099818,
       "lon": 10.590633,
@@ -1248,6 +1801,22 @@
         "place": "village",
         "population": "642",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753563,
+      "lat": 43.8420391,
+      "lon": 10.5735254,
+      "tags": {
+        "gfoss_id": "4430",
+        "name": "Capannori",
+        "name:ru": "Капаннори",
+        "place": "town",
+        "population": "46252",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q216881",
+        "wikipedia": "it:Capannori"
       }
     },
     {
@@ -1294,6 +1863,22 @@
     },
     {
       "type": "node",
+      "id": 61753568,
+      "lat": 43.8676499,
+      "lon": 10.3397157,
+      "tags": {
+        "gfoss_id": "4441",
+        "name": "Massarosa",
+        "name:it": "Massarosa",
+        "name:ru": "Массароза",
+        "place": "town",
+        "population": "22471",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q217489"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753570,
       "lat": 44.170449,
       "lon": 10.207592,
@@ -1329,6 +1914,20 @@
         "name": "Pescaglia",
         "place": "village",
         "population": "3718",
+        "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753574,
+      "lat": 44.0192855,
+      "lon": 10.1764302,
+      "tags": {
+        "gfoss_id": "4417",
+        "name": "Montignoso",
+        "name:egl": "Muntignoso",
+        "place": "town",
+        "population": "10323",
         "source": "geodati.gfoss.it"
       }
     },
@@ -1506,6 +2105,21 @@
     },
     {
       "type": "node",
+      "id": 61753591,
+      "lat": 43.9589031,
+      "lon": 10.2332031,
+      "tags": {
+        "gfoss_id": "4447",
+        "name": "Pietrasanta",
+        "name:ru": "Пьетрасанта",
+        "place": "town",
+        "population": "24007",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q219330"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753592,
       "lat": 44.0717451,
       "lon": 10.4176703,
@@ -1547,6 +2161,21 @@
     },
     {
       "type": "node",
+      "id": 61753596,
+      "lat": 43.6702986,
+      "lon": 10.7608316,
+      "tags": {
+        "alt_name": "Montopoli Valdarno",
+        "ele": "98",
+        "name": "Montopoli in Val d'Arno",
+        "place": "town",
+        "population": "11148",
+        "wikidata": "Q103161",
+        "wikipedia": "it:Montopoli in Val d'Arno"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753597,
       "lat": 44.3159261,
       "lon": 9.8896261,
@@ -1556,6 +2185,20 @@
         "name:egl": "Mulàz",
         "place": "village",
         "population": "2565",
+        "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753599,
+      "lat": 44.3771813,
+      "lon": 9.8829911,
+      "tags": {
+        "gfoss_id": "4420",
+        "name": "Pontremoli",
+        "name:egl": "Pontrémal",
+        "place": "town",
+        "population": "7357",
         "source": "geodati.gfoss.it"
       }
     },
@@ -1693,6 +2336,23 @@
     },
     {
       "type": "node",
+      "id": 61753613,
+      "lat": 44.214548,
+      "lon": 9.967787,
+      "tags": {
+        "gfoss_id": "4407",
+        "name": "Aulla",
+        "name:egl": "Aùla",
+        "place": "town",
+        "population": "10808",
+        "population:date": "2025-01-01",
+        "source:population": "https://demo.istat.it/app/?i=POS&l=it",
+        "wikidata": "Q52227",
+        "wikipedia": "it:Aulla"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753616,
       "lat": 43.725799,
       "lon": 10.5152807,
@@ -1736,6 +2396,21 @@
     },
     {
       "type": "node",
+      "id": 61753621,
+      "lat": 43.7101077,
+      "lon": 10.7819415,
+      "tags": {
+        "gfoss_id": "4577",
+        "name": "Santa Croce sull'Arno",
+        "place": "town",
+        "population": "14601",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q103253",
+        "wikipedia": "it:Santa Croce sull'Arno"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753622,
       "lat": 43.3646248,
       "lon": 10.5995286,
@@ -1745,6 +2420,33 @@
         "place": "village",
         "population": "1327",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753624,
+      "lat": 43.400337,
+      "lon": 10.860019,
+      "tags": {
+        "gfoss_id": "4583",
+        "name": "Volterra",
+        "name:ar": "فولتيرا",
+        "name:bg": "Волтера",
+        "name:he": "וולטרה",
+        "name:ja": "ヴォルテッラ",
+        "name:kk": "Вольтерра",
+        "name:ko": "볼테라",
+        "name:la": "Volaterrae",
+        "name:nap": "Vulterra",
+        "name:ru": "Вольтерра",
+        "name:uk": "Вольтерра",
+        "name:vec": "Voltera",
+        "name:zh": "沃尔泰拉",
+        "place": "town",
+        "population": "9967",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q103305",
+        "wikipedia": "it:Volterra"
       }
     },
     {
@@ -1788,6 +2490,20 @@
         "source": "geodati.gfoss.it",
         "wikidata": "Q103136",
         "wikipedia": "it:Montescudaio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753629,
+      "lat": 43.6634536,
+      "lon": 10.6354851,
+      "tags": {
+        "gfoss_id": "4573",
+        "name": "Pontedera",
+        "place": "town",
+        "population": "29223",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q103219"
       }
     },
     {
@@ -1850,6 +2566,35 @@
     },
     {
       "type": "node",
+      "id": 61753637,
+      "lat": 43.6797502,
+      "lon": 10.8500949,
+      "tags": {
+        "gfoss_id": "4576",
+        "name": "San Miniato",
+        "place": "town",
+        "population": "27934",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q103244",
+        "wikipedia": "it:San Miniato"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753638,
+      "lat": 43.6980639,
+      "lon": 10.6929976,
+      "tags": {
+        "gfoss_id": "4579",
+        "name": "Santa Maria a Monte",
+        "place": "town",
+        "population": "13253",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q30030255"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753639,
       "lat": 43.524738,
       "lon": 10.680114,
@@ -1861,6 +2606,20 @@
         "source": "geodati.gfoss.it",
         "wikidata": "Q103279",
         "wikipedia": "it:Terricciola"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753640,
+      "lat": 43.783342,
+      "lon": 10.384403,
+      "tags": {
+        "gfoss_id": "4581",
+        "name": "Vecchiano",
+        "name:ru": "Веккьяно",
+        "place": "town",
+        "population": "12189",
+        "source": "geodati.gfoss.it"
       }
     },
     {
@@ -1890,6 +2649,20 @@
         "place": "village",
         "population": "6323",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753644,
+      "lat": 43.6207132,
+      "lon": 10.6308287,
+      "tags": {
+        "gfoss_id": "4572",
+        "name": "Ponsacco",
+        "place": "town",
+        "population": "15611",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q103209"
       }
     },
     {
@@ -1934,6 +2707,20 @@
         "source": "geodati.gfoss.it",
         "wikidata": "Q103155",
         "wikipedia": "it:Monteverdi Marittimo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753652,
+      "lat": 43.6997153,
+      "lon": 10.7451778,
+      "tags": {
+        "gfoss_id": "4553",
+        "name": "Castelfranco di Sotto",
+        "place": "town",
+        "population": "13427",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q30024178"
       }
     },
     {
@@ -1992,6 +2779,20 @@
     },
     {
       "type": "node",
+      "id": 61753659,
+      "lat": 43.9038155,
+      "lon": 11.0033961,
+      "tags": {
+        "gfoss_id": "4460",
+        "name": "Agliana",
+        "place": "town",
+        "population": "17525",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q102555"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753660,
       "lat": 44.1444997,
       "lon": 10.6644636,
@@ -2020,6 +2821,36 @@
     },
     {
       "type": "node",
+      "id": 61753662,
+      "lat": 43.8475005,
+      "lon": 10.9777009,
+      "tags": {
+        "gfoss_id": "4475",
+        "name": "Quarrata",
+        "place": "town",
+        "population": "26190",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q102716",
+        "wikipedia": "it:Quarrata"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753663,
+      "lat": 43.8409347,
+      "lon": 10.7475475,
+      "tags": {
+        "ele": "18",
+        "gfoss_id": "4474",
+        "name": "Ponte Buggianese",
+        "place": "town",
+        "population": "8804",
+        "source": "demo.istat.it",
+        "wikidata": "Q30029017"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753664,
       "lat": 44.0282307,
       "lon": 10.7657375,
@@ -2044,6 +2875,20 @@
         "place": "village",
         "population": "9266",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753667,
+      "lat": 43.90171,
+      "lon": 10.6897811,
+      "tags": {
+        "gfoss_id": "4470",
+        "name": "Pescia",
+        "place": "town",
+        "population": "19644",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q102661"
       }
     },
     {
@@ -2140,6 +2985,35 @@
     },
     {
       "type": "node",
+      "id": 61753683,
+      "lat": 43.8160891,
+      "lon": 11.0546502,
+      "tags": {
+        "gfoss_id": "7944",
+        "name": "Poggio a Caiano",
+        "place": "town",
+        "population": "10007",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q49288097"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753684,
+      "lat": 43.9690119,
+      "lon": 11.1240715,
+      "tags": {
+        "gfoss_id": "7946",
+        "name": "Vaiano",
+        "place": "town",
+        "population": "9895",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q20392",
+        "wikipedia": "it:Vaiano"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753685,
       "lat": 44.0440508,
       "lon": 11.1498804,
@@ -2150,6 +3024,20 @@
         "population": "6060",
         "source": "geodati.gfoss.it",
         "wikidata": "Q30031638"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753687,
+      "lat": 43.8140654,
+      "lon": 11.0190297,
+      "tags": {
+        "gfoss_id": "7942",
+        "name": "Carmignano",
+        "place": "town",
+        "population": "14450",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q30023788"
       }
     },
     {
@@ -2165,6 +3053,21 @@
         "source": "geodati.gfoss.it",
         "wikidata": "Q20382",
         "wikipedia": "it:Cantagallo (Italia)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753689,
+      "lat": 43.9269279,
+      "lon": 11.0366993,
+      "tags": {
+        "gfoss_id": "7943",
+        "name": "Montemurlo",
+        "place": "town",
+        "population": "18456",
+        "postal_code": "59013",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q20389"
       }
     },
     {
@@ -2185,6 +3088,58 @@
     },
     {
       "type": "node",
+      "id": 61753692,
+      "lat": 43.9058503,
+      "lon": 10.8330195,
+      "tags": {
+        "gfoss_id": "4478",
+        "name": "Serravalle Pistoiese",
+        "place": "town",
+        "population": "11659",
+        "source": "ISTAT",
+        "wikidata": "Q102780",
+        "wikipedia": "it:Serravalle Pistoiese"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753693,
+      "lat": 43.9352396,
+      "lon": 11.0158786,
+      "tags": {
+        "gfoss_id": "4468",
+        "name": "Montale",
+        "place": "town",
+        "population": "10737",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q102652"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753695,
+      "lat": 43.883179,
+      "lon": 10.7709533,
+      "tags": {
+        "alt_name": "Montecatini-Terme",
+        "gfoss_id": "4469",
+        "heritage": "1",
+        "heritage:operator": "whc",
+        "heritage:ref": "1613",
+        "heritage:website": "https://whc.unesco.org/en/list/1613/",
+        "name": "Montecatini Terme",
+        "place": "town",
+        "population": "20409",
+        "ref:whc": "1613-010",
+        "source": "geodati.gfoss.it",
+        "whc:criteria": "(ii)(iii)",
+        "whc:inscription_date": "2021",
+        "wikidata": "Q49605",
+        "wikipedia": "it:Montecatini Terme"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753696,
       "lat": 43.9336995,
       "lon": 10.7692761,
@@ -2194,6 +3149,20 @@
         "place": "village",
         "population": "2917",
         "source": "geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753697,
+      "lat": 43.8707438,
+      "lon": 10.8140162,
+      "tags": {
+        "gfoss_id": "4467",
+        "name": "Monsummano Terme",
+        "place": "town",
+        "population": "21338",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q102634"
       }
     },
     {
@@ -2285,6 +3254,28 @@
     },
     {
       "type": "node",
+      "id": 61753705,
+      "lat": 43.0575578,
+      "lon": 11.4902818,
+      "tags": {
+        "ele": "567",
+        "gfoss_id": "4636",
+        "name": "Montalcino",
+        "name:be": "Мантальчына",
+        "name:ja": "モンタルチーノ",
+        "name:kk": "Монтальчино",
+        "name:la": "Mons Ilcinus",
+        "name:ru": "Монтальчино",
+        "name:uk": "Монтальчино",
+        "name:zh": "蒙达奇诺",
+        "place": "town",
+        "population": "5946",
+        "wikidata": "Q91208",
+        "wikipedia": "it:Montalcino"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753707,
       "lat": 43.4682951,
       "lon": 11.4342003,
@@ -2298,6 +3289,26 @@
         "source": "geodati.gfoss.it",
         "wikidata": "Q91199",
         "wikipedia": "en:Gaiole in Chianti"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753708,
+      "lat": 43.4226367,
+      "lon": 11.1263856,
+      "tags": {
+        "addr:city": "Colle di Val d'Elsa",
+        "addr:postcode": "53034",
+        "ele": "141",
+        "gfoss_id": "4634",
+        "name": "Colle di Val d'Elsa",
+        "place": "town",
+        "population": "21620",
+        "short_name": "Colle Val d'Elsa",
+        "short_name_1": "Colle",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q91192",
+        "wikipedia": "it:Colle di Val d'Elsa"
       }
     },
     {
@@ -2430,6 +3441,31 @@
     },
     {
       "type": "node",
+      "id": 61753726,
+      "lat": 43.0945279,
+      "lon": 11.7826795,
+      "tags": {
+        "ele": "605",
+        "gfoss_id": "4637",
+        "name": "Montepulciano",
+        "name:be": "Мантэпульчана",
+        "name:he": "מונטפולצ'אנו",
+        "name:ja": "モンテプルチャーノ",
+        "name:kk": "Монтепульчано",
+        "name:la": "Mons Politianus",
+        "name:ru": "Монтепульчано",
+        "name:uk": "Монтепульчіано",
+        "name:zh": "蒙特普齐亚诺",
+        "place": "town",
+        "population": "14097",
+        "source": "geodati.gfoss.it",
+        "source:population": "http://dati-censimentopopolazione.istat.it/#",
+        "wikidata": "Q91217",
+        "wikipedia": "it:Montepulciano"
+      }
+    },
+    {
+      "type": "node",
       "id": 61753730,
       "lat": 43.4870518,
       "lon": 11.3747003,
@@ -2478,6 +3514,22 @@
         "tourism": "attraction",
         "wikidata": "Q91413",
         "wikipedia": "it:San Gimignano"
+      }
+    },
+    {
+      "type": "node",
+      "id": 61753740,
+      "lat": 43.2121236,
+      "lon": 11.7364829,
+      "tags": {
+        "ele": "364",
+        "gfoss_id": "4655",
+        "name": "Sinalunga",
+        "place": "town",
+        "population": "12764",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q91464",
+        "wikipedia": "en:Sinalunga"
       }
     },
     {
@@ -2613,6 +3665,18 @@
         "place": "village",
         "wikidata": "Q2090626",
         "wikipedia": "it:Vicarello (Collesalvetti)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 245401838,
+      "lat": 43.6935349,
+      "lon": 10.4455624,
+      "tags": {
+        "name": "Oratoio",
+        "place": "suburb",
+        "wikidata": "Q3000035",
+        "wikipedia": "it:Oratoio"
       }
     },
     {
@@ -3032,6 +4096,19 @@
     },
     {
       "type": "node",
+      "id": 253517720,
+      "lat": 43.7167114,
+      "lon": 10.3731903,
+      "tags": {
+        "is_in": "Pisa",
+        "name": "Barbaricina",
+        "place": "suburb",
+        "wikidata": "Q3634714",
+        "wikipedia": "it:Barbaricina (Pisa)"
+      }
+    },
+    {
+      "type": "node",
       "id": 253517880,
       "lat": 43.7389653,
       "lon": 10.3338875,
@@ -3051,6 +4128,18 @@
         "name": "Cascine Vecchie",
         "place": "hamlet",
         "wikidata": "Q18490104"
+      }
+    },
+    {
+      "type": "node",
+      "id": 253553616,
+      "lat": 43.7108335,
+      "lon": 10.3726358,
+      "tags": {
+        "is_in": "Pisa",
+        "name": "CEP",
+        "place": "suburb",
+        "wikidata": "Q98568337"
       }
     },
     {
@@ -3103,6 +4192,17 @@
         "place": "village",
         "wikidata": "Q2466948",
         "wikipedia": "it:Scrofiano"
+      }
+    },
+    {
+      "type": "node",
+      "id": 254063404,
+      "lat": 43.2015674,
+      "lon": 11.7344338,
+      "tags": {
+        "name": "Rigaiolo",
+        "place": "neighbourhood",
+        "wikidata": "Q124795608"
       }
     },
     {
@@ -3308,6 +4408,21 @@
         "place": "village",
         "wikidata": "Q748150",
         "wikipedia": "it:Montisi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 258512997,
+      "lat": 43.7629956,
+      "lon": 10.4410399,
+      "tags": {
+        "gfoss_id": "4575",
+        "name": "San Giuliano Terme",
+        "place": "town",
+        "population": "31399",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q103239",
+        "wikipedia": "it:San Giuliano Terme"
       }
     },
     {
@@ -4387,6 +5502,18 @@
     },
     {
       "type": "node",
+      "id": 275675366,
+      "lat": 43.9067533,
+      "lon": 11.1143241,
+      "tags": {
+        "name": "Santa Lucia",
+        "place": "neighbourhood",
+        "wikidata": "Q3949057",
+        "wikipedia": "it:Santa Lucia (Prato)"
+      }
+    },
+    {
+      "type": "node",
       "id": 277274628,
       "lat": 43.3879455,
       "lon": 11.4982754,
@@ -4704,6 +5831,41 @@
     },
     {
       "type": "node",
+      "id": 291764995,
+      "lat": 43.6965064,
+      "lon": 10.4481494,
+      "tags": {
+        "name": "Riglione",
+        "place": "suburb",
+        "wikidata": "Q3935752",
+        "wikipedia": "it:Riglione"
+      }
+    },
+    {
+      "type": "node",
+      "id": 291765203,
+      "lat": 43.7050509,
+      "lon": 10.39908,
+      "tags": {
+        "name": "San Giusto",
+        "place": "suburb",
+        "wikidata": "Q98568142"
+      }
+    },
+    {
+      "type": "node",
+      "id": 291765275,
+      "lat": 43.6963326,
+      "lon": 10.4237563,
+      "tags": {
+        "is_in": "Pisa",
+        "name": "Putignano",
+        "place": "neighbourhood",
+        "wikidata": "Q63380880"
+      }
+    },
+    {
+      "type": "node",
       "id": 291765367,
       "lat": 43.7218945,
       "lon": 10.4417379,
@@ -4763,6 +5925,26 @@
         "name": "Pascoso",
         "place": "village",
         "wikidata": "Q18488915"
+      }
+    },
+    {
+      "type": "node",
+      "id": 292336296,
+      "lat": 43.2995802,
+      "lon": 10.4940069,
+      "tags": {
+        "name": "Marina di Cecina",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 293276875,
+      "lat": 43.9011134,
+      "lon": 11.1037498,
+      "tags": {
+        "name": "Coiano",
+        "place": "neighbourhood"
       }
     },
     {
@@ -5091,6 +6273,16 @@
     },
     {
       "type": "node",
+      "id": 311177234,
+      "lat": 43.8956568,
+      "lon": 11.1029816,
+      "tags": {
+        "name": "San Martino",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 311288705,
       "lat": 43.7283173,
       "lon": 10.9579943,
@@ -5099,6 +6291,19 @@
         "is_in": "Firenze,Toscana,Italy",
         "name": "Serravalle",
         "place": "village"
+      }
+    },
+    {
+      "type": "node",
+      "id": 311317894,
+      "lat": 43.707847,
+      "lon": 10.9081342,
+      "tags": {
+        "created_by": "Potlatch 0.10f",
+        "is_in": "Empoli, Firenze, Toscana, Italy",
+        "name": "Terrafino",
+        "place": "suburb",
+        "wikidata": "Q18487472"
       }
     },
     {
@@ -5156,6 +6361,16 @@
         "is_in": "Montespertoli, Firenze, Toscana",
         "name": "Voltiggiano",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 311840956,
+      "lat": 43.8999697,
+      "lon": 11.0950413,
+      "tags": {
+        "name": "Cilianuzzo",
+        "place": "neighbourhood"
       }
     },
     {
@@ -5298,6 +6513,18 @@
         "source": "Istat - geodati.gfoss.it",
         "wikidata": "Q666388",
         "wikipedia": "it:Mercatale in Val di Pesa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 312565303,
+      "lat": 43.6724342,
+      "lon": 11.2074418,
+      "tags": {
+        "gfoss_id": "37494",
+        "name": "Montecapri",
+        "place": "suburb",
+        "source": "Istat - geodati.gfoss.it"
       }
     },
     {
@@ -5685,6 +6912,38 @@
         "place": "hamlet",
         "population": "431",
         "source": "Istat 2001 - geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 317055338,
+      "lat": 43.8275927,
+      "lon": 11.0681008,
+      "tags": {
+        "ele": "40",
+        "gfoss_id": "48974",
+        "istat_id": "2147483647",
+        "name": "Castelnuovo",
+        "place": "neighbourhood",
+        "population": "434",
+        "source": "Istat 2001 - geodati.gfoss.it",
+        "wikidata": "Q3663007",
+        "wikipedia": "it:Castelnuovo (Prato)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 317055341,
+      "lat": 43.841341,
+      "lon": 11.1189478,
+      "tags": {
+        "ele": "39",
+        "gfoss_id": "45508",
+        "istat_id": "2147483647",
+        "name": "Centola",
+        "place": "neighbourhood",
+        "population": "26",
+        "source": "Istat 2001 - geodati.gfoss.it;C.T.R. Regione Toscana"
       }
     },
     {
@@ -6267,6 +7526,21 @@
         "place": "hamlet",
         "population": "37",
         "source": "Istat 2001 - geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 317055461,
+      "lat": 43.8382996,
+      "lon": 11.1127802,
+      "tags": {
+        "ele": "38",
+        "gfoss_id": "45503",
+        "istat_id": "2147483647",
+        "name": "Tre Ville",
+        "place": "neighbourhood",
+        "population": "36",
+        "source": "Istat 2001 - geodati.gfoss.it;C.T.R. Regione Toscana"
       }
     },
     {
@@ -7610,6 +8884,21 @@
         "population": "30",
         "source": "Istat 2001 - geodati.gfoss.it",
         "wikidata": "Q18491785"
+      }
+    },
+    {
+      "type": "node",
+      "id": 317673086,
+      "lat": 43.4670957,
+      "lon": 11.1357497,
+      "tags": {
+        "ele": "158",
+        "gfoss_id": "48287",
+        "istat_id": "2147483647",
+        "name": "Montelonti",
+        "place": "suburb",
+        "population": "25",
+        "source": "Istat 2001 - geodati.gfoss.it"
       }
     },
     {
@@ -9412,6 +10701,16 @@
     },
     {
       "type": "node",
+      "id": 324790914,
+      "lat": 43.8833861,
+      "lon": 11.1053614,
+      "tags": {
+        "name": "La Pietà",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 326125010,
       "lat": 43.9093255,
       "lon": 11.427455,
@@ -9971,6 +11270,18 @@
         "place": "hamlet",
         "population": "29",
         "source": "Istat 2001 - geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 327569145,
+      "lat": 43.9015024,
+      "lon": 11.0738439,
+      "tags": {
+        "name": "Maliseti",
+        "place": "suburb",
+        "wikidata": "Q3843941",
+        "wikipedia": "it:Maliseti"
       }
     },
     {
@@ -12632,6 +13943,30 @@
     },
     {
       "type": "node",
+      "id": 340295840,
+      "lat": 43.8892031,
+      "lon": 11.1081645,
+      "tags": {
+        "historic": "wayside_shrine",
+        "man_made": "obelisk",
+        "name": "Guglia",
+        "place": "neighbourhood",
+        "wikimedia_commons": "Category:La Guglia (La Castellina)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 341305549,
+      "lat": 43.8912439,
+      "lon": 11.1081545,
+      "tags": {
+        "name": "La Castellina",
+        "place": "neighbourhood",
+        "wikidata": "Q21177637"
+      }
+    },
+    {
+      "type": "node",
       "id": 342350317,
       "lat": 43.3251294,
       "lon": 10.4625299,
@@ -12681,6 +14016,24 @@
         "source": "Istat 2001 - geodati.gfoss.it",
         "wikidata": "Q1094154",
         "wikipedia": "it:Pomaia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 342350339,
+      "lat": 43.3960392,
+      "lon": 10.4340511,
+      "tags": {
+        "ele": "10",
+        "gfoss_id": "46577",
+        "istat_id": "2147483647",
+        "name": "Rosignano Solvay",
+        "name:ru": "Розиньяно-Солвей",
+        "place": "town",
+        "population": "19239",
+        "source": "Istat 2001 - geodati.gfoss.it",
+        "wikidata": "Q1064088",
+        "wikipedia": "it:Rosignano Solvay"
       }
     },
     {
@@ -13012,6 +14365,17 @@
     },
     {
       "type": "node",
+      "id": 360039670,
+      "lat": 43.9059051,
+      "lon": 11.0948366,
+      "tags": {
+        "name": "Villa Fiorita",
+        "place": "neighbourhood",
+        "wikimedia_commons": "Category:Villa Fiorita (Prato)"
+      }
+    },
+    {
+      "type": "node",
       "id": 361229865,
       "lat": 43.8922148,
       "lon": 11.1165962,
@@ -13019,6 +14383,16 @@
         "name": "Filettole",
         "place": "hamlet",
         "wikidata": "Q18491339"
+      }
+    },
+    {
+      "type": "node",
+      "id": 362721717,
+      "lat": 43.9068213,
+      "lon": 11.0912148,
+      "tags": {
+        "name": "Galcetello",
+        "place": "neighbourhood"
       }
     },
     {
@@ -13094,6 +14468,21 @@
         "source": "Istat 2001 - geodati.gfoss.it",
         "wikidata": "Q2539509",
         "wikipedia": "it:Gerfalco"
+      }
+    },
+    {
+      "type": "node",
+      "id": 374354489,
+      "lat": 43.153496,
+      "lon": 11.0765422,
+      "tags": {
+        "ele": "525",
+        "gfoss_id": "48054",
+        "istat_id": "2147483647",
+        "name": "San Giusto",
+        "place": "neighbourhood",
+        "population": "38",
+        "source": "Istat 2001 - geodati.gfoss.it"
       }
     },
     {
@@ -13615,6 +15004,21 @@
     },
     {
       "type": "node",
+      "id": 391263899,
+      "lat": 42.9912216,
+      "lon": 11.3605075,
+      "tags": {
+        "ele": "212",
+        "gfoss_id": "48640",
+        "istat_id": "2147483647",
+        "name": "Monte Antico Alto",
+        "place": "neighbourhood",
+        "population": "13",
+        "source": "Istat 2001 - geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
       "id": 391543627,
       "lat": 44.0927287,
       "lon": 11.4376876,
@@ -13668,6 +15072,22 @@
         "population": "669",
         "source": "Istat 2001 - geodati.gfoss.it",
         "wikidata": "Q18491319"
+      }
+    },
+    {
+      "type": "node",
+      "id": 395370519,
+      "lat": 43.9905035,
+      "lon": 11.1005895,
+      "tags": {
+        "ele": "620",
+        "gfoss_id": "48929",
+        "istat_id": "2147483647",
+        "name": "Case di Sotto",
+        "place": "neighbourhood",
+        "population": "148",
+        "source": "Istat 2001 - geodati.gfoss.it;C.T.R. Regione Toscana",
+        "wikimedia_commons": "Category:Case di Sotto (Migliana, Cantagallo)"
       }
     },
     {
@@ -16999,6 +18419,16 @@
     },
     {
       "type": "node",
+      "id": 471024741,
+      "lat": 43.8855475,
+      "lon": 11.0733305,
+      "tags": {
+        "name": "San Paolo",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
       "id": 475135195,
       "lat": 43.585844,
       "lon": 11.6099415,
@@ -17021,6 +18451,64 @@
         "place": "hamlet",
         "population": "130",
         "wikidata": "Q18484818"
+      }
+    },
+    {
+      "type": "node",
+      "id": 477697418,
+      "lat": 43.8961309,
+      "lon": 11.0822004,
+      "tags": {
+        "name": "Chiesanova",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 477697431,
+      "lat": 43.8875487,
+      "lon": 11.0562704,
+      "tags": {
+        "is_in": "Prato,PO,Toscana,Italia",
+        "name": "Galciana",
+        "place": "suburb",
+        "wikidata": "Q3757533",
+        "wikipedia": "it:Galciana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 477697453,
+      "lat": 43.8913374,
+      "lon": 11.0471386,
+      "tags": {
+        "is_in": "Prato,PO,Toscana,Italia",
+        "name": "Sant'Ippolito",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 477697480,
+      "lat": 43.8777679,
+      "lon": 11.0569062,
+      "tags": {
+        "name": "Vergaio",
+        "place": "suburb",
+        "wikidata": "Q766223",
+        "wikipedia": "it:Vergaio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 477697505,
+      "lat": 43.8758376,
+      "lon": 11.0403752,
+      "tags": {
+        "name": "Casale",
+        "place": "suburb",
+        "wikidata": "Q3661418",
+        "wikipedia": "it:Casale (Prato)"
       }
     },
     {
@@ -17609,6 +19097,17 @@
     },
     {
       "type": "node",
+      "id": 493597398,
+      "lat": 43.8830867,
+      "lon": 11.1143152,
+      "tags": {
+        "name": "Sant'Anna",
+        "place": "neighbourhood",
+        "source": "web.rete.toscana.it WMS C.T.R."
+      }
+    },
+    {
+      "type": "node",
       "id": 493602679,
       "lat": 43.4508315,
       "lon": 11.6710787,
@@ -18191,6 +19690,21 @@
     },
     {
       "type": "node",
+      "id": 495232258,
+      "lat": 43.4161576,
+      "lon": 10.5763809,
+      "tags": {
+        "ele": "394",
+        "gfoss_id": "46724",
+        "istat_id": "2147483647",
+        "name": "Ceppo Nero",
+        "place": "neighbourhood",
+        "population": "22",
+        "source": "Istat 2001 - geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
       "id": 495232261,
       "lat": 43.4557275,
       "lon": 10.6465518,
@@ -18263,6 +19777,21 @@
         "name": "Iano",
         "place": "hamlet",
         "population": "80",
+        "source": "Istat 2001 - geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 495232995,
+      "lat": 43.5296485,
+      "lon": 10.9502717,
+      "tags": {
+        "ele": "406",
+        "gfoss_id": "45812",
+        "istat_id": "2147483647",
+        "name": "Il Porcello",
+        "place": "neighbourhood",
+        "population": "40",
         "source": "Istat 2001 - geodati.gfoss.it"
       }
     },
@@ -20867,6 +22396,17 @@
     },
     {
       "type": "node",
+      "id": 496114535,
+      "lat": 43.3977014,
+      "lon": 11.4241501,
+      "tags": {
+        "long_name": "Monti in Chianti di Sotto",
+        "name": "Monti di Sotto",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 496114538,
       "lat": 43.3637356,
       "lon": 11.4646198,
@@ -21055,6 +22595,19 @@
         "short_name": "Le More",
         "wikidata": "Q18491719",
         "wikipedia": "it:More di Cuna"
+      }
+    },
+    {
+      "type": "node",
+      "id": 500787212,
+      "lat": 43.8065474,
+      "lon": 11.1774673,
+      "tags": {
+        "name": "Osmannoro",
+        "place": "suburb",
+        "source": "web.rete.toscana.it WMS C.T.R. 2000;local knowledge",
+        "wikidata": "Q1992560",
+        "wikipedia": "it:Osmannoro"
       }
     },
     {
@@ -21967,6 +23520,16 @@
     },
     {
       "type": "node",
+      "id": 540302208,
+      "lat": 43.9248446,
+      "lon": 11.1301097,
+      "tags": {
+        "name": "Gamberame",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 540302209,
       "lat": 43.9268807,
       "lon": 11.1275837,
@@ -22068,6 +23631,17 @@
       "tags": {
         "name": "Ponte a Greve",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 543364087,
+      "lat": 43.7778699,
+      "lon": 11.2163739,
+      "tags": {
+        "name": "Isolotto",
+        "place": "suburb",
+        "wikidata": "Q3803281"
       }
     },
     {
@@ -23325,6 +24899,52 @@
       "tags": {
         "name": "Marzana",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 592579345,
+      "lat": 43.845129,
+      "lon": 11.2033943,
+      "tags": {
+        "name": "Querceto",
+        "place": "suburb",
+        "wikidata": "Q1843409",
+        "wikipedia": "it:Querceto (Sesto Fiorentino)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 592581394,
+      "lat": 43.851008,
+      "lon": 11.1812812,
+      "tags": {
+        "name": "Settimello",
+        "place": "suburb",
+        "wikidata": "Q2616067",
+        "wikipedia": "it:Settimello"
+      }
+    },
+    {
+      "type": "node",
+      "id": 592585891,
+      "lat": 43.8364548,
+      "lon": 11.2116341,
+      "tags": {
+        "name": "Colonnata",
+        "place": "suburb",
+        "wikidata": "Q3683547",
+        "wikipedia": "it:Colonnata (Sesto Fiorentino)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 592588559,
+      "lat": 43.836205,
+      "lon": 11.1775803,
+      "tags": {
+        "name": "Padule",
+        "place": "suburb"
       }
     },
     {
@@ -24867,6 +26487,19 @@
     },
     {
       "type": "node",
+      "id": 637467866,
+      "lat": 43.6056068,
+      "lon": 10.9712484,
+      "tags": {
+        "name": "Castelfiorentino",
+        "place": "town",
+        "population": "17504",
+        "wikidata": "Q82643",
+        "wikipedia": "it:Castelfiorentino"
+      }
+    },
+    {
+      "type": "node",
       "id": 637467884,
       "lat": 43.609012,
       "lon": 10.9795002,
@@ -25145,6 +26778,33 @@
     },
     {
       "type": "node",
+      "id": 662861770,
+      "lat": 44.0005414,
+      "lon": 11.2383808,
+      "tags": {
+        "gfoss_id": "4482",
+        "name": "Barberino di Mugello",
+        "place": "town",
+        "population": "10836",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q30022575"
+      }
+    },
+    {
+      "type": "node",
+      "id": 664282196,
+      "lat": 43.8617628,
+      "lon": 11.1155396,
+      "tags": {
+        "name": "Mezzana",
+        "place": "suburb",
+        "source": "survey",
+        "wikidata": "Q27096347",
+        "wikipedia": "it:Mezzana (Prato)"
+      }
+    },
+    {
+      "type": "node",
       "id": 667305010,
       "lat": 43.75049,
       "lon": 11.2366804,
@@ -25300,6 +26960,16 @@
     },
     {
       "type": "node",
+      "id": 693743304,
+      "lat": 44.0139437,
+      "lon": 10.5850755,
+      "tags": {
+        "name": "Paretaio",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 693880671,
       "lat": 44.0100533,
       "lon": 10.4780246,
@@ -25394,6 +27064,74 @@
       "tags": {
         "name": "Casino",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 695457362,
+      "lat": 43.3416329,
+      "lon": 11.3136868,
+      "tags": {
+        "description": "Suburb of Siena",
+        "name": "Vico Alto",
+        "place": "suburb",
+        "wikidata": "Q98574279"
+      }
+    },
+    {
+      "type": "node",
+      "id": 696529427,
+      "lat": 43.335575,
+      "lon": 11.3334999,
+      "tags": {
+        "description": "Suburb of Siena",
+        "name": "Scacciapensieri",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 696532876,
+      "lat": 43.3337521,
+      "lon": 11.3002966,
+      "tags": {
+        "description": "Suburb of Siena",
+        "name": "Petriccio",
+        "old_name": "Pietriccio",
+        "place": "suburb",
+        "wikidata": "Q122912703",
+        "wikipedia": "it:Petriccio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 696532882,
+      "lat": 43.3403706,
+      "lon": 11.3015425,
+      "tags": {
+        "description": "Suburb of Siena",
+        "name": "Acquacalda",
+        "old_name": "Acqua Calda",
+        "place": "suburb",
+        "wikidata": "Q98574557"
+      }
+    },
+    {
+      "type": "node",
+      "id": 696532885,
+      "lat": 43.3468735,
+      "lon": 11.3268467,
+      "tags": {
+        "abbr_name": "SM",
+        "description": "Suburb of Siena",
+        "long_name": "San Miniato alle Scotte",
+        "name": "San Miniato",
+        "place": "suburb",
+        "population": "2600",
+        "population:date": "2023-10-02",
+        "source:population": "CEI",
+        "wikidata": "Q18491929",
+        "wikipedia": "it:San Miniato (Siena)"
       }
     },
     {
@@ -25511,6 +27249,17 @@
         "name": "Case Sabina",
         "place": "hamlet",
         "source": "web.rete.toscana.it WMS C.T.R. 1:10k"
+      }
+    },
+    {
+      "type": "node",
+      "id": 714821032,
+      "lat": 43.5282375,
+      "lon": 11.564323,
+      "tags": {
+        "name": "Giglio",
+        "place": "suburb",
+        "source": "survey;web.rete.toscana.it WMS C.T.R. 1:10k"
       }
     },
     {
@@ -27764,15 +29513,6 @@
       "lon": 9.7884167,
       "tags": {
         "name": "Paretola",
-        "place": "hamlet"
-      }
-    },
-    {
-      "type": "node",
-      "id": 925667656,
-      "lat": 44.3266929,
-      "lon": 9.7809247,
-      "tags": {
         "place": "hamlet"
       }
     },
@@ -30696,6 +32436,16 @@
     },
     {
       "type": "node",
+      "id": 1075308896,
+      "lat": 43.4548882,
+      "lon": 11.2916385,
+      "tags": {
+        "name": "Croce Fiorentina",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 1075334462,
       "lat": 43.4352485,
       "lon": 11.3057685,
@@ -30867,6 +32617,16 @@
     },
     {
       "type": "node",
+      "id": 1090943102,
+      "lat": 43.4841964,
+      "lon": 11.3658459,
+      "tags": {
+        "name": "La Croce",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 1091955699,
       "lat": 43.5502284,
       "lon": 11.1689547,
@@ -30930,6 +32690,18 @@
     },
     {
       "type": "node",
+      "id": 1095167183,
+      "lat": 43.7943465,
+      "lon": 11.1677291,
+      "tags": {
+        "name": "Brozzi",
+        "place": "suburb",
+        "wikidata": "Q2194442",
+        "wikipedia": "it:Brozzi"
+      }
+    },
+    {
+      "type": "node",
       "id": 1098223227,
       "lat": 43.6348925,
       "lon": 11.0199963,
@@ -30946,6 +32718,20 @@
       "tags": {
         "name": "San Gersolè",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1104553208,
+      "lat": 43.3996722,
+      "lon": 11.1330609,
+      "tags": {
+        "ele": "173",
+        "name": "Gracciano dell'Elsa",
+        "place": "suburb",
+        "was:place": "village",
+        "wikidata": "Q727509",
+        "wikipedia": "it:Gracciano dell'Elsa"
       }
     },
     {
@@ -31200,12 +32986,126 @@
     },
     {
       "type": "node",
+      "id": 1172035639,
+      "lat": 43.8433953,
+      "lon": 11.0466473,
+      "tags": {
+        "name": "Tavola",
+        "place": "suburb",
+        "wikidata": "Q944481",
+        "wikipedia": "it:Tavola (Prato)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1172035642,
+      "lat": 43.8645326,
+      "lon": 11.0423343,
+      "tags": {
+        "alt_name": "Jolo",
+        "name": "Iolo",
+        "place": "suburb",
+        "wikidata": "Q21192471",
+        "wikipedia": "it:Iolo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1172035652,
+      "lat": 43.895202,
+      "lon": 11.0665579,
+      "tags": {
+        "name": "Narnali",
+        "place": "suburb",
+        "wikidata": "Q2595690",
+        "wikipedia": "it:Narnali"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1172035657,
+      "lat": 43.9001498,
+      "lon": 11.0341997,
+      "tags": {
+        "is_in": "Prato,PO,Toscana,Italia",
+        "name": "Mazzone",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1172035670,
+      "lat": 43.8490755,
+      "lon": 11.076084,
+      "tags": {
+        "name": "Fontanelle",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1172035676,
+      "lat": 43.8586225,
+      "lon": 11.0945591,
+      "tags": {
+        "name": "Le Badie",
+        "place": "suburb",
+        "wikimedia_commons": "Category:Le Badie (Prato)"
+      }
+    },
+    {
+      "type": "node",
       "id": 1172035678,
       "lat": 43.8605712,
       "lon": 11.1257585,
       "tags": {
         "name": "Gonfienti",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1172035697,
+      "lat": 43.8983725,
+      "lon": 11.0558527,
+      "tags": {
+        "is_in": "Prato,PO,Toscana,Italia",
+        "name": "Viaccia",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1172035702,
+      "lat": 43.8701628,
+      "lon": 11.0549943,
+      "tags": {
+        "name": "Tobbiana",
+        "place": "suburb",
+        "wikidata": "Q1949242",
+        "wikipedia": "it:Tobbiana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1172035711,
+      "lat": 43.8617323,
+      "lon": 11.1365947,
+      "tags": {
+        "name": "La Querce",
+        "place": "suburb",
+        "wikimedia_commons": "Category:La Querce (Prato)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1172035721,
+      "lat": 43.8685849,
+      "lon": 11.1263593,
+      "tags": {
+        "name": "La Macine",
+        "place": "suburb",
+        "wikimedia_commons": "Category:La Macine (Prato)"
       }
     },
     {
@@ -31218,6 +33118,16 @@
         "place": "village",
         "wikidata": "Q3071656",
         "wikipedia": "it:Figline di Prato"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1172035733,
+      "lat": 43.8822128,
+      "lon": 11.0582774,
+      "tags": {
+        "name": "Capezzana",
+        "place": "suburb"
       }
     },
     {
@@ -31238,6 +33148,17 @@
       "tags": {
         "name": "Lama",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1179499343,
+      "lat": 43.9146813,
+      "lon": 11.0609136,
+      "tags": {
+        "is_in": "Montemurlo,PO,Toscana,Italia",
+        "name": "Bagnolo",
+        "place": "suburb"
       }
     },
     {
@@ -36224,6 +38145,39 @@
     },
     {
       "type": "node",
+      "id": 1286682287,
+      "lat": 43.1023345,
+      "lon": 11.2592155,
+      "tags": {
+        "ele": "460",
+        "gfoss_id": "48231",
+        "istat_id": "2147483647",
+        "long_name": "Il Palazzo",
+        "name": "Palazzo",
+        "place": "neighbourhood",
+        "population": "21",
+        "source": "Istat 2001 - geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1286682306,
+      "lat": 43.0980987,
+      "lon": 11.2603008,
+      "tags": {
+        "ele": "455",
+        "gfoss_id": "48230",
+        "istat_id": "2147483647",
+        "long_name": "Località Cerbaia",
+        "name": "Cerbaia",
+        "place": "neighbourhood",
+        "population": "42",
+        "source": "Istat 2001 - geodati.gfoss.it",
+        "wikidata": "Q18491575"
+      }
+    },
+    {
+      "type": "node",
       "id": 1286682309,
       "lat": 43.1332822,
       "lon": 11.2618699,
@@ -36270,6 +38224,21 @@
         "population": "20",
         "source": "Istat 2001 - geodati.gfoss.it",
         "wikidata": "Q18491587"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1286682436,
+      "lat": 43.0996367,
+      "lon": 11.2503395,
+      "tags": {
+        "ele": "432",
+        "gfoss_id": "48224",
+        "istat_id": "2147483647",
+        "name": "Lama",
+        "place": "neighbourhood",
+        "population": "146",
+        "source:population": "wikipedia"
       }
     },
     {
@@ -37595,6 +39564,20 @@
         "source": "Istat 2001 - geodati.gfoss.it",
         "wikidata": "Q18491752",
         "wikipedia": "en:Macciano"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1296553800,
+      "lat": 43.0085065,
+      "lon": 11.9537624,
+      "tags": {
+        "description": "Suburb of Chiusi",
+        "ele": "300",
+        "gfoss_id": "48072",
+        "istat_id": "2147483647",
+        "name": "La Collina",
+        "place": "suburb"
       }
     },
     {
@@ -39264,6 +41247,16 @@
     },
     {
       "type": "node",
+      "id": 1349110840,
+      "lat": 44.0497215,
+      "lon": 11.1504129,
+      "tags": {
+        "name": "Poggiole",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 1351436596,
       "lat": 43.1128654,
       "lon": 11.0000282,
@@ -39374,6 +41367,16 @@
     },
     {
       "type": "node",
+      "id": 1365164084,
+      "lat": 43.4616818,
+      "lon": 11.0352595,
+      "tags": {
+        "name": "Santa Chiara",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 1381478704,
       "lat": 43.0899641,
       "lon": 11.2473486,
@@ -39457,6 +41460,18 @@
     },
     {
       "type": "node",
+      "id": 1393928008,
+      "lat": 43.5649304,
+      "lon": 11.5305954,
+      "tags": {
+        "name": "San Giovanni Valdarno",
+        "place": "town",
+        "population": "17018",
+        "wikidata": "Q52097"
+      }
+    },
+    {
+      "type": "node",
       "id": 1394880616,
       "lat": 43.3637653,
       "lon": 11.1550994,
@@ -39493,6 +41508,16 @@
         "source": "Istat 2001 - geodati.gfoss.it",
         "wikidata": "Q3896393",
         "wikipedia": "it:Parrana San Giusto"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1403921862,
+      "lat": 42.9817474,
+      "lon": 11.3617134,
+      "tags": {
+        "name": "Monte Antico Scalo",
+        "place": "neighbourhood"
       }
     },
     {
@@ -39768,6 +41793,18 @@
         "population": "116",
         "wikidata": "Q1118281",
         "wikipedia": "it:Ansedonia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1415242736,
+      "lat": 43.4197285,
+      "lon": 11.1003036,
+      "tags": {
+        "name": "Le Grazie",
+        "place": "suburb",
+        "wikidata": "Q2514593",
+        "wikipedia": "it:Le Grazie (Colle di Val d'Elsa)"
       }
     },
     {
@@ -40355,6 +42392,16 @@
     },
     {
       "type": "node",
+      "id": 1431031272,
+      "lat": 43.8355368,
+      "lon": 10.4999819,
+      "tags": {
+        "name": "San Concordio",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
       "id": 1431086050,
       "lat": 43.8919517,
       "lon": 10.5548336,
@@ -40804,6 +42851,21 @@
         "source": "Istat 2001 - geodati.gfoss.it",
         "wikidata": "Q947816",
         "wikipedia": "it:Codena"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1433663454,
+      "lat": 44.0174004,
+      "lon": 10.1787377,
+      "tags": {
+        "ele": "150",
+        "gfoss_id": "44013",
+        "istat_id": "2147483647",
+        "name": "Piano",
+        "place": "neighbourhood",
+        "population": "23",
+        "source": "Istat 2001 - geodati.gfoss.it"
       }
     },
     {
@@ -44858,6 +46920,16 @@
     },
     {
       "type": "node",
+      "id": 1512539112,
+      "lat": 43.3015806,
+      "lon": 11.3455195,
+      "tags": {
+        "name": "Luglie",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 1512539113,
       "lat": 43.3046164,
       "lon": 11.3536228,
@@ -46260,6 +48332,21 @@
     },
     {
       "type": "node",
+      "id": 1678989868,
+      "lat": 43.6766738,
+      "lon": 10.5492244,
+      "tags": {
+        "gfoss_id": "4552",
+        "name": "Cascina",
+        "place": "town",
+        "population": "45257",
+        "postal_code": "56021",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q103049"
+      }
+    },
+    {
+      "type": "node",
       "id": 1681857912,
       "lat": 43.6724218,
       "lon": 10.2727668,
@@ -46279,6 +48366,18 @@
       "tags": {
         "name": "Mugnana",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1688928152,
+      "lat": 43.9045177,
+      "lon": 11.0301175,
+      "tags": {
+        "is_in": "Montemurlo, PO, Toscana, Italia",
+        "name": "Oste",
+        "place": "suburb",
+        "wikidata": "Q48413906"
       }
     },
     {
@@ -46960,6 +49059,16 @@
     },
     {
       "type": "node",
+      "id": 1715160127,
+      "lat": 43.1114207,
+      "lon": 11.8746143,
+      "tags": {
+        "name": "Casenuove",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 1715193259,
       "lat": 43.1351285,
       "lon": 11.8567684,
@@ -47068,6 +49177,17 @@
       "tags": {
         "name": "Dolciano",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1716415451,
+      "lat": 42.9951917,
+      "lon": 11.9549773,
+      "tags": {
+        "description": "Suburb of Chiusi",
+        "name": "Le Biffe",
+        "place": "suburb"
       }
     },
     {
@@ -47491,6 +49611,18 @@
     },
     {
       "type": "node",
+      "id": 1736765203,
+      "lat": 43.7076365,
+      "lon": 10.4354912,
+      "tags": {
+        "is_in": "Pisa",
+        "name": "Cisanello",
+        "place": "suburb",
+        "wikidata": "Q98547123"
+      }
+    },
+    {
+      "type": "node",
       "id": 1741283351,
       "lat": 43.4264695,
       "lon": 11.6376129,
@@ -47647,6 +49779,18 @@
         "place": "village",
         "wikidata": "Q2418988",
         "wikipedia": "it:Marrucheti"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1752771719,
+      "lat": 42.9374901,
+      "lon": 10.5058934,
+      "tags": {
+        "name": "Salivoli",
+        "place": "suburb",
+        "wikidata": "Q3945550",
+        "wikipedia": "it:Salivoli"
       }
     },
     {
@@ -49406,6 +51550,55 @@
     },
     {
       "type": "node",
+      "id": 1855053061,
+      "lat": 44.0711868,
+      "lon": 10.0780564,
+      "tags": {
+        "name": "Fossola",
+        "place": "suburb",
+        "wikidata": "Q123753867"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1855062543,
+      "lat": 44.0470099,
+      "lon": 10.0622156,
+      "tags": {
+        "alt_name": "Avenza-Carrara",
+        "int_name": "Avenza",
+        "name": "Avenza",
+        "place": "suburb",
+        "wikidata": "Q1917286",
+        "wikipedia": "it:Avenza"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1855062834,
+      "lat": 44.0376696,
+      "lon": 10.0455044,
+      "tags": {
+        "name": "Marina di Carrara",
+        "place": "suburb",
+        "wikidata": "Q16965",
+        "wikipedia": "it:Marina di Carrara"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1855067841,
+      "lat": 44.0094968,
+      "lon": 10.1019306,
+      "tags": {
+        "name": "Marina di Massa",
+        "place": "suburb",
+        "wikidata": "Q1898323",
+        "wikipedia": "it:Marina di Massa"
+      }
+    },
+    {
+      "type": "node",
       "id": 1855566383,
       "lat": 43.8376233,
       "lon": 11.3164247,
@@ -49711,6 +51904,17 @@
     },
     {
       "type": "node",
+      "id": 1874354682,
+      "lat": 43.8647252,
+      "lon": 11.0134015,
+      "tags": {
+        "name": "Caserana",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
       "id": 1875065658,
       "lat": 43.3565992,
       "lon": 11.1128939,
@@ -49993,6 +52197,16 @@
     },
     {
       "type": "node",
+      "id": 1906771609,
+      "lat": 43.8432743,
+      "lon": 10.4911695,
+      "tags": {
+        "name": "Sant'Anna",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
       "id": 1907061958,
       "lat": 43.7829916,
       "lon": 11.3208169,
@@ -50242,6 +52456,19 @@
         "place": "village",
         "wikidata": "Q18486545",
         "wikipedia": "it:Caldine"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1948788074,
+      "lat": 43.7089096,
+      "lon": 10.3851667,
+      "tags": {
+        "addr:postcode": "56122",
+        "name": "Porta a Mare",
+        "place": "suburb",
+        "wikidata": "Q98568067",
+        "wikipedia": "it:Pisa"
       }
     },
     {
@@ -50564,6 +52791,18 @@
       "tags": {
         "name": "San Michele in Escheto",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1979471975,
+      "lat": 43.8375714,
+      "lon": 10.4840676,
+      "tags": {
+        "name": "San Donato",
+        "place": "neighbourhood",
+        "wikidata": "Q3947015",
+        "wikipedia": "it:San Donato (Lucca)"
       }
     },
     {
@@ -51159,6 +53398,16 @@
     },
     {
       "type": "node",
+      "id": 1998726949,
+      "lat": 43.8527001,
+      "lon": 10.2760986,
+      "tags": {
+        "name": "Bicchio",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
       "id": 2003087827,
       "lat": 43.5902919,
       "lon": 11.896646,
@@ -51617,6 +53866,16 @@
     },
     {
       "type": "node",
+      "id": 2051944349,
+      "lat": 43.9445478,
+      "lon": 10.9311203,
+      "tags": {
+        "name": "Le Fornaci",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 2051944567,
       "lat": 43.9316597,
       "lon": 10.9719617,
@@ -51911,6 +54170,19 @@
     },
     {
       "type": "node",
+      "id": 2083392436,
+      "lat": 43.3096606,
+      "lon": 11.3159362,
+      "tags": {
+        "description": "Suburb of Siena",
+        "full_name": "Colonna di San Marco",
+        "long_name": "Colonna San Marco",
+        "name": "San Marco",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
       "id": 2091057711,
       "lat": 43.7883531,
       "lon": 10.7835952,
@@ -52014,6 +54286,16 @@
       "tags": {
         "name": "Termini",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2116282221,
+      "lat": 43.0998796,
+      "lon": 11.2481579,
+      "tags": {
+        "name": "Contra",
+        "place": "neighbourhood"
       }
     },
     {
@@ -52171,6 +54453,27 @@
       "tags": {
         "name": "Vallico di Sopra",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2163709988,
+      "lat": 43.4587551,
+      "lon": 11.8553003,
+      "tags": {
+        "name": "Meridiana",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2163709991,
+      "lat": 43.4633563,
+      "lon": 11.8601909,
+      "tags": {
+        "name": "Pescaiola",
+        "place": "neighbourhood",
+        "wikidata": "Q130224550"
       }
     },
     {
@@ -52367,6 +54670,21 @@
     },
     {
       "type": "node",
+      "id": 2279303717,
+      "lat": 43.4678366,
+      "lon": 11.0431816,
+      "tags": {
+        "heritage": "1",
+        "heritage:operator": "whc",
+        "historic": "district",
+        "name": "Centro storico di San Gimignano",
+        "place": "neighbourhood",
+        "wikidata": "Q9724840",
+        "wikipedia": "it:San Gimignano"
+      }
+    },
+    {
+      "type": "node",
       "id": 2283063863,
       "lat": 43.6185346,
       "lon": 11.3935514,
@@ -52425,6 +54743,16 @@
       "tags": {
         "name": "Pulicciano",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2289109436,
+      "lat": 43.9994092,
+      "lon": 11.4239781,
+      "tags": {
+        "name": "Poggio",
+        "place": "neighbourhood"
       }
     },
     {
@@ -52492,6 +54820,36 @@
         "place": "village",
         "wikidata": "Q2348122",
         "wikipedia": "it:Sticciano"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2294690119,
+      "lat": 44.0102669,
+      "lon": 11.4374825,
+      "tags": {
+        "name": "Sodello",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2294702711,
+      "lat": 44.0034081,
+      "lon": 11.4286433,
+      "tags": {
+        "name": "Fondaccio",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2297558748,
+      "lat": 43.999996,
+      "lon": 11.4221399,
+      "tags": {
+        "name": "La Piazza",
+        "place": "neighbourhood"
       }
     },
     {
@@ -52593,6 +54951,16 @@
         "place": "village",
         "wikidata": "Q3747504",
         "wikipedia": "it:Fonteblanda"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2337522631,
+      "lat": 43.9824012,
+      "lon": 11.4020006,
+      "tags": {
+        "name": "Cantone",
+        "place": "neighbourhood"
       }
     },
     {
@@ -53578,6 +55946,18 @@
     },
     {
       "type": "node",
+      "id": 2516073306,
+      "lat": 43.8066689,
+      "lon": 11.2930735,
+      "tags": {
+        "name": "Fiesole",
+        "place": "town",
+        "population": "13969",
+        "wikidata": "Q82670"
+      }
+    },
+    {
+      "type": "node",
       "id": 2516248219,
       "lat": 43.7213636,
       "lon": 12.2936625,
@@ -53671,6 +56051,16 @@
       "tags": {
         "name": "Santa Maria",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2521320440,
+      "lat": 43.661748,
+      "lon": 10.5429377,
+      "tags": {
+        "name": "Via di Corte",
+        "place": "neighbourhood"
       }
     },
     {
@@ -55301,6 +57691,17 @@
     },
     {
       "type": "node",
+      "id": 2813136928,
+      "lat": 43.9714387,
+      "lon": 10.885121,
+      "tags": {
+        "description": "Alberi di cipresso che alla base riportano il tentativo di taglio da parte dei tedeschi in ritirata. Operazione tentata per rallentare l'avanzata degli alleati della V armata. Elementi non valorizzati.",
+        "name": "I Cipressi",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 2813266637,
       "lat": 43.9751511,
       "lon": 10.8821633,
@@ -55803,6 +58204,23 @@
         "place": "hamlet",
         "population": "38",
         "source": "Istat 2001 - geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2813475279,
+      "lat": 43.0606283,
+      "lon": 10.6154958,
+      "tags": {
+        "ele": "231",
+        "gfoss_id": "46338",
+        "istat_id": "4900210002",
+        "name": "Campiglia Marittima",
+        "place": "town",
+        "population": "13218",
+        "source": "Istat 2001 - geodati.gfoss.it",
+        "wikidata": "Q157686",
+        "wikipedia": "it:Campiglia Marittima"
       }
     },
     {
@@ -56640,6 +59058,16 @@
     },
     {
       "type": "node",
+      "id": 2918456312,
+      "lat": 44.0574233,
+      "lon": 11.124183,
+      "tags": {
+        "name": "I Tozzini",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 2918708981,
       "lat": 43.7598389,
       "lon": 11.4801651,
@@ -57006,6 +59434,30 @@
     },
     {
       "type": "node",
+      "id": 3097449146,
+      "lat": 43.7130588,
+      "lon": 10.4044808,
+      "tags": {
+        "name": "San Martino",
+        "place": "suburb",
+        "wikidata": "Q13375",
+        "wikipedia": "it:Pisa#Urbanistica"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3098444031,
+      "lat": 43.7194008,
+      "lon": 10.4142611,
+      "tags": {
+        "name": "Don Bosco",
+        "place": "suburb",
+        "wikidata": "Q13375",
+        "wikipedia": "it:Pisa#Urbanistica"
+      }
+    },
+    {
+      "type": "node",
       "id": 3102630271,
       "lat": 44.0323968,
       "lon": 11.3109907,
@@ -57061,6 +59513,17 @@
     },
     {
       "type": "node",
+      "id": 3106902837,
+      "lat": 43.7094369,
+      "lon": 10.4126395,
+      "tags": {
+        "alt_name": "Le Piagge",
+        "name": "Porta a Piagge",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
       "id": 3109347069,
       "lat": 43.8592738,
       "lon": 11.2614996,
@@ -57104,6 +59567,52 @@
     },
     {
       "type": "node",
+      "id": 3110690510,
+      "lat": 43.7952626,
+      "lon": 11.1927845,
+      "tags": {
+        "name": "Petriolo",
+        "place": "neighbourhood",
+        "wikidata": "Q3901064",
+        "wikipedia": "it:Petriolo (Firenze)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3110721370,
+      "lat": 43.7526468,
+      "lon": 11.3050423,
+      "tags": {
+        "name": "Sorgane",
+        "place": "neighbourhood",
+        "wikidata": "Q3965075",
+        "wikipedia": "it:Sorgane"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3110738246,
+      "lat": 43.7669314,
+      "lon": 11.3004707,
+      "tags": {
+        "name": "Varlungo",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3112667483,
+      "lat": 43.6908764,
+      "lon": 10.3671656,
+      "tags": {
+        "addr:postcode": "56122",
+        "name": "La Vettola",
+        "place": "suburb",
+        "short_name": "Vettola"
+      }
+    },
+    {
+      "type": "node",
       "id": 3114221303,
       "lat": 42.3731761,
       "lon": 10.8902272,
@@ -57127,6 +59636,16 @@
     },
     {
       "type": "node",
+      "id": 3115287901,
+      "lat": 43.7270469,
+      "lon": 10.4193324,
+      "tags": {
+        "name": "La Fontina",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 3115522784,
       "lat": 44.0336675,
       "lon": 11.3371264,
@@ -57138,12 +59657,70 @@
     },
     {
       "type": "node",
+      "id": 3131230294,
+      "lat": 43.9961503,
+      "lon": 11.1065626,
+      "tags": {
+        "name": "I Felciai",
+        "place": "neighbourhood",
+        "source": "C.T.R. REGIONE TOSCANA",
+        "wikimedia_commons": "File:I Felciai (Migliana, Cantagallo).jpg"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3131230295,
+      "lat": 43.9954461,
+      "lon": 11.103125,
+      "tags": {
+        "name": "Il Masseto",
+        "place": "neighbourhood",
+        "source": "C.T.R. REGIONE TOSCANA",
+        "wikimedia_commons": "Category:Il Masseto (Migliana, Cantagallo)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3131230297,
+      "lat": 43.9927825,
+      "lon": 11.0998423,
+      "tags": {
+        "name": "I Montini",
+        "place": "neighbourhood",
+        "source": "C.T.R. REGIONE TOSCANA"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3131230298,
+      "lat": 43.9902295,
+      "lon": 11.0979094,
+      "tags": {
+        "name": "La Vergine",
+        "place": "neighbourhood",
+        "source": "C.T.R. REGIONE TOSCANA;Cartografia Catastale Toscana",
+        "wikimedia_commons": "Category:La Vergine (Migliana, Cantagallo)"
+      }
+    },
+    {
+      "type": "node",
       "id": 3143598478,
       "lat": 43.5002316,
       "lon": 11.233272,
       "tags": {
         "name": "Patrignone",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3145563610,
+      "lat": 44.0669587,
+      "lon": 11.0458744,
+      "tags": {
+        "name": "Casa Ciliegia",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
       }
     },
     {
@@ -57462,6 +60039,18 @@
       "tags": {
         "name": "Lubaco",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3205708404,
+      "lat": 43.8385068,
+      "lon": 11.2156773,
+      "tags": {
+        "name": "Doccia",
+        "place": "neighbourhood",
+        "population": "0",
+        "source": "C.T.R. REGIONE TOSCANA"
       }
     },
     {
@@ -57829,12 +60418,42 @@
     },
     {
       "type": "node",
+      "id": 3310510153,
+      "lat": 43.4300939,
+      "lon": 11.4026498,
+      "tags": {
+        "name": "Le Celle",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3310510154,
+      "lat": 43.4301588,
+      "lon": 11.3987009,
+      "tags": {
+        "name": "Monteluco di Lecchi",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 3312479771,
       "lat": 43.891098,
       "lon": 10.6950585,
       "tags": {
         "name": "S. Erasmo",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3321896198,
+      "lat": 44.1281546,
+      "lon": 10.3714369,
+      "tags": {
+        "name": "Noceto",
+        "place": "neighbourhood"
       }
     },
     {
@@ -57859,6 +60478,16 @@
         "place": "hamlet",
         "wikidata": "Q3642164",
         "wikipedia": "it:Bonistallo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3330897771,
+      "lat": 43.8700081,
+      "lon": 11.1186642,
+      "tags": {
+        "name": "I lecci",
+        "place": "suburb"
       }
     },
     {
@@ -57932,6 +60561,19 @@
         "name": "Paterno",
         "place": "village",
         "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3362027422,
+      "lat": 43.4677215,
+      "lon": 11.148762,
+      "tags": {
+        "ele": "116",
+        "name": "Poggibonsi",
+        "place": "town",
+        "population": "29196",
+        "wikidata": "Q91350"
       }
     },
     {
@@ -58016,12 +60658,53 @@
     },
     {
       "type": "node",
+      "id": 3392596009,
+      "lat": 43.9077258,
+      "lon": 11.1071522,
+      "tags": {
+        "name": "Le Sacca",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3395321538,
+      "lat": 43.8842323,
+      "lon": 11.1025344,
+      "tags": {
+        "name": "il Cantiere",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3400223621,
+      "lat": 43.9227989,
+      "lon": 11.1274797,
+      "tags": {
+        "name": "Gamberame Basso",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 3400590206,
       "lat": 43.9100439,
       "lon": 11.1230319,
       "tags": {
         "name": "Canneto",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3407089980,
+      "lat": 43.9854521,
+      "lon": 11.095409,
+      "tags": {
+        "name": "Novelleto",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana;Le Mappe dei Cittadini - Quaderno n. 2"
       }
     },
     {
@@ -58045,6 +60728,17 @@
         "place": "hamlet",
         "source": "C.T.R. Regione Toscana",
         "wikimedia_commons": "Category:Chiusoli (Cantagallo)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3407091993,
+      "lat": 43.9864878,
+      "lon": 11.0964908,
+      "tags": {
+        "name": "Ghiffia",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
       }
     },
     {
@@ -59798,6 +62492,16 @@
     },
     {
       "type": "node",
+      "id": 3594001805,
+      "lat": 43.2558431,
+      "lon": 11.2793271,
+      "tags": {
+        "name": "Strada",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 3596082555,
       "lat": 43.6441942,
       "lon": 10.4491519,
@@ -60273,6 +62977,41 @@
     },
     {
       "type": "node",
+      "id": 3727443425,
+      "lat": 43.8252954,
+      "lon": 11.2153507,
+      "tags": {
+        "name": "Quinto Basso",
+        "place": "suburb",
+        "population": "1000",
+        "wikidata": "Q16593838",
+        "wikipedia": "it:Quinto Basso"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3727456743,
+      "lat": 43.8251268,
+      "lon": 11.2025744,
+      "tags": {
+        "ele": "43",
+        "name": "Zambra",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3732885847,
+      "lat": 44.0923553,
+      "lon": 11.15865,
+      "tags": {
+        "description": "Antico nucleo abitato di Montepiano",
+        "name": "Il Casone",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 3734291019,
       "lat": 44.0282528,
       "lon": 10.9164469,
@@ -60333,6 +63072,16 @@
       "tags": {
         "name": "Africo",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3774723456,
+      "lat": 43.7557886,
+      "lon": 11.2895466,
+      "tags": {
+        "name": "Bandino",
+        "place": "neighbourhood"
       }
     },
     {
@@ -60432,6 +63181,26 @@
     },
     {
       "type": "node",
+      "id": 3884901659,
+      "lat": 44.0552051,
+      "lon": 11.1236933,
+      "tags": {
+        "name": "Il Bettarello",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3884901661,
+      "lat": 44.0553383,
+      "lon": 11.1262404,
+      "tags": {
+        "name": "Il Trebbio",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 3887316194,
       "lat": 43.7239227,
       "lon": 10.8532113,
@@ -60451,6 +63220,17 @@
         "place": "hamlet",
         "source": "C.T.R. Regione Toscana",
         "wikidata": "Q18491355"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3892089087,
+      "lat": 44.0927585,
+      "lon": 11.1446453,
+      "tags": {
+        "ele": "739",
+        "name": "La Badia",
+        "place": "neighbourhood"
       }
     },
     {
@@ -60669,6 +63449,16 @@
       "tags": {
         "name": "Il Pettirosso",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3999653296,
+      "lat": 43.8376449,
+      "lon": 10.7429412,
+      "tags": {
+        "name": "Borghino",
+        "place": "neighbourhood"
       }
     },
     {
@@ -61161,6 +63951,18 @@
     },
     {
       "type": "node",
+      "id": 4396167036,
+      "lat": 42.7791916,
+      "lon": 11.1170399,
+      "tags": {
+        "name": "Sugherella",
+        "place": "suburb",
+        "wikidata": "Q81217317",
+        "wikipedia": "it:Sugherella"
+      }
+    },
+    {
+      "type": "node",
       "id": 4396413047,
       "lat": 42.254379,
       "lon": 11.1026126,
@@ -61259,6 +64061,30 @@
         "place": "hamlet",
         "wikidata": "Q16912609",
         "wikipedia": "it:Gello (Palaia)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4419413224,
+      "lat": 43.7973619,
+      "lon": 11.1966117,
+      "tags": {
+        "name": "Peretola",
+        "place": "suburb",
+        "wikidata": "Q3899784",
+        "wikipedia": "it:Peretola"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4419413225,
+      "lat": 43.7968716,
+      "lon": 11.179926,
+      "tags": {
+        "name": "Quaracchi",
+        "place": "suburb",
+        "wikidata": "Q3927072",
+        "wikipedia": "it:Quaracchi"
       }
     },
     {
@@ -61519,12 +64345,72 @@
     },
     {
       "type": "node",
+      "id": 4672280227,
+      "lat": 43.4973576,
+      "lon": 10.498992,
+      "tags": {
+        "name": "Convento",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4674541029,
+      "lat": 43.4922273,
+      "lon": 10.5109114,
+      "tags": {
+        "name": "Il Livellino",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4675112255,
+      "lat": 43.4936667,
+      "lon": 10.5087212,
+      "tags": {
+        "name": "Le Casellore",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 4687409061,
       "lat": 43.4373014,
       "lon": 10.4891939,
       "tags": {
         "name": "Macchia Verde",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4688763964,
+      "lat": 43.4949186,
+      "lon": 10.5144555,
+      "tags": {
+        "name": "Il Campaccio",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4688763965,
+      "lat": 43.4963822,
+      "lon": 10.5138235,
+      "tags": {
+        "name": "L'Uccelliera",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4688763966,
+      "lat": 43.4959844,
+      "lon": 10.5081568,
+      "tags": {
+        "name": "I Vignacci",
+        "place": "neighbourhood"
       }
     },
     {
@@ -61537,6 +64423,16 @@
         "name": "Brenna",
         "place": "village",
         "wikidata": "Q22691442"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4697305401,
+      "lat": 43.4970488,
+      "lon": 10.5022447,
+      "tags": {
+        "name": "Aiaccia",
+        "place": "neighbourhood"
       }
     },
     {
@@ -61614,6 +64510,76 @@
         "place": "hamlet",
         "population": "54",
         "source": "Istat 2001 - geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4777902851,
+      "lat": 42.7700835,
+      "lon": 11.0974388,
+      "tags": {
+        "name": "Barbanella",
+        "place": "suburb",
+        "population": "14871",
+        "wikidata": "Q3634573",
+        "wikipedia": "it:Barbanella"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4777936923,
+      "lat": 42.7529835,
+      "lon": 11.1034834,
+      "tags": {
+        "name": "Gorarella",
+        "place": "suburb",
+        "population": "12533",
+        "wikidata": "Q3773463",
+        "wikipedia": "it:Gorarella"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4778011636,
+      "lat": 42.7656057,
+      "lon": 11.1500331,
+      "tags": {
+        "name": "San Martino",
+        "place": "suburb",
+        "wikidata": "Q81215451",
+        "wikipedia": "it:San Martino (Grosseto)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4778011637,
+      "lat": 42.7726203,
+      "lon": 11.165146,
+      "tags": {
+        "name": "Casalecci",
+        "place": "suburb",
+        "population": "446"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4778011638,
+      "lat": 42.7895612,
+      "lon": 11.1308929,
+      "tags": {
+        "name": "Poggione",
+        "place": "suburb",
+        "wikidata": "Q81217346"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4778011639,
+      "lat": 42.7909941,
+      "lon": 11.1139413,
+      "tags": {
+        "name": "Commendone",
+        "place": "suburb"
       }
     },
     {
@@ -61838,6 +64804,17 @@
     },
     {
       "type": "node",
+      "id": 4811594391,
+      "lat": 44.0576379,
+      "lon": 10.0876502,
+      "tags": {
+        "name": "Bonascola",
+        "place": "suburb",
+        "wikidata": "Q125162761"
+      }
+    },
+    {
+      "type": "node",
       "id": 4813636212,
       "lat": 43.9894216,
       "lon": 10.3617526,
@@ -61854,6 +64831,36 @@
       "tags": {
         "name": "Bucine",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4823479136,
+      "lat": 43.8631175,
+      "lon": 10.2714975,
+      "tags": {
+        "name": "Fontanini",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4823479137,
+      "lat": 43.8589159,
+      "lon": 10.2703338,
+      "tags": {
+        "name": "Cotone",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4823479138,
+      "lat": 43.8668644,
+      "lon": 10.2747333,
+      "tags": {
+        "name": "Forcone",
+        "place": "suburb"
       }
     },
     {
@@ -61918,6 +64925,17 @@
     },
     {
       "type": "node",
+      "id": 4878487242,
+      "lat": 44.0398403,
+      "lon": 10.1026447,
+      "tags": {
+        "name": "Codupino",
+        "place": "neighbourhood",
+        "wikidata": "Q125197941"
+      }
+    },
+    {
+      "type": "node",
       "id": 4881901938,
       "lat": 44.0654463,
       "lon": 10.3017602,
@@ -61935,6 +64953,16 @@
         "name": "Capanne",
         "place": "village",
         "wikidata": "Q125145722"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4883244558,
+      "lat": 44.0146302,
+      "lon": 10.1687677,
+      "tags": {
+        "name": "Bottaccio",
+        "place": "neighbourhood"
       }
     },
     {
@@ -61960,6 +64988,18 @@
         "place": "hamlet",
         "population": "258",
         "source": "Istat 2001 - geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4897992687,
+      "lat": 43.3173933,
+      "lon": 11.3568139,
+      "tags": {
+        "description": "Suburb of Siena",
+        "name": "Due Ponti",
+        "place": "suburb",
+        "wikidata": "Q125116544"
       }
     },
     {
@@ -62391,6 +65431,38 @@
     },
     {
       "type": "node",
+      "id": 5131302171,
+      "lat": 43.4925996,
+      "lon": 10.5100139,
+      "tags": {
+        "name": "La Chiesa Vecchia",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5131302173,
+      "lat": 43.4930593,
+      "lon": 10.5110475,
+      "tags": {
+        "name": "L'Orto",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5131633579,
+      "lat": 43.3915105,
+      "lon": 11.1304946,
+      "tags": {
+        "name": "Pieve a Elsa",
+        "place": "neighbourhood",
+        "wikidata": "Q3904422",
+        "wikipedia": "it:Pieve a Elsa"
+      }
+    },
+    {
+      "type": "node",
       "id": 5159841575,
       "lat": 43.7782636,
       "lon": 11.0812139,
@@ -62411,6 +65483,16 @@
         "place": "village",
         "wikidata": "Q3909745",
         "wikipedia": "it:Pozzarello"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5220179864,
+      "lat": 44.066497,
+      "lon": 10.0485419,
+      "tags": {
+        "name": "Fossone",
+        "place": "suburb"
       }
     },
     {
@@ -62522,6 +65604,17 @@
     },
     {
       "type": "node",
+      "id": 5291588825,
+      "lat": 43.73147,
+      "lon": 10.3942734,
+      "tags": {
+        "name": "Gagno",
+        "place": "suburb",
+        "wikidata": "Q122914961"
+      }
+    },
+    {
+      "type": "node",
       "id": 5291595268,
       "lat": 43.380515,
       "lon": 11.956382,
@@ -62529,6 +65622,18 @@
         "name": "San Chimento",
         "place": "hamlet",
         "source": "C.T.R Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5291596927,
+      "lat": 43.7225038,
+      "lon": 10.4106736,
+      "tags": {
+        "is_in": "Pisa",
+        "name": "Pratale",
+        "place": "suburb",
+        "wikidata": "Q98567998"
       }
     },
     {
@@ -62556,6 +65661,30 @@
     },
     {
       "type": "node",
+      "id": 5293438561,
+      "lat": 43.6985455,
+      "lon": 10.413423,
+      "tags": {
+        "is_in": "Pisa",
+        "name": "Sant'Ermete",
+        "place": "suburb",
+        "wikidata": "Q98546791"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5293447739,
+      "lat": 43.7021882,
+      "lon": 10.4053436,
+      "tags": {
+        "is_in": "Pisa",
+        "name": "San Marco",
+        "place": "suburb",
+        "wikidata": "Q98568230"
+      }
+    },
+    {
+      "type": "node",
       "id": 5304871256,
       "lat": 43.9400169,
       "lon": 11.1420679,
@@ -62568,6 +65697,16 @@
     },
     {
       "type": "node",
+      "id": 5314883027,
+      "lat": 43.8012898,
+      "lon": 11.2854341,
+      "tags": {
+        "name": "San Domenico",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 5337653114,
       "lat": 43.8103854,
       "lon": 11.0218097,
@@ -62575,6 +65714,18 @@
         "name": "Bagno",
         "place": "hamlet",
         "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5337725095,
+      "lat": 43.8085702,
+      "lon": 11.010643,
+      "tags": {
+        "name": "Castello",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana",
+        "wikimedia_commons": "Category:Castello (Carmignano)"
       }
     },
     {
@@ -62622,6 +65773,18 @@
     },
     {
       "type": "node",
+      "id": 5347938659,
+      "lat": 43.4718681,
+      "lon": 11.1603847,
+      "tags": {
+        "name": "Papaiano",
+        "place": "suburb",
+        "wikidata": "Q2719077",
+        "wikipedia": "it:Papaiano"
+      }
+    },
+    {
+      "type": "node",
       "id": 5353604482,
       "lat": 43.1002914,
       "lon": 11.2515185,
@@ -62655,6 +65818,54 @@
         "place": "hamlet",
         "wikidata": "Q3877643",
         "wikipedia": "it:Noceta in Val di Chio"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5474253054,
+      "lat": 43.8310905,
+      "lon": 11.1304057,
+      "tags": {
+        "name": "La Villa",
+        "place": "suburb",
+        "wikidata": "Q3821295",
+        "wikipedia": "it:La Villa (Campi Bisenzio)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5474253055,
+      "lat": 43.8160583,
+      "lon": 11.126039,
+      "tags": {
+        "name": "San Martino",
+        "place": "suburb",
+        "wikidata": "Q3947634",
+        "wikipedia": "it:San Martino (Campi Bisenzio)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5474253056,
+      "lat": 43.820765,
+      "lon": 11.1271333,
+      "tags": {
+        "name": "San Lorenzo",
+        "place": "suburb",
+        "wikidata": "Q3947481",
+        "wikipedia": "it:San Lorenzo (Campi Bisenzio)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5474253057,
+      "lat": 43.8271973,
+      "lon": 11.1291718,
+      "tags": {
+        "name": "Santa Maria",
+        "place": "suburb",
+        "wikidata": "Q3949099",
+        "wikipedia": "it:Santa Maria (Campi Bisenzio)"
       }
     },
     {
@@ -62743,6 +65954,16 @@
         "place": "hamlet",
         "population": "51",
         "source": "Istat 2001 - geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5514874060,
+      "lat": 43.7183921,
+      "lon": 10.4057827,
+      "tags": {
+        "name": "San Francesco",
+        "place": "suburb"
       }
     },
     {
@@ -62973,6 +66194,16 @@
     },
     {
       "type": "node",
+      "id": 5731770512,
+      "lat": 43.3931915,
+      "lon": 11.1321949,
+      "tags": {
+        "name": "Spedaletto",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 5782174809,
       "lat": 43.4099083,
       "lon": 10.4985698,
@@ -63184,6 +66415,26 @@
     },
     {
       "type": "node",
+      "id": 5918618129,
+      "lat": 43.7966763,
+      "lon": 11.2402344,
+      "tags": {
+        "name": "Rifredi",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5918618134,
+      "lat": 43.7971761,
+      "lon": 11.233979,
+      "tags": {
+        "name": "Firenze Nova",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 5919237472,
       "lat": 43.3231601,
       "lon": 11.484254,
@@ -63204,6 +66455,16 @@
         "population": "182",
         "wikidata": "Q1920326",
         "wikipedia": "it:Magliano (Sillano Giuncugnano)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5968845345,
+      "lat": 43.7839072,
+      "lon": 11.2402356,
+      "tags": {
+        "name": "San Iacopino",
+        "place": "neighbourhood"
       }
     },
     {
@@ -63324,6 +66585,235 @@
       "tags": {
         "name": "Piercari",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6135144567,
+      "lat": 44.0645617,
+      "lon": 10.0829868,
+      "tags": {
+        "name": "Pontecimato",
+        "place": "suburb",
+        "wikidata": "Q125162773"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6135144568,
+      "lat": 44.0674355,
+      "lon": 10.0853097,
+      "tags": {
+        "name": "Gatto Rosso",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6139012501,
+      "lat": 43.7867895,
+      "lon": 11.2503819,
+      "tags": {
+        "name": "Statuto",
+        "place": "neighbourhood",
+        "wikidata": "Q3968715",
+        "wikipedia": "it:Statuto (Firenze)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6139012502,
+      "lat": 43.7871301,
+      "lon": 11.245753,
+      "tags": {
+        "name": "Romito",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6139012503,
+      "lat": 43.7948093,
+      "lon": 11.247866,
+      "tags": {
+        "check_date": "2024-04-21",
+        "name": "Poggetto",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6139016268,
+      "lat": 43.7520015,
+      "lon": 11.293231,
+      "tags": {
+        "name": "San Marcellino",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6139016274,
+      "lat": 43.7624144,
+      "lon": 11.2827221,
+      "tags": {
+        "name": "Gavinana",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6139016277,
+      "lat": 43.7552663,
+      "lon": 11.298646,
+      "tags": {
+        "name": "Badia a Ripoli",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6139019843,
+      "lat": 43.7680502,
+      "lon": 11.2843365,
+      "tags": {
+        "name": "Bellariva",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6139019845,
+      "lat": 43.7787422,
+      "lon": 11.2959996,
+      "tags": {
+        "name": "Coverciano",
+        "place": "neighbourhood",
+        "wikidata": "Q3696313",
+        "wikipedia": "it:Coverciano"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6139019846,
+      "lat": 43.7722346,
+      "lon": 11.286036,
+      "tags": {
+        "name": "San Salvi",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6139022219,
+      "lat": 43.7817975,
+      "lon": 11.2864567,
+      "tags": {
+        "name": "Campo di Marte",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6139022220,
+      "lat": 43.7870158,
+      "lon": 11.2693344,
+      "tags": {
+        "name": "Le Cure",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6139310485,
+      "lat": 44.0408589,
+      "lon": 10.6296277,
+      "tags": {
+        "ele": "558",
+        "name": "Piazza",
+        "place": "neighbourhood",
+        "source": "Cartografia Catastale Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6145608299,
+      "lat": 43.7705299,
+      "lon": 11.2115148,
+      "tags": {
+        "check_date": "2024-04-04",
+        "name": "Legnaia",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6145608300,
+      "lat": 43.7716629,
+      "lon": 11.2250304,
+      "tags": {
+        "name": "Monticelli",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6145608301,
+      "lat": 43.77117,
+      "lon": 11.2367946,
+      "tags": {
+        "name": "Pignone",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6145608302,
+      "lat": 43.7697716,
+      "lon": 11.2437791,
+      "tags": {
+        "name": "San Frediano",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6145608303,
+      "lat": 43.7642783,
+      "lon": 11.2613636,
+      "tags": {
+        "name": "San Niccolò",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6145608304,
+      "lat": 43.766103,
+      "lon": 11.2504739,
+      "tags": {
+        "name": "Oltrarno",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6147789966,
+      "lat": 43.7296108,
+      "lon": 11.0062657,
+      "tags": {
+        "name": "San Quirico",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6147789967,
+      "lat": 43.7283549,
+      "lon": 11.0150098,
+      "tags": {
+        "name": "Erta",
+        "place": "neighbourhood"
       }
     },
     {
@@ -63481,6 +66971,16 @@
     },
     {
       "type": "node",
+      "id": 6334066504,
+      "lat": 43.7620731,
+      "lon": 11.2740723,
+      "tags": {
+        "name": "Ricorboli",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 6402158284,
       "lat": 44.2863954,
       "lon": 9.8237193,
@@ -63497,6 +66997,26 @@
       "tags": {
         "name": "Savolano",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6415208213,
+      "lat": 43.7780025,
+      "lon": 11.4299197,
+      "tags": {
+        "name": "Mezzana",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6415208214,
+      "lat": 43.7827235,
+      "lon": 11.4466301,
+      "tags": {
+        "name": "Il Fossato",
+        "place": "neighbourhood"
       }
     },
     {
@@ -63622,6 +67142,17 @@
     },
     {
       "type": "node",
+      "id": 6586048183,
+      "lat": 43.7379353,
+      "lon": 10.3995206,
+      "tags": {
+        "is_in": "Pisa",
+        "name": "I Passi",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
       "id": 6592278787,
       "lat": 43.2994352,
       "lon": 11.3131225,
@@ -63726,6 +67257,38 @@
     },
     {
       "type": "node",
+      "id": 6611261309,
+      "lat": 43.9513017,
+      "lon": 10.1770441,
+      "tags": {
+        "name": "Roma Imperiale",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6611261310,
+      "lat": 43.9567225,
+      "lon": 10.1889556,
+      "tags": {
+        "name": "Caranna",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6611261311,
+      "lat": 43.9687837,
+      "lon": 10.1606876,
+      "tags": {
+        "name": "Vittoria Apuana",
+        "place": "suburb",
+        "wikidata": "Q4015202",
+        "wikipedia": "it:Vittoria Apuana"
+      }
+    },
+    {
+      "type": "node",
       "id": 6615415201,
       "lat": 43.1579196,
       "lon": 11.5271489,
@@ -63762,12 +67325,72 @@
     },
     {
       "type": "node",
+      "id": 6634418482,
+      "lat": 42.9391736,
+      "lon": 10.51723,
+      "tags": {
+        "name": "Montemazzano",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6634418483,
+      "lat": 42.9319302,
+      "lon": 10.520376,
+      "tags": {
+        "name": "Desco",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6634418484,
+      "lat": 42.9263527,
+      "lon": 10.5302895,
+      "tags": {
+        "name": "Porta a Terra",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
       "id": 6634462485,
       "lat": 42.9248915,
       "lon": 10.5374134,
       "tags": {
         "name": "Tolla",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6634462486,
+      "lat": 42.9434437,
+      "lon": 10.5034269,
+      "tags": {
+        "name": "Ghiaccioni",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6634462487,
+      "lat": 42.9410076,
+      "lon": 10.5357876,
+      "tags": {
+        "name": "Poggetto",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6634462488,
+      "lat": 42.9358394,
+      "lon": 10.5340818,
+      "tags": {
+        "name": "Cotone",
+        "place": "suburb"
       }
     },
     {
@@ -63821,6 +67444,16 @@
       "tags": {
         "name": "Case Fonte al Cerro",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6771560839,
+      "lat": 43.058426,
+      "lon": 11.8312379,
+      "tags": {
+        "name": "Chianciano",
+        "place": "neighbourhood"
       }
     },
     {
@@ -63930,12 +67563,33 @@
     },
     {
       "type": "node",
+      "id": 6857781141,
+      "lat": 43.8114846,
+      "lon": 11.2336246,
+      "tags": {
+        "name": "Il Sodo",
+        "place": "neighbourhood",
+        "url": "https://it.wikisource.org/wiki/I_dintorni_di_Firenze,_volume_I/VII._Barriera_del_Ponte_all%27Asse"
+      }
+    },
+    {
+      "type": "node",
       "id": 6857792460,
       "lat": 43.8158613,
       "lon": 11.2278166,
       "tags": {
         "name": "Castello",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6866932847,
+      "lat": 43.8177772,
+      "lon": 11.2408747,
+      "tags": {
+        "name": "Quarto",
+        "place": "neighbourhood"
       }
     },
     {
@@ -63979,6 +67633,46 @@
       "tags": {
         "name": "Spedalino Asnelli",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7137571745,
+      "lat": 43.9405947,
+      "lon": 10.9180282,
+      "tags": {
+        "name": "Casermette",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7137571746,
+      "lat": 43.9247406,
+      "lon": 10.9200814,
+      "tags": {
+        "name": "La Vergine",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7137574139,
+      "lat": 43.92468,
+      "lon": 10.9160753,
+      "tags": {
+        "name": "Roccon Rosso",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7137619332,
+      "lat": 43.8710345,
+      "lon": 10.9523085,
+      "tags": {
+        "name": "Case Maraviglia",
+        "place": "neighbourhood"
       }
     },
     {
@@ -64048,12 +67742,56 @@
     },
     {
       "type": "node",
+      "id": 7369524920,
+      "lat": 42.7577944,
+      "lon": 11.123791,
+      "tags": {
+        "name": "Alberino",
+        "place": "neighbourhood",
+        "wikidata": "Q81216770"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7369610135,
+      "lat": 42.791533,
+      "lon": 11.081828,
+      "tags": {
+        "name": "Rugginosa",
+        "place": "suburb",
+        "wikidata": "Q98630674"
+      }
+    },
+    {
+      "type": "node",
       "id": 7395707428,
       "lat": 44.1335213,
       "lon": 11.3097128,
       "tags": {
         "name": "Covigliaio di sotto",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7403958848,
+      "lat": 44.0640056,
+      "lon": 10.0757766,
+      "tags": {
+        "name": "Perticata",
+        "place": "suburb",
+        "wikidata": "Q125162742"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7403967902,
+      "lat": 44.0705406,
+      "lon": 10.087766,
+      "tags": {
+        "name": "Fabbrica",
+        "place": "suburb",
+        "wikidata": "Q125162805"
       }
     },
     {
@@ -64197,6 +67935,17 @@
       "tags": {
         "name": "Ponte a Calcaiola",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7643129194,
+      "lat": 43.7204966,
+      "lon": 10.9554694,
+      "tags": {
+        "name": "Naiana",
+        "place": "neighbourhood",
+        "source": "local knowledge;http://www.sangiovanniempoli.org/wp-content/uploads/2013/09/I-cinquanta-anni-della-nostra-parrocchia-prof.-Testafferrata.pdf"
       }
     },
     {
@@ -64526,6 +68275,26 @@
     },
     {
       "type": "node",
+      "id": 7963613495,
+      "lat": 43.4541622,
+      "lon": 10.5642275,
+      "tags": {
+        "name": "Pastinello",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7963613496,
+      "lat": 43.4554174,
+      "lon": 10.567277,
+      "tags": {
+        "name": "San Michele",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 7965832122,
       "lat": 44.4250446,
       "lon": 9.8403488,
@@ -64557,6 +68326,37 @@
       "tags": {
         "name": "Lagoscuro",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7992075361,
+      "lat": 43.4727951,
+      "lon": 10.5668834,
+      "tags": {
+        "loc_name": "Il Castello",
+        "name": "Il Castello",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7992075362,
+      "lat": 43.4720299,
+      "lon": 10.5629552,
+      "tags": {
+        "name": "Mercatale",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7992075363,
+      "lat": 43.4692941,
+      "lon": 10.5598994,
+      "tags": {
+        "name": "Il Poggio",
+        "place": "neighbourhood"
       }
     },
     {
@@ -64603,6 +68403,28 @@
       "tags": {
         "name": "Canipaia",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8171362189,
+      "lat": 43.7296223,
+      "lon": 10.4020696,
+      "tags": {
+        "is_in": "Pisa",
+        "name": "Porta a Lucca",
+        "place": "suburb",
+        "wikidata": "Q98567933"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8218865793,
+      "lat": 44.0846296,
+      "lon": 10.105429,
+      "tags": {
+        "name": "San Giuseppe",
+        "place": "neighbourhood"
       }
     },
     {
@@ -64687,6 +68509,16 @@
       "tags": {
         "name": "Casa Capecchi",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8375151439,
+      "lat": 43.4598294,
+      "lon": 10.5687111,
+      "tags": {
+        "name": "La Ghiraia",
+        "place": "neighbourhood"
       }
     },
     {
@@ -64789,6 +68621,16 @@
       "tags": {
         "name": "Campiano",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8557544988,
+      "lat": 43.9646693,
+      "lon": 11.1183044,
+      "tags": {
+        "name": "Castagneta di Sopra",
+        "place": "neighbourhood"
       }
     },
     {
@@ -65001,6 +68843,28 @@
     },
     {
       "type": "node",
+      "id": 8848502115,
+      "lat": 43.3196137,
+      "lon": 11.3211818,
+      "tags": {
+        "name": "San Prospero",
+        "place": "suburb",
+        "wikidata": "Q122912672",
+        "wikipedia": "it:San Prospero (Siena)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8874823030,
+      "lat": 43.4039971,
+      "lon": 11.131911,
+      "tags": {
+        "name": "Querciolaia",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 8875764229,
       "lat": 43.2427761,
       "lon": 11.5594572,
@@ -65059,6 +68923,20 @@
       "tags": {
         "name": "Lato",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8914809872,
+      "lat": 43.9109613,
+      "lon": 11.1194798,
+      "tags": {
+        "alt_name": "Senarica",
+        "name": "La Torricella",
+        "place": "neighbourhood",
+        "source": "Quadro conoscitivo Provincia di Prato",
+        "source:alt_name": "wikimedia_commons",
+        "wikimedia_commons": "Category:Senarica (Prato)"
       }
     },
     {
@@ -65246,6 +69124,26 @@
     },
     {
       "type": "node",
+      "id": 8981383007,
+      "lat": 43.4057761,
+      "lon": 11.1318752,
+      "tags": {
+        "name": "Agrestino",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8982977870,
+      "lat": 43.4028702,
+      "lon": 11.134656,
+      "tags": {
+        "name": "San Marziale",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 9032908423,
       "lat": 43.5656688,
       "lon": 10.4316634,
@@ -65335,6 +69233,29 @@
         "place": "hamlet",
         "population": "58",
         "source": "Istat 2001 - geodati.gfoss.it"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9138236298,
+      "lat": 43.8671591,
+      "lon": 11.0225449,
+      "tags": {
+        "name": "Le Vanne",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana",
+        "wikimedia_commons": "Category:Le Vanne (Prato)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9138236299,
+      "lat": 43.8633462,
+      "lon": 11.0196807,
+      "tags": {
+        "name": "Ponte alla Caserana",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
       }
     },
     {
@@ -65439,6 +69360,17 @@
     },
     {
       "type": "node",
+      "id": 9171480584,
+      "lat": 43.9001371,
+      "lon": 11.0440115,
+      "tags": {
+        "name": "Palarciano",
+        "place": "neighbourhood",
+        "wikimedia_commons": "Category:Palarciano (Prato)"
+      }
+    },
+    {
+      "type": "node",
       "id": 9174810656,
       "lat": 43.9857176,
       "lon": 11.1174249,
@@ -65458,6 +69390,41 @@
         "place": "hamlet",
         "source": "Cartografia Catastale Toscana",
         "wikimedia_commons": "Category:Segalari (Vernio)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9205358104,
+      "lat": 43.8959192,
+      "lon": 11.0210209,
+      "tags": {
+        "alt_name": "Contone di Sotto",
+        "name": "Cantone",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana",
+        "source:alt_name": "Cartografia Catastale Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9205360853,
+      "lat": 43.8203108,
+      "lon": 11.0870912,
+      "tags": {
+        "name": "Le Case",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9205360856,
+      "lat": 43.8173904,
+      "lon": 11.0842555,
+      "tags": {
+        "name": "Crocicchio dell'Oro",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
       }
     },
     {
@@ -65533,6 +69500,17 @@
     },
     {
       "type": "node",
+      "id": 9227216133,
+      "lat": 43.8377289,
+      "lon": 11.0931954,
+      "tags": {
+        "name": "Le Calvane",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
       "id": 9230530746,
       "lat": 44.0590454,
       "lon": 11.1619335,
@@ -65554,6 +69532,28 @@
     },
     {
       "type": "node",
+      "id": 9309084504,
+      "lat": 43.8774866,
+      "lon": 11.0135379,
+      "tags": {
+        "name": "Ponte dei Bini",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9328215843,
+      "lat": 43.9917199,
+      "lon": 11.0999984,
+      "tags": {
+        "name": "Il Monte",
+        "place": "neighbourhood",
+        "source": "Cartografia Catastale Toscana;survey"
+      }
+    },
+    {
+      "type": "node",
       "id": 9340257998,
       "lat": 44.0144241,
       "lon": 11.4435348,
@@ -65571,6 +69571,21 @@
         "name": "Vignaglia",
         "place": "hamlet",
         "wikidata": "Q18492057"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9519037564,
+      "lat": 43.3500593,
+      "lon": 11.3096653,
+      "tags": {
+        "alt_name": "Montearioso",
+        "description": "Frazione di Monteriggioni, Quartiere di Siena",
+        "description:en": "Located in Monteriggioni's municipality area, Quarter of Siena",
+        "name": "Montarioso",
+        "place": "suburb",
+        "wikidata": "Q98798186",
+        "wikipedia": "en:Montarioso"
       }
     },
     {
@@ -65735,6 +69750,19 @@
     },
     {
       "type": "node",
+      "id": 9763825594,
+      "lat": 44.0335132,
+      "lon": 11.1367907,
+      "tags": {
+        "alt_name": "Colcelle",
+        "name": "Curcelle",
+        "place": "neighbourhood",
+        "source:alt_name": "C.T.R. Regione Toscana",
+        "wikimedia_commons": "Category:Curcelle (Vernio)"
+      }
+    },
+    {
+      "type": "node",
       "id": 9763826145,
       "lat": 44.0310195,
       "lon": 11.1459108,
@@ -65742,6 +69770,27 @@
         "name": "Castagneta",
         "place": "hamlet",
         "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9788495991,
+      "lat": 44.1720108,
+      "lon": 9.90719,
+      "tags": {
+        "name": "Albiano Magra",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9800229467,
+      "lat": 42.7702099,
+      "lon": 11.1144238,
+      "tags": {
+        "name": "Pace",
+        "place": "neighbourhood",
+        "wikidata": "Q108710926"
       }
     },
     {
@@ -65779,6 +69828,17 @@
     },
     {
       "type": "node",
+      "id": 9844225216,
+      "lat": 44.0607889,
+      "lon": 11.1552797,
+      "tags": {
+        "name": "Cafaggio",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
       "id": 9855313313,
       "lat": 44.0243573,
       "lon": 11.3151851,
@@ -65809,6 +69869,17 @@
       "tags": {
         "name": "Villaggio La Brocchi",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9871967047,
+      "lat": 43.8526676,
+      "lon": 11.4659348,
+      "tags": {
+        "name": "Stanica",
+        "place": "neighbourhood",
+        "source": "Cartografia Catastale Toscana"
       }
     },
     {
@@ -65852,6 +69923,30 @@
         "name": "Paterno",
         "place": "hamlet",
         "population": "20"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9964456870,
+      "lat": 43.9646965,
+      "lon": 11.1054229,
+      "tags": {
+        "description": "Una delle più antiche borgate di Schignano",
+        "name": "Villamagna",
+        "place": "neighbourhood",
+        "source": "Antiche villeggiature - Val di Bisenzio e Montepiano tra Ottocento e Novecento - A. Marchi-A. Cecconi-L. Ciardi-C. Bartolozzi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9964456871,
+      "lat": 43.9639656,
+      "lon": 11.1069768,
+      "tags": {
+        "description": "Una delle più antiche borgate di Schignano",
+        "name": "Il Palagio",
+        "place": "neighbourhood",
+        "source": "Antiche villeggiature - Val di Bisenzio e Montepiano tra Ottocento e Novecento - A. Marchi-A. Cecconi-L. Ciardi-C. Bartolozzi;C.T.R. Regione Toscana"
       }
     },
     {
@@ -65902,6 +69997,27 @@
       "tags": {
         "name": "Pierini",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9993499975,
+      "lat": 43.930875,
+      "lon": 11.1266891,
+      "tags": {
+        "name": "Camino",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10043508026,
+      "lat": 43.8459421,
+      "lon": 11.1988459,
+      "tags": {
+        "description": "Una delle parti più antiche della località Querceto",
+        "name": "Borgo Tantola",
+        "place": "neighbourhood"
       }
     },
     {
@@ -65968,6 +70084,62 @@
     },
     {
       "type": "node",
+      "id": 10201606949,
+      "lat": 44.0455093,
+      "lon": 11.1492305,
+      "tags": {
+        "name": "Montini",
+        "place": "neighbourhood",
+        "source": "Cartografia Catastale Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10201606956,
+      "lat": 44.0450473,
+      "lon": 11.1461595,
+      "tags": {
+        "name": "La Casellina",
+        "place": "neighbourhood",
+        "source": "Cartografia Catastale Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10201606964,
+      "lat": 44.0472833,
+      "lon": 11.1464305,
+      "tags": {
+        "alt_name": "Case d'Aiaccia",
+        "name": "Aiaccia",
+        "place": "neighbourhood",
+        "source": "Cartografia Catastale Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10201638137,
+      "lat": 44.0328985,
+      "lon": 11.1492038,
+      "tags": {
+        "name": "Mozzacacio",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10201638155,
+      "lat": 44.0332277,
+      "lon": 11.1514833,
+      "tags": {
+        "name": "Morandaccio",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
       "id": 10213284413,
       "lat": 43.2735683,
       "lon": 11.3129438,
@@ -65979,12 +70151,62 @@
     },
     {
       "type": "node",
+      "id": 10248754196,
+      "lat": 44.0630211,
+      "lon": 11.0370791,
+      "tags": {
+        "name": "Casone",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10257866056,
+      "lat": 43.8605004,
+      "lon": 11.1562781,
+      "tags": {
+        "alt_name": "Il Palazzaccio",
+        "name": "Il Molino",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana",
+        "source:alt_name": "Cartografia Catastale Toscana",
+        "url": "http://www.sinistrapercalenzano.it/articoli/8-comunicati-stampa/340-la-storia-di-calenzano-il-molino-e-il-ponte-alla-valle"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10269277988,
+      "lat": 43.7894595,
+      "lon": 11.2128018,
+      "tags": {
+        "name": "Il Barco",
+        "old_name": "Le Mulina",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
       "id": 10271271465,
       "lat": 43.7771858,
       "lon": 11.4650292,
       "tags": {
         "name": "Palaie Vecchie",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10284901975,
+      "lat": 43.7614405,
+      "lon": 11.3097866,
+      "tags": {
+        "name": "Nave a Rovezzano",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana;Istituto Topografico Militare - Pianta di Firenze e dintorni (1873)",
+        "wikidata": "Q3873403",
+        "wikipedia": "it:Nave a Rovezzano"
       }
     },
     {
@@ -66026,15 +70248,6 @@
       "lon": 10.9278774,
       "tags": {
         "name": "La Chiesa",
-        "place": "hamlet"
-      }
-    },
-    {
-      "type": "node",
-      "id": 10293957260,
-      "lat": 44.0705489,
-      "lon": 10.9297941,
-      "tags": {
         "place": "hamlet"
       }
     },
@@ -66220,6 +70433,62 @@
     },
     {
       "type": "node",
+      "id": 10812155759,
+      "lat": 43.3288859,
+      "lon": 11.3161004,
+      "tags": {
+        "alt_name": "Fuoriporta",
+        "description": "Suburb of Siena",
+        "name": "Camollia",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10812155760,
+      "lat": 43.3176625,
+      "lon": 11.3453673,
+      "tags": {
+        "description": "Suburb of Siena",
+        "name": "Pispini",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10812743130,
+      "lat": 43.2349636,
+      "lon": 11.5736623,
+      "tags": {
+        "name": "Asciano Scalo",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10812743132,
+      "lat": 43.4408516,
+      "lon": 11.162844,
+      "tags": {
+        "ele": "140",
+        "name": "Bellavista",
+        "place": "suburb",
+        "wikidata": "Q18491452",
+        "wikipedia": "en:Bellavista, Poggibonsi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10812743133,
+      "lat": 43.4573129,
+      "lon": 11.1560195,
+      "tags": {
+        "name": "Calcinaia",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
       "id": 10821583061,
       "lat": 43.3397038,
       "lon": 11.2832684,
@@ -66282,6 +70551,17 @@
         "name": "Montazzi",
         "place": "hamlet",
         "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10911479648,
+      "lat": 42.702559,
+      "lon": 11.6907938,
+      "tags": {
+        "name": "Le Pianacce",
+        "place": "suburb",
+        "population": "0"
       }
     },
     {
@@ -66352,6 +70632,28 @@
       "tags": {
         "name": "Case Vasconi",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10973214985,
+      "lat": 43.8474659,
+      "lon": 10.9437769,
+      "tags": {
+        "name": "Dreoni",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10973214986,
+      "lat": 43.8454272,
+      "lon": 10.9447164,
+      "tags": {
+        "name": "Case Bracali",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
       }
     },
     {
@@ -66445,12 +70747,76 @@
     },
     {
       "type": "node",
+      "id": 11053669028,
+      "lat": 43.3256354,
+      "lon": 11.3349331,
+      "tags": {
+        "description": "Suburb of Siena",
+        "name": "Ravacciano",
+        "place": "suburb",
+        "wikidata": "Q98573978"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11055205162,
+      "lat": 43.2900983,
+      "lon": 11.3436214,
+      "tags": {
+        "description": "Suburb of Siena",
+        "name": "Coroncina",
+        "place": "suburb",
+        "wikidata": "Q124156616"
+      }
+    },
+    {
+      "type": "node",
       "id": 11059989052,
       "lat": 44.2925229,
       "lon": 10.1287909,
       "tags": {
         "name": "Felegara",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11089167150,
+      "lat": 43.3480017,
+      "lon": 11.3039951,
+      "tags": {
+        "description": "Frazione di Monteriggioni, Quartiere di Siena",
+        "description:en": "Located in Monteriggioni's municipality area, Quarter of Siena",
+        "long_name": "Quartiere Belverde",
+        "name": "Belverde",
+        "place": "suburb",
+        "wikidata": "Q18491454",
+        "wikipedia": "en:Belverde"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11089167152,
+      "lat": 43.3170346,
+      "lon": 11.3129904,
+      "tags": {
+        "description": "Suburb of Siena",
+        "name": "Cappuccini",
+        "place": "suburb",
+        "wikidata": "Q125116278"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11089167153,
+      "lat": 43.3082322,
+      "lon": 11.3386617,
+      "tags": {
+        "description": "Suburb of Siena",
+        "name": "Valli",
+        "place": "suburb",
+        "wikidata": "Q122911746",
+        "wikipedia": "it:Valli (Siena)"
       }
     },
     {
@@ -66504,6 +70870,18 @@
     },
     {
       "type": "node",
+      "id": 11108747995,
+      "lat": 43.2952872,
+      "lon": 11.3397419,
+      "tags": {
+        "description": "Neighbourhood of Siena",
+        "name": "Cerchiaia",
+        "place": "neighbourhood",
+        "wikidata": "Q18491577"
+      }
+    },
+    {
+      "type": "node",
       "id": 11113880141,
       "lat": 43.4079631,
       "lon": 11.2899703,
@@ -66520,6 +70898,63 @@
       "tags": {
         "name": "San Iacopo",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11117760677,
+      "lat": 43.2310941,
+      "lon": 11.4214524,
+      "tags": {
+        "ele": "161",
+        "gfoss_id": "4639",
+        "name": "Monteroni d'Arbia",
+        "place": "town",
+        "population": "9144",
+        "short_name": "Monteroni",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q91243",
+        "wikipedia": "en:Monteroni d'Arbia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11117760678,
+      "lat": 42.8809558,
+      "lon": 11.6723792,
+      "tags": {
+        "ele": "822",
+        "gfoss_id": "4623",
+        "name": "Abbadia San Salvatore",
+        "name:be": "Абадзія-Сан-Сальваторэ",
+        "name:it": "Abbadia San Salvatore",
+        "name:ja": "アッバディーア・サン・サルヴァトーレ",
+        "name:kk": "Аббадия-Сан-Сальваторе",
+        "name:la": "Abbatia Sancti Salvatoris",
+        "name:ru": "Аббадия-Сан-Сальваторе",
+        "name:uk": "Аббадія-Сан-Сальваторе",
+        "name:zh": "阿巴迪亚圣萨尔瓦托雷",
+        "place": "town",
+        "population": "6832",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q91096",
+        "wikipedia": "it:Abbadia San Salvatore"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11117760679,
+      "lat": 43.016515,
+      "lon": 11.9477359,
+      "tags": {
+        "ele": "398",
+        "gfoss_id": "4633",
+        "name": "Chiusi",
+        "place": "town",
+        "population": "8704",
+        "source": "geodati.gfoss.it",
+        "wikidata": "Q91185",
+        "wikipedia": "it:Chiusi"
       }
     },
     {
@@ -66579,6 +71014,32 @@
       "tags": {
         "name": "Montefortino",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11162830626,
+      "lat": 43.2399095,
+      "lon": 11.4067184,
+      "tags": {
+        "description": "Neighbourhood of Cuna",
+        "name": "Nuovo Borgo di Cuna",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11165190922,
+      "lat": 43.0027694,
+      "lon": 11.9557836,
+      "tags": {
+        "description": "Suburb of Chiusi",
+        "ele": "252",
+        "name": "Chiusi Scalo",
+        "name:zh": "丘西",
+        "place": "suburb",
+        "wikidata": "Q18491582",
+        "wikipedia": "en:Chiusi Scalo"
       }
     },
     {
@@ -66644,6 +71105,17 @@
     },
     {
       "type": "node",
+      "id": 11232431053,
+      "lat": 43.2106464,
+      "lon": 11.4260746,
+      "tags": {
+        "description": "Neighbourhood of Greppo",
+        "name": "Le Casine di Greppo",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 11232569521,
       "lat": 43.2765312,
       "lon": 11.4957671,
@@ -66652,6 +71124,17 @@
         "place": "hamlet",
         "wikidata": "Q18492045",
         "wikipedia": "en:Vescona"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11259653938,
+      "lat": 43.8517646,
+      "lon": 11.1027323,
+      "tags": {
+        "name": "Campostino",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
       }
     },
     {
@@ -66672,6 +71155,17 @@
       "tags": {
         "name": "San Leo",
         "place": "village"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11276919904,
+      "lat": 43.2097967,
+      "lon": 11.4243221,
+      "tags": {
+        "description": "Neighbourhood of Greppo",
+        "name": "Podere San Paolo",
+        "place": "neighbourhood"
       }
     },
     {
@@ -66780,6 +71274,16 @@
     },
     {
       "type": "node",
+      "id": 11393923746,
+      "lat": 43.8739357,
+      "lon": 11.0706506,
+      "tags": {
+        "name": "Villaggio Gescal",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 11397542860,
       "lat": 43.3679846,
       "lon": 10.5946802,
@@ -66817,6 +71321,18 @@
         "name": "Stabbiano",
         "place": "hamlet",
         "wikidata": "Q18491993"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11515086228,
+      "lat": 43.8427457,
+      "lon": 11.0892012,
+      "tags": {
+        "name": "Paperino",
+        "place": "suburb",
+        "wikidata": "Q2251504",
+        "wikipedia": "it:Paperino (Prato)"
       }
     },
     {
@@ -66989,6 +71505,16 @@
     },
     {
       "type": "node",
+      "id": 11758120510,
+      "lat": 43.1111242,
+      "lon": 11.3379781,
+      "tags": {
+        "name": "Borgo Montepescini",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 11764199998,
       "lat": 44.0158703,
       "lon": 10.1698681,
@@ -67033,6 +71559,87 @@
     },
     {
       "type": "node",
+      "id": 11764201102,
+      "lat": 44.0209967,
+      "lon": 10.1721397,
+      "tags": {
+        "name": "Serra",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11764201103,
+      "lat": 44.0195852,
+      "lon": 10.1782408,
+      "tags": {
+        "name": "Palmenzone",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11764201104,
+      "lat": 44.0202165,
+      "lon": 10.1775683,
+      "tags": {
+        "name": "Cozzanello",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11764201105,
+      "lat": 44.0196685,
+      "lon": 10.1755658,
+      "tags": {
+        "name": "Borella",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11764201106,
+      "lat": 44.0188947,
+      "lon": 10.1749008,
+      "tags": {
+        "name": "Gabbiano",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11764201107,
+      "lat": 44.0199156,
+      "lon": 10.1737763,
+      "tags": {
+        "name": "Rosoleto",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11764976821,
+      "lat": 44.0539298,
+      "lon": 10.0737548,
+      "tags": {
+        "name": "Nazzano",
+        "place": "suburb",
+        "wikidata": "Q125161928"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11765169111,
+      "lat": 42.7079638,
+      "lon": 11.0174638,
+      "tags": {
+        "name": "Rio Grande",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 11765234776,
       "lat": 42.6836005,
       "lon": 11.088266,
@@ -67044,12 +71651,207 @@
     },
     {
       "type": "node",
+      "id": 11765359742,
+      "lat": 42.7658346,
+      "lon": 10.8829142,
+      "tags": {
+        "name": "Portaccia",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11765359743,
+      "lat": 42.7674889,
+      "lon": 10.8883819,
+      "tags": {
+        "name": "Paduline",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11765359744,
+      "lat": 42.7610613,
+      "lon": 10.8879079,
+      "tags": {
+        "name": "Ponte Giorgini",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11765359745,
+      "lat": 42.7668269,
+      "lon": 10.8768754,
+      "tags": {
+        "name": "Poggio alle Trincee",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11765413981,
+      "lat": 42.774492,
+      "lon": 10.8585294,
+      "tags": {
+        "name": "Cannucce",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11766410341,
+      "lat": 42.7645862,
+      "lon": 10.8730733,
+      "tags": {
+        "name": "Marina",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11766449755,
+      "lat": 44.0576196,
+      "lon": 10.0687885,
+      "tags": {
+        "name": "Sant'Antonio",
+        "place": "suburb",
+        "wikidata": "Q125162843"
+      }
+    },
+    {
+      "type": "node",
       "id": 11772025872,
       "lat": 44.0463457,
       "lon": 10.1650718,
       "tags": {
         "name": "Ca' di Cecco",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11772078032,
+      "lat": 44.0301353,
+      "lon": 10.1446037,
+      "tags": {
+        "name": "Grondini",
+        "place": "neighbourhood",
+        "wikidata": "Q125210551"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11772081051,
+      "lat": 44.0215099,
+      "lon": 10.1519839,
+      "tags": {
+        "name": "Montepepe",
+        "place": "neighbourhood",
+        "wikidata": "Q125210507"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11772115975,
+      "lat": 44.0185721,
+      "lon": 10.1488137,
+      "tags": {
+        "name": "Le Jare",
+        "place": "neighbourhood",
+        "wikidata": "Q125210608"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11772378257,
+      "lat": 44.0135809,
+      "lon": 10.1480842,
+      "tags": {
+        "name": "Sei Ponti",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11772385150,
+      "lat": 44.0422305,
+      "lon": 10.0910934,
+      "tags": {
+        "name": "Candia",
+        "place": "neighbourhood",
+        "wikidata": "Q125212936"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11773623974,
+      "lat": 44.0158871,
+      "lon": 10.1406883,
+      "tags": {
+        "name": "Nara",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11773623975,
+      "lat": 44.0192868,
+      "lon": 10.1452675,
+      "tags": {
+        "name": "Bagaglione",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11773623976,
+      "lat": 44.0345061,
+      "lon": 10.1435934,
+      "tags": {
+        "name": "Martana",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11773623977,
+      "lat": 44.0329963,
+      "lon": 10.141114,
+      "tags": {
+        "name": "Ponticello",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11773639770,
+      "lat": 44.0174925,
+      "lon": 10.1065363,
+      "tags": {
+        "name": "Lodolina",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11773659493,
+      "lat": 44.0341128,
+      "lon": 10.118752,
+      "tags": {
+        "name": "Tinelli",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11773659494,
+      "lat": 44.0384428,
+      "lon": 10.1065801,
+      "tags": {
+        "name": "Pratta",
+        "place": "neighbourhood"
       }
     },
     {
@@ -67104,6 +71906,36 @@
     },
     {
       "type": "node",
+      "id": 11788824660,
+      "lat": 43.0456619,
+      "lon": 10.8869401,
+      "tags": {
+        "name": "Monacelle",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11788824661,
+      "lat": 43.0492215,
+      "lon": 10.895094,
+      "tags": {
+        "name": "Poggio",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11788824662,
+      "lat": 43.0453651,
+      "lon": 10.9004985,
+      "tags": {
+        "name": "Camilletta",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 11812100666,
       "lat": 43.632797,
       "lon": 10.7725377,
@@ -67131,6 +71963,17 @@
       "tags": {
         "name": "Castagneto",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11963001169,
+      "lat": 43.7177932,
+      "lon": 10.475044,
+      "tags": {
+        "name": "Traversagna",
+        "place": "neighbourhood",
+        "source": "C.T.R. Regione Toscana"
       }
     },
     {
@@ -67272,6 +72115,57 @@
     },
     {
       "type": "node",
+      "id": 12153770639,
+      "lat": 43.455673,
+      "lon": 11.8735688,
+      "tags": {
+        "name": "Saione",
+        "place": "neighbourhood",
+        "wikidata": "Q130224518"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12153783977,
+      "lat": 43.4579173,
+      "lon": 11.8676733,
+      "tags": {
+        "name": "San Donato",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12153827287,
+      "lat": 43.4577039,
+      "lon": 11.8869441,
+      "tags": {
+        "name": "Giotto",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12153834383,
+      "lat": 43.4493839,
+      "lon": 11.8655628,
+      "tags": {
+        "name": "San Marco alla Sella",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12153841360,
+      "lat": 43.4561134,
+      "lon": 11.860208,
+      "tags": {
+        "name": "Tortaia",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
       "id": 12212555709,
       "lat": 43.348862,
       "lon": 11.4473048,
@@ -67298,6 +72192,46 @@
       "tags": {
         "name": "Vada",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12248122523,
+      "lat": 44.0208443,
+      "lon": 10.2309913,
+      "tags": {
+        "name": "Venezia",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12248122524,
+      "lat": 44.0214218,
+      "lon": 10.2291364,
+      "tags": {
+        "name": "Cità",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12248122525,
+      "lat": 44.0202317,
+      "lon": 10.2305332,
+      "tags": {
+        "name": "Castello",
+        "place": "neighbourhood"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12248122526,
+      "lat": 44.0179354,
+      "lon": 10.229651,
+      "tags": {
+        "name": "Tarsello",
+        "place": "neighbourhood"
       }
     },
     {
@@ -67353,6 +72287,17 @@
     },
     {
       "type": "node",
+      "id": 12323647414,
+      "lat": 43.759221,
+      "lon": 11.2969648,
+      "tags": {
+        "name": "Borgo delle Lame",
+        "place": "neighbourhood",
+        "website": "https://www.minube.it/posto-preferito/viuzzo-delle-lame-a3650682"
+      }
+    },
+    {
+      "type": "node",
       "id": 12344572648,
       "lat": 43.7867031,
       "lon": 11.3772274,
@@ -67369,6 +72314,16 @@
       "tags": {
         "name": "Spannocchia",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12386150309,
+      "lat": 43.143317,
+      "lon": 11.4501042,
+      "tags": {
+        "name": "Pieve di Piana",
+        "place": "neighbourhood"
       }
     },
     {
@@ -67439,6 +72394,28 @@
       "tags": {
         "name": "Poggio Conca",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12441921267,
+      "lat": 43.5913408,
+      "lon": 11.6346351,
+      "tags": {
+        "name": "Oratorio della Madonna",
+        "place": "neighbourhood",
+        "source": "Comune di Loro Ciuffenna"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12441921288,
+      "lat": 43.5957045,
+      "lon": 11.631899,
+      "tags": {
+        "name": "La Corte",
+        "place": "neighbourhood",
+        "source": "Comune di Loro Ciuffenna"
       }
     },
     {
@@ -67677,6 +72654,16 @@
     },
     {
       "type": "node",
+      "id": 12874126041,
+      "lat": 43.4700403,
+      "lon": 11.1457729,
+      "tags": {
+        "name": "Centro",
+        "place": "suburb"
+      }
+    },
+    {
+      "type": "node",
       "id": 12902115602,
       "lat": 44.0997739,
       "lon": 10.7173204,
@@ -67693,6 +72680,17 @@
       "tags": {
         "name": "Casa Bebi",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12980897935,
+      "lat": 42.7989787,
+      "lon": 10.3141504,
+      "tags": {
+        "alt_name": "Località San Giovanni",
+        "name": "San Giovanni",
+        "place": "neighbourhood"
       }
     },
     {
@@ -67723,6 +72721,16 @@
       "tags": {
         "name": "Pannellina",
         "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13019580393,
+      "lat": 43.0163187,
+      "lon": 11.9477457,
+      "tags": {
+        "name": "Centro",
+        "place": "suburb"
       }
     },
     {
@@ -67774,6 +72782,16 @@
       "lon": 10.5736414,
       "tags": {
         "name": "Piè Maggiore",
+        "place": "hamlet"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13103115101,
+      "lat": 43.8097476,
+      "lon": 10.5766432,
+      "tags": {
+        "name": "Cecchini",
         "place": "hamlet"
       }
     }
